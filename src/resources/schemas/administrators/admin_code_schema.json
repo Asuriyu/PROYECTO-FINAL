@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": ["id", "firstName", "lastName", "username", "email", "enabled", "localeCode", "createdAt"],
+  "properties": {
+    "id": {"type": "integer"},
+    "firstName": {"type": "string"},
+    "lastName": {"type": "string"},
+    "username": {"type": "string"},
+    "email": {"type": "string", "format": "email"},
+    "enabled": {"type": "boolean"},
+    "localeCode": {"type": "string"},
+    "createdAt": {"type": "string", "format": "date-time"},
+    "updatedAt": {"type": ["string", "null"], "format": "date-time"}
+  }
+}

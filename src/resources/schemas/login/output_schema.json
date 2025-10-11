@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "required": [
+        "adminUser",
+        "token"
+    ],
+    "properties": {
+        "token": {
+            "type": "string"
+        },
+        "adminUser": {
+            "type": "string",
+            "pattern": "^/api/v2/admin/administrators/[0-9]+$"
+        }
+    }
+}
