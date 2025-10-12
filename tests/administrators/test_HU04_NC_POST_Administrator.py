@@ -8,8 +8,8 @@ from src.assertions.administrators.view_content_assertion import AssertionAdmini
 from src.resources.payloads.administrators_payload import AdministratorsPayload
 from src.data.administrators import generate_admin_data
 
-# TC-21: Admin > Administrators – Crear administrador con datos válidos
-def test_TC21_Crear_administrador_datos_validos(auth_headers, admin_data):
+# TC-42: Admin > Administrators – Crear administrador con datos válidos
+def test_TC42_Crear_administrador_datos_validos(auth_headers, admin_data):
     headers = auth_headers
     payload = AdministratorsPayload.build_payload_admin(admin_data)
     url = AdministratorsEndpoint.admins()
@@ -19,8 +19,8 @@ def test_TC21_Crear_administrador_datos_validos(auth_headers, admin_data):
     AssertionAdministrators.assert_create_schema(response_json)
     AssertionAdministratorsContent.assert_admin_item(response_json, expected_username=payload["username"])
 
-# TC-90: Admin > Administrators – Crear administrador con solo datos requeridos
-def test_TC_Admin_Administrators_crear_datos_requeridos(auth_headers):
+# TC-43: Admin > Administrators – Crear administrador con solo datos requeridos
+def test_TC43_Crear_administrador_con_solo_datos_requeridos(auth_headers):
     headers = auth_headers
     admin_data = generate_admin_data()
     required_fields = ["firstName", "lastName", "username", "plainPassword", "email"]
@@ -33,8 +33,8 @@ def test_TC_Admin_Administrators_crear_datos_requeridos(auth_headers):
     AssertionAdministrators.assert_create_schema(response_json)
     AssertionAdministratorsContent.assert_admin_item(response_json, expected_username=payload["username"])
 
-# TC-33: Admin > Administrators - Validar error al crear administrador sin token de autenticación
-def test_TC33_Crear_administrador_sin_token():
+# TC-44: Admin > Administrators - Validar error al crear administrador sin token de autenticación
+def test_TC44_Validar_error_al_crear_administrador_sin_token_de_autenticacion():
     headers = {}
     payload = AdministratorsPayload.build_payload_admin(generate_admin_data())
     url = AdministratorsEndpoint.admins()
@@ -42,8 +42,8 @@ def test_TC33_Crear_administrador_sin_token():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "JWT Token not found")
 
-# TC-34: Admin > Administrators - Validar error al crear administrador con token inválido
-def test_TC34_Crear_administrador_token_invalido():
+# TC-45: Admin > Administrators - Validar error al crear administrador con token inválido
+def test_TC45_Validar_error_al_crear_administrador_con_token_invalido():
     headers = {"Authorization": "Bearer token_invalido"}
     payload = AdministratorsPayload.build_payload_admin(generate_admin_data())
     url = AdministratorsEndpoint.admins()
@@ -51,8 +51,8 @@ def test_TC34_Crear_administrador_token_invalido():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "Invalid JWT Token")
 
-# TC-296: Admin > Administrators – Validar error al crear administrador sin datos requeridos
-def test_TC296_Crear_administrador_sin_datos(auth_headers):
+# TC-46: Admin > Administrators – Validar error al crear administrador sin datos requeridos
+def test_TC46_Validar_error_al_crear_administrador_sin_datos_requeridos(auth_headers):
     headers = auth_headers
     url = AdministratorsEndpoint.admins()
     response = SyliusRequest.post(url, headers, {})
@@ -60,8 +60,8 @@ def test_TC296_Crear_administrador_sin_datos(auth_headers):
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAdministratorsError.assert_admin_error_request(response.json(), 422, "email: Please enter your email.\nusername: Please enter your name.\nlocaleCode: Please choose a locale.\nplainPassword: Please enter your password.")
 
-# TC-27: Admin > Administrators - Validar error al crear administrador con username duplicado
-def test_TC27_Crear_administrador_username_duplicado(auth_headers, admin_data):
+# TC-47: Admin > Administrators - Validar error al crear administrador con username duplicado
+def test_TC47_Validar_error_al_crear_administrador_con_username_duplicado(auth_headers, admin_data):
     headers = auth_headers
     url = AdministratorsEndpoint.admins()
     payload_original = AdministratorsPayload.build_payload_admin(admin_data)
@@ -75,8 +75,8 @@ def test_TC27_Crear_administrador_username_duplicado(auth_headers, admin_data):
     expected_detail = "username: This username is already used."
     AssertionAdministratorsError.assert_admin_error_request(response_duplicado.json(), 422, expected_detail)
 
-# TC-28: Admin > Administrators - Validar error al crear administrador con email duplicado
-def test_TC28_Crear_administrador_email_duplicado(auth_headers, admin_data):
+# TC-48: Admin > Administrators - Validar error al crear administrador con email duplicado
+def test_TC48_Validar_error_al_crear_administrador_con_email_duplicado(auth_headers, admin_data):
     headers = auth_headers
     url = AdministratorsEndpoint.admins()
     payload_original = AdministratorsPayload.build_payload_admin(admin_data)
@@ -89,8 +89,9 @@ def test_TC28_Crear_administrador_email_duplicado(auth_headers, admin_data):
     AssertionStatusCode.assert_status_code_422(response_duplicado)
     expected_detail = "email: This email is already used."
     AssertionAdministratorsError.assert_admin_error_request(response_duplicado.json(), 422, expected_detail)
-# TC-35: Admin > Administrators - Validar error al crear administrador con email inválido
-def test_TC35_Crear_administrador_email_invalido(auth_headers):
+
+# TC-49: Admin > Administrators - Validar error al crear administrador con email inválido
+def test_TC49_Validar_error_al_crear_administrador_con_email_invalido(auth_headers):
     headers = auth_headers
     admin_data = generate_admin_data()
     admin_data["email"] = "correo-invalido"
@@ -100,8 +101,8 @@ def test_TC35_Crear_administrador_email_invalido(auth_headers):
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAdministratorsError.assert_admin_error_request(response.json(), 422, "email: This email is invalid.")
 
-# TC-31: Admin > Administrators - Crear administrador con enabled activado
-def test_TC31_Crear_administrador_enabled_activado(auth_headers, admin_data):
+# TC-50: Admin > Administrators - Crear administrador con enabled activado
+def test_TC50_Crear_administrador_enabled_activado(auth_headers, admin_data):
     headers = auth_headers
     payload = AdministratorsPayload.build_payload_admin(admin_data)
     payload["enabled"] = True
@@ -112,8 +113,8 @@ def test_TC31_Crear_administrador_enabled_activado(auth_headers, admin_data):
     AssertionAdministrators.assert_create_schema(response_json)
     AssertionAdministratorsContent.assert_admin_enabled_state(response_json, True)
 
-# TC-496: Admin > Administrators - Crear administrador con enabled desactivado
-def test_TC496_Crear_administrador_enabled_desactivado(auth_headers, admin_data):
+# TC-51: Admin > Administrators - Crear administrador con enabled desactivado
+def test_TC51_Crear_administrador_enabled_desactivado(auth_headers, admin_data):
     headers = auth_headers
     payload = AdministratorsPayload.build_payload_admin(admin_data)
     payload["enabled"] = False
@@ -124,11 +125,11 @@ def test_TC496_Crear_administrador_enabled_desactivado(auth_headers, admin_data)
     AssertionAdministrators.assert_create_schema(response_json)
     AssertionAdministratorsContent.assert_admin_enabled_state(response_json, False)
 
-# TC-474: Admin > Administrators - Ingresar ID igual a 12345
-# TC-475: Admin > Administrators - Validar error al ingresar ID igual a 0
-# TC-476: Admin > Administrators - Validar error al ingresar ID string igual a "uno"
-# TC-477: Admin > Administrators - Validar error al ingresar ID negativo igual a -1
-# TC-478: Admin > Administrators - Validar error al ingresar ID decimal igual a 1.5
+# TC-52: Admin > Administrators - Ingresar ID igual a 12345
+# TC-53: Admin > Administrators - Validar error al ingresar ID igual a 0
+# TC-54: Admin > Administrators - Validar error al ingresar ID string igual a "uno"
+# TC-55: Admin > Administrators - Validar error al ingresar ID negativo igual a -1
+# TC-56: Admin > Administrators - Validar error al ingresar ID decimal igual a 1.5
 @pytest.mark.parametrize("admin_id, expected_status", [
     (12345, 404),
     (0, 404),
@@ -142,10 +143,10 @@ def test_TC_Admin_Administrators_validar_parametros_ID(auth_headers, admin_id, e
     response = SyliusRequest.get(url, headers)
     AssertionStatusCode.assert_status_code(response, expected_status)
     
-# TC-538: Admin > Administrators - Validar campo firstName con valor null
-# TC-539: Admin > Administrators - Ingresar firstName con caracteres menor a 256 caracteres
-# TC-540: Admin > Administrators - Ingresar firstName igual a Juan
-# TC-541: Admin > Administrators - Validar error al ingresar firstName con 256 caracteres
+# TC-57: Admin > Administrators - Validar campo firstName con valor null
+# TC-58: Admin > Administrators - Ingresar firstName con caracteres menor a 256 caracteres
+# TC-59: Admin > Administrators - Ingresar firstName igual a Juan
+# TC-60: Admin > Administrators - Validar error al ingresar firstName con 256 caracteres
 @pytest.mark.parametrize("firstName, expected_status", [
     (None, 201),
     ("a"*255, 201),
@@ -162,11 +163,10 @@ def test_TC_Admin_Administrators_validar_firstName(auth_headers, firstName, expe
     AssertionStatusCode.assert_status_code(response, expected_status)
 
 
-# TC-542: Admin > Administrators - Validar campo lastName con valor null
-# TC-543: Admin > Administrators - Ingresar lastName con caracteres menor a 256 caracteres
-# TC-544: Admin > Administrators - Ingresar lastName igual a Pérez
-# TC-545: Admin > Administrators - Validar error al ingresar lastName con 256 caracteres
-
+# TC-61: Admin > Administrators - Validar campo lastName con valor null
+# TC-62: Admin > Administrators - Ingresar lastName con caracteres menor a 256 caracteres
+# TC-63: Admin > Administrators - Ingresar lastName igual a Pérez
+# TC-64: Admin > Administrators - Validar error al ingresar lastName con 256 caracteres
 @pytest.mark.parametrize("lastName, expected_status", [
     (None, 201),
     ("a"*255, 201),
@@ -182,11 +182,10 @@ def test_TC_Admin_Administrators_validar_lastName(auth_headers, lastName, expect
     response = SyliusRequest.post(url, headers, payload)
     AssertionStatusCode.assert_status_code(response, expected_status)
 
-# TC-546: Admin > Administrators - Ingresar localeCode igual a en_US
-# TC-547: Admin > Administrators - Validar error al ingresar localeCode igual a xx_XX
-# TC-548: Admin > Administrators - Validar error al ingresar localeCode igual a 123
-# TC-549: Admin > Administrators - Validar error al ingresar localeCode vacío
-
+# TC-65: Admin > Administrators - Ingresar localeCode igual a en_US
+# TC-66: Admin > Administrators - Validar error al ingresar localeCode igual a xx_XX
+# TC-67: Admin > Administrators - Validar error al ingresar localeCode igual a 123
+# TC-68: Admin > Administrators - Validar error al ingresar localeCode vacío
 @pytest.mark.parametrize("localeCode, expected_status", [
     ("en_US", 201),
     ("xx_XX", 422),
@@ -202,13 +201,12 @@ def test_TC_Admin_Administrators_validar_localeCode(auth_headers, localeCode, ex
     response = SyliusRequest.post(url, headers, payload)
     AssertionStatusCode.assert_status_code(response, expected_status)
 
-# TC-550: Admin > Administrators - Ingresar username igual a 1 carácter
-# TC-551: Admin > Administrators - Ingresar username con exactamente 255 caracteres
-# TC-552: Admin > Administrators - Ingresar username igual a admin01
-# TC-553: Admin > Administrators - Validar error al ingresar username con 0 caracteres
-# TC-554: Admin > Administrators - Validar error al ingresar username con 256 caracteres
-# TC-555: Admin > Administrators - Validar error al ingresar username vacío
-
+# TC-69: Admin > Administrators - Ingresar username igual a 1 carácter
+# TC-70: Admin > Administrators - Ingresar username con exactamente 255 caracteres
+# TC-71: Admin > Administrators - Ingresar username igual a admin01
+# TC-72: Admin > Administrators - Validar error al ingresar username con 0 caracteres
+# TC-73: Admin > Administrators - Validar error al ingresar username con 256 caracteres
+# TC-74: Admin > Administrators - Validar error al ingresar username vacío
 @pytest.mark.parametrize("username, expected_status", [
     ("a", 201),
     ("a"*255, 201),
@@ -226,13 +224,12 @@ def test_TC_Admin_Administrators_validar_username(auth_headers, username, expect
     response = SyliusRequest.post(url, headers, payload)
     AssertionStatusCode.assert_status_code(response, expected_status)
 
-# TC-556: Admin > Administrators - Ingresar plainPassword igual a 4 caracteres
-# TC-557: Admin > Administrators - Ingresar plainPassword con 255 caracteres
-# TC-558: Admin > Administrators - Ingresar plainPassword igual a Test1234
-# TC-559: Admin > Administrators - Validar error al ingresar plainPassword con 3 caracteres
-# TC-560: Admin > Administrators - Validar error al ingresar plainPassword con 256 caracteres
-# TC-561: Admin > Administrators - Validar error al ingresar plainPassword vacío
-
+# TC-75: Admin > Administrators - Ingresar plainPassword igual a 4 caracteres
+# TC-76: Admin > Administrators - Ingresar plainPassword con 255 caracteres
+# TC-77: Admin > Administrators - Ingresar plainPassword igual a Test1234
+# TC-78: Admin > Administrators - Validar error al ingresar plainPassword con 3 caracteres
+# TC-79: Admin > Administrators - Validar error al ingresar plainPassword con 256 caracteres
+# TC-80: Admin > Administrators - Validar error al ingresar plainPassword vacío
 @pytest.mark.parametrize("plainPassword, expected_status", [
     ("1234", 201),
     ("a"*254, 201),
@@ -250,12 +247,11 @@ def test_TC_Admin_Administrators_validar_plainPassword(auth_headers, plainPasswo
     response = SyliusRequest.post(url, headers, payload)
     AssertionStatusCode.assert_status_code(response, expected_status)
 
-# TC-562: Admin > Administrators - Ingresar email igual a user@test.com
-# TC-563: Admin > Administrators - Validar error al ingresar email igual a test
-# TC-564: Admin > Administrators - Validar error al ingresar email igual a user@com
-# TC-565: Admin > Administrators - Validar error al ingresar email igual a @mail.com
-# TC-566: Admin > Administrators - Validar error al ingresar email vacío
-
+# TC-81: Admin > Administrators - Ingresar email igual a user@test.com
+# TC-82: Admin > Administrators - Validar error al ingresar email igual a test
+# TC-83: Admin > Administrators - Validar error al ingresar email igual a user@com
+# TC-84: Admin > Administrators - Validar error al ingresar email igual a @mail.com
+# TC-85: Admin > Administrators - Validar error al ingresar email vacío
 @pytest.mark.parametrize("email, expected_status", [
     ("user1@test.com", 201),
     ("test", 422),
