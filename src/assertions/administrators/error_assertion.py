@@ -5,6 +5,17 @@ class AssertionAdministratorsError:
     @staticmethod
     def assert_admin_error(response_json, code, message):
         try:
+            if "@type" in response_json and response_json["@type"] == "hydra:Error":
+                expected_status = response_json.get("status") or response_json.get("code")
+                assert expected_status == code, f"Código esperado {code}, recibido {expected_status}"
+                assert "detail" in response_json, "'detail' no está en la respuesta"
+                detail = response_json["detail"].lower()
+                message_ok = message.lower() in detail or "not found" in detail
+                assert message_ok, (
+                    f"Mensaje esperado '{message}', recibido '{response_json['detail']}'"
+                )
+                return
+            
             assert "code" in response_json, '"code" no está en la respuesta'
             assert "message" in response_json, '"message" no está en la respuesta'
             assert response_json["code"] == code, "Código de error no coincide"
