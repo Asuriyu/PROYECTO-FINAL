@@ -6,7 +6,8 @@ from src.assertions.administrators.error_assertion import AssertionAdministrator
 from src.data.admin_helper import create_temp_admin, delete_temp_admin, get_avatar_url, disable_admin
 from tests.conftest import auth_headers
 
-def test_TC139_Consultar_avatar_sin_token():
+#TC-139: Admin > Administrators > Avatar Images – Validar error al consultar imagen de avatar sin token de autenticación
+def test_TC139_Validar_error_al_consultar_imagen_de_avatar_sin_token_de_autenticacion():
     headers = {}
     admin_id = 1
     url = get_avatar_url(admin_id)
@@ -14,7 +15,8 @@ def test_TC139_Consultar_avatar_sin_token():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "JWT Token not found")
 
-def test_TC140_Consultar_avatar_token_invalido():
+#TC-140: Admin > Administrators > Avatar Images – Validar error al consultar avatar image con token inválido
+def test_TC140_Validar_error_al_consultar_avatar_image_con_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     admin_id = 1
     url = get_avatar_url(admin_id)
@@ -22,23 +24,25 @@ def test_TC140_Consultar_avatar_token_invalido():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "Invalid JWT Token")
 
-def test_TC141_Consultar_avatar_devuelve_imagen_o_url(auth_headers):
+#TC-141: Admin > Administrators > Avatar Images – Validar que path devuelva URL válida
+def test_TC141_Validar_que_path_devuelva_URL_valida(auth_headers):
     admin_id, _ = create_temp_admin(auth_headers)
     url = get_avatar_url(admin_id)
     response = SyliusRequest.get(url, auth_headers)
     AssertionStatusCode.assert_status_code_404(response)
 
-def test_TC142_Consultar_avatar_sin_configuracion(auth_headers):
+#TC-142: Admin > Administrators > Avatar Images – Verificar error cuando administrador no tiene avatar configurado
+def test_TC142_Validar_error_al_consultar_avatar_sin_configuracion(auth_headers):
     admin_id, _ = create_temp_admin(auth_headers)
     url = get_avatar_url(admin_id)
     response = SyliusRequest.get(url, auth_headers)
     AssertionStatusCode.assert_status_code_404(response)
 
-# TC-37: Admin > Administrators - Ingresar ID igual a 12345
-# TC-38: Admin > Administrators - Validar error al ingresar ID igual a 0
-# TC-39: Admin > Administrators - Validar error al ingresar ID string igual a "uno"
-# TC-40: Admin > Administrators - Validar error al ingresar ID negativo igual a -1
-# TC-41: Admin > Administrators - Validar error al ingresar ID decimal igual a 1.5
+# TC-144: Admin > Administrators > Avatar Images - Ingresar ID igual a 12345
+# TC-145: Admin > Administrators > Avatar Images - Validar error al ingresar ID igual a 0
+# TC-146: Admin > Administrators > Avatar Images - Validar error al ingresar ID string igual a "uno"
+# TC-147: Admin > Administrators > Avatar Images - Validar error al ingresar ID negativo igual a -1
+# TC-148: Admin > Administrators > Avatar Images - Validar error al ingresar ID decimal igual a 1.5
 @pytest.mark.parametrize("admin_id, expected_status", [
     (12345, 404),
     (0, 404),
