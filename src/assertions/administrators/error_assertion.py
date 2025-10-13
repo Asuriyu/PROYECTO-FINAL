@@ -32,3 +32,31 @@ class AssertionAdministratorsError:
             assert response_json["detail"] == detail, "Error detail no coincide"
         except AssertionError as e:
             pytest.fail(f"[AdministratorsErrorRequest] {e}")
+            
+    @staticmethod
+    def assert_authentication_error(response_json):
+        assert "message" in response_json, "Falta el campo 'message'"
+        message = response_json["message"].lower()
+        expected_phrases = [
+            "unauthorized",
+            "invalid token",
+            "authentication required",
+            "jwt token not found",
+            "invalid jwt token",
+        ]
+        assert any(p in message for p in expected_phrases), \
+            f"Mensaje inesperado: {response_json['message']}"
+
+    @staticmethod
+    def assert_missing_file_error(response_json):
+        field = response_json.get("message") or response_json.get("detail")
+        assert field, "No se encontró ni 'message' ni 'detail' en la respuesta"
+        assert "no file" in field.lower() or "missing" in field.lower(), \
+            f"Mensaje inesperado: {field}"
+
+    @staticmethod
+    def assert_multiple_files_error(response_json):
+        field = response_json.get("message") or response_json.get("detail")
+        assert field, "No se encontró ni 'message' ni 'detail' en la respuesta"
+        assert "multiple" in field.lower() or "only one" in field.lower() or "no file" in field.lower(), \
+            f"Mensaje inesperado: {field}"

@@ -7,12 +7,15 @@ class SyliusRequest:
         return response
 
     @staticmethod
-    def post(url, headers=None, payload=None):
+    def post(url, headers=None, payload=None, files=None):
         if headers is None:
             headers = {}
-        headers = headers.copy()
-        headers.update({'Content-Type': 'application/json'})
-        response = requests.post(url, headers=headers, json=payload)
+        if files:
+            response = requests.post(url, headers=headers, files=files, data=payload)
+        else:
+            headers = headers.copy()
+            headers.update({'Content-Type': 'application/json'})
+            response = requests.post(url, headers=headers, json=payload)
         return response
 
     @staticmethod
