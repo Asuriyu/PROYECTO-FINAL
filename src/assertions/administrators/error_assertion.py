@@ -60,3 +60,19 @@ class AssertionAdministratorsError:
         assert field, "No se encontró ni 'message' ni 'detail' en la respuesta"
         assert "multiple" in field.lower() or "only one" in field.lower() or "no file" in field.lower(), \
             f"Mensaje inesperado: {field}"
+        
+    @staticmethod
+    def assert_avatar_not_found_error(response_json):
+        assert isinstance(response_json, dict), "La respuesta no es un diccionario válido"
+        msg = response_json.get("message") or response_json.get("detail")
+        assert msg is not None, (
+            f"No se encontró 'message' ni 'detail' en la respuesta. "
+            f"Contenido recibido: {response_json}"
+        )
+
+        msg_lower = msg.lower()
+        assert (
+            "not found" in msg_lower
+            or "no existe" in msg_lower
+            or "avatar" in msg_lower
+        ), f"Mensaje inesperado en la respuesta: {msg}"
