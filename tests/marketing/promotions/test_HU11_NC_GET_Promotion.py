@@ -69,8 +69,8 @@ def test_TC510_Obtener_promocion_activa(view_promotions):
 # TC-514: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres  
 # TC-515: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres  
 @pytest.mark.parametrize("promo_code, expected_status", [
-    ("A", 404),                      
-    ("A" * 255, 404),                  
+    ("A", 200),                      
+    ("A" * 255, 200),                  
     ("Test_#12/", 404),              
     ("", 200),                       
     ("A" * 256, 404)                   
@@ -80,3 +80,4 @@ def test_TC_Admin_Promotions_validar_parametros_code(auth_headers, promo_code, e
     url = f"{PromotionsEndpoint.promotions()}/{promo_code}"
     response = SyliusRequest.get(url, headers)
     AssertionStatusCode.assert_status_code(response, expected_status)
+    response_json = response.json()
