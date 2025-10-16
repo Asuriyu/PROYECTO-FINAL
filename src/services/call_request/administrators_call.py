@@ -22,9 +22,3 @@ class AdministratorsCall:
     def delete(cls, headers, admin_id):
         response = SyliusRequest().delete(AdministratorsEndpoint.admin_code(admin_id), headers)
         return response
-
-    @classmethod
-    def disable(cls, headers, admin_id):
-        payload = {"enabled": False}
-        response = SyliusRequest.patch(AdministratorsEndpoint.admin_code(admin_id), headers, payload)
-        return response
