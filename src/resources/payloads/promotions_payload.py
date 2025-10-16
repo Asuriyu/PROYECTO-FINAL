@@ -2,9 +2,6 @@ class PromotionsPayload:
 
     @staticmethod
     def build_payload_promotion(data: dict):
-        """
-        Construye el payload JSON que se enviará en POST o PUT.
-        """
         payload = {
             "code": data.get("code"),
             "name": data.get("name"),
@@ -22,7 +19,6 @@ class PromotionsPayload:
 
     @staticmethod
     def build_invalid_payload():
-        """Payload inválido para pruebas negativas."""
         return {
             "code": "",
             "name": None,

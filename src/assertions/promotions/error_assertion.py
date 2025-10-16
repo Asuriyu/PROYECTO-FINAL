@@ -4,7 +4,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_promotion_error(response_json, code, message):
-        """Valida errores generales de promociones (autenticación, formato, etc.)"""
         try:
             if "@type" in response_json and response_json["@type"] == "hydra:Error":
                 expected_status = response_json.get("status") or response_json.get("code")
@@ -26,7 +25,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_promotion_error_request(response_json, status, detail):
-        """Valida errores de request (400, 404, etc.)"""
         try:
             assert "status" in response_json, "'status' no está en la respuesta"
             assert "detail" in response_json, "'detail' no está en la respuesta"
@@ -37,7 +35,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_authentication_error(response_json):
-        """Valida errores de autenticación (token ausente o inválido)"""
         assert "message" in response_json or "detail" in response_json, "Falta 'message' o 'detail'"
         message = (response_json.get("message") or response_json.get("detail")).lower()
         expected_phrases = [
@@ -52,7 +49,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_not_found_error(response_json):
-        """Valida error de promoción inexistente"""
         assert isinstance(response_json, dict), "La respuesta no es un diccionario válido"
         msg = response_json.get("message") or response_json.get("detail")
         assert msg is not None, f"No se encontró 'message' ni 'detail' en la respuesta: {response_json}"
@@ -65,7 +61,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_already_archived_error(response_json):
-        """Valida error al archivar una promoción ya archivada"""
         msg = response_json.get("message") or response_json.get("detail")
         assert msg, "No se encontró 'message' ni 'detail' en la respuesta"
         msg_lower = msg.lower()
@@ -77,7 +72,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_not_archived_error(response_json):
-        """Valida error al intentar restaurar una promoción no archivada"""
         msg = response_json.get("message") or response_json.get("detail")
         assert msg, "No se encontró 'message' ni 'detail' en la respuesta"
         msg_lower = msg.lower()
@@ -89,7 +83,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_missing_field_error(response_json):
-        """Valida error cuando faltan campos obligatorios en el payload"""
         msg = response_json.get("message") or response_json.get("detail")
         assert msg, "No se encontró 'message' ni 'detail' en la respuesta"
         msg_lower = msg.lower()
@@ -101,7 +94,6 @@ class AssertionPromotionsError:
 
     @staticmethod
     def assert_duplicate_code_error(response_json):
-        """Valida error por intento de crear promoción con code duplicado"""
         msg = response_json.get("message") or response_json.get("detail")
         assert msg, "No se encontró 'message' ni 'detail' en la respuesta"
         msg_lower = msg.lower()

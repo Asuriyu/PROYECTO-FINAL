@@ -4,10 +4,6 @@ import random
 faker = Faker()
 
 def generate_promotion_data(valid=True):
-    """
-    Genera datos dinámicos para crear o actualizar promociones.
-    Si valid=False, puede generar campos inválidos para pruebas negativas.
-    """
     if valid:
         return {
             "code": faker.lexify(text="PROMO????"),
@@ -24,10 +20,10 @@ def generate_promotion_data(valid=True):
         }
     else:
         return {
-            "code": "",  # Inválido
+            "code": "",
             "name": None,
             "description": "",
-            "priority": "high",  # Tipo incorrecto
+            "priority": "high",
             "exclusive": "yes",
             "usageLimit": -5,
             "startsAt": "invalid_date",
