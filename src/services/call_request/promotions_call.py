@@ -40,7 +40,12 @@ class PromotionsCall:
         return response.json()
 
     @staticmethod
-    def delete(headers, code):
-        url = PromotionsEndpoint.delete_promotion(code)
+    def delete(headers, promo_code):
+        url = f"{PromotionsEndpoint.promotions()}/{promo_code}"
         response = SyliusRequest.delete(url, headers)
-        return response.json()
+        if response.status_code == 204:
+            return {"status": 204, "message": "Deleted successfully"}
+        try:
+            return response.json()
+        except Exception:
+            return {"status": response.status_code, "message": "No JSON content"}
