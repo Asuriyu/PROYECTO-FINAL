@@ -26,15 +26,3 @@ class AdministratorsEndpoint:
     @classmethod
     def admin_code(cls, admin_id):
         return f"{BASE_URL}{Endpoint.BASE_ADMINS_CODE.value.format(id=admin_id)}"
-    
-    @classmethod
-    def avatar_upload(cls, admin_id: str | int):
-        return f"{BASE_URL}/api/v2/admin/administrators/{admin_id}/avatar-image"
-    
-    @staticmethod
-    def avatar_delete(admin_id: str):
-        return f"/api/v2/admin/administrators/{admin_id}/avatar-image"
-
-    @staticmethod
-    def avatar_get(admin_id: str):
-        return f"/api/v2/admin/administrators/{admin_id}/avatar-image"
