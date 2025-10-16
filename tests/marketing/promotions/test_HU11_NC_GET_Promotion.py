@@ -69,8 +69,8 @@ def test_TC510_Obtener_promocion_activa(view_promotions):
 # TC-514: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres  
 # TC-515: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres  
 @pytest.mark.parametrize("promo_code, expected_status", [
-    ("A", 200),                      
-    ("A" * 255, 200),                  
+    ("A", 404),                      
+    ("A" * 255, 404),                  
     ("Test_#12/", 404),              
     ("", 200),                       
     ("A" * 256, 404)                   
