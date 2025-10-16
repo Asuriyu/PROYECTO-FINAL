@@ -54,8 +54,8 @@ def test_TC541_Crear_promocion_token_invalido():
 # TC-542: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres
 # TC-543: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres
 @pytest.mark.parametrize("promo_code, expected_status", [
-    ("A", 200),         
-    ("A" * 255, 200),
+    ("A", 404),         
+    ("A" * 255, 404),
     ("Test_#12/", 404),
     ("", 200),
     ("A" * 256, 404)

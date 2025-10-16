@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Promotion Update Schema",
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "code",
+    "name",
+    "description",
+    "couponBased",
+    "exclusive"
+  ],
+  "properties": {
+    "@context": { "type": "string" },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "code": { "type": "string", "minLength": 1, "maxLength": 255 },
+    "name": { "type": "string", "minLength": 2, "maxLength": 255 },
+    "description": { "type": "string", "minLength": 2, "maxLength": 255 },
+    "priority": { "type": "integer" },
+    "exclusive": { "type": "boolean" },
+    "usageLimit": { "type": ["integer", "null"] },
+    "couponBased": { "type": "boolean" },
+    "startsAt": { "type": ["string", "null"], "format": "date-time" },
+    "endsAt": { "type": ["string", "null"], "format": "date-time" },
+    "channels": { "type": "array", "items": { "type": "string" } },
+    "translations": { "type": "object" },
+    "rules": { "type": "array" },
+    "actions": { "type": "array" },
+    "appliesToDiscounted": { "type": ["boolean", "null"] },
+    "archivedAt": { "type": ["string", "null"] },
+    "createdAt": { "type": ["string", "null"] },
+    "updatedAt": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}
