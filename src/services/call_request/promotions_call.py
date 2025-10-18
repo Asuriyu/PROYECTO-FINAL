@@ -28,10 +28,10 @@ class PromotionsCall:
         return response
     
     @staticmethod
-    def archive(headers, code):
-        url = PromotionsEndpoint.archive_promotion(code)
+    def archive(headers, promo_code):
+        url = f"{PromotionsEndpoint.promotions()}/{promo_code}/archive"
         response = SyliusRequest.patch(url, headers)
-        return response.json()
+        return response
 
     @staticmethod
     def restore(headers, code):
