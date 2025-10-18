@@ -34,10 +34,10 @@ class PromotionsCall:
         return response
 
     @staticmethod
-    def restore(headers, code):
-        url = PromotionsEndpoint.restore_promotion(code)
+    def restore(headers, promo_code):
+        url = f"{PromotionsEndpoint.promotions()}/{promo_code}/restore"
         response = SyliusRequest.patch(url, headers)
-        return response.json()
+        return response
 
     @staticmethod
     def delete(headers, promo_code):
