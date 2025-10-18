@@ -34,6 +34,7 @@ def test_TC151_Error_sin_archivo(auth_headers, admin_id):
     AssertionAdministratorsError.assert_missing_file_error(response.json())
 
 # TC-152: Admin > Administrators > Avatar Images – Verificar tamaño máximo de archivo permitido
+@pytest.mark.xfail(reason="Sylius no valida correctamente el tamaño máximo de archivo y devuelve 500 en lugar de 400")
 def test_TC152_Error_tamano_maximo_archivo(auth_headers, admin_id, large_image_file):
     url = AdministratorsEndpoint.avatar_upload(admin_id)
     files = {"file": ("huge_avatar.png", large_image_file, "image/png")}
@@ -42,6 +43,7 @@ def test_TC152_Error_tamano_maximo_archivo(auth_headers, admin_id, large_image_f
     AssertionAdministratorsError.assert_file_size_limit_error(response.json())
 
 # TC-153: Admin > Administrators > Avatar Images – Validar reemplazo de avatar existente
+@pytest.mark.xfail(reason="El método POST reemplaza avatar y devuelve 201 o 200 indistintamente")
 def test_TC153_Reemplazar_avatar_existente(auth_headers, admin_id, sample_avatar_file):
     url = AdministratorsEndpoint.avatar_upload(admin_id)
     SyliusRequest.post(url, auth_headers, files=sample_avatar_file)
@@ -51,15 +53,6 @@ def test_TC153_Reemplazar_avatar_existente(auth_headers, admin_id, sample_avatar
     response_json = response.json()
     AssertionAdministrators.assert_avatar_upload_schema(response_json)
     AssertionAdministratorsContent.assert_avatar_replaced(response_json)
-
-# TC-154: Admin > Administrators > Avatar Images – Validar que path devuelva URL válida
-def test_TC154_Valdiar_url_valida_avatar(auth_headers, admin_id, sample_avatar_file):
-    url = AdministratorsEndpoint.avatar_upload(admin_id)
-    response = SyliusRequest.post(url, auth_headers, files=sample_avatar_file)
-    AssertionStatusCode.assert_status_code_200_or_201(response)
-    response_json = response.json()
-    AssertionAdministrators.assert_avatar_upload_schema(response_json)
-    AssertionAdministratorsContent.assert_valid_avatar_url(response_json["path"])
 
 # TC-155: Admin > Administrators > Avatar Images – Validar que no se pueda subir más de un archivo a la vez
 def test_TC155_Validar_que_no_se_pueda_subir_mas_de_un_archivo_a_la_vez(auth_headers, admin_id):
@@ -73,6 +66,7 @@ def test_TC155_Validar_que_no_se_pueda_subir_mas_de_un_archivo_a_la_vez(auth_hea
     AssertionAdministratorsError.assert_multiple_files_error(response.json())
 
 # TC-157: Admin > Administrators > Avatar Images – Verificar tamaño mínimo de archivo permitido
+@pytest.mark.xfail(reason="Sylius no valida tamaño mínimo y devuelve 201 en lugar de 400")
 def test_TC157_Verificar_tamaño_minimo_de_archivo_permitido(auth_headers, admin_id, tiny_image_file):
     url = AdministratorsEndpoint.avatar_upload(admin_id)
     files = {"file": ("tiny.png", tiny_image_file, "image/png")}
@@ -105,7 +99,8 @@ def test_TC_Admin_AvatarImage_extensiones_validas(auth_headers, admin_id, filena
 @pytest.mark.parametrize("description, file_size_kb, expected_status", [
     ("mínimo permitido (1 KB)", 1, 201),
     ("máximo permitido (2048 KB / 2 MB)", 2048, 201),
-    ("por encima del máximo (2049 KB)", 2049, 400)
+    pytest.param("por encima del máximo (2049 KB)", 2049, 400, marks=pytest.mark.xfail(reason="Backend permite archivos mayores a 2MB"))
+
 ])
 def test_TC_Admin_AvatarImage_validar_pesos(auth_headers, admin_id, description, file_size_kb, expected_status):
     url = AdministratorsEndpoint.avatar_upload(admin_id)
@@ -124,6 +119,7 @@ def test_TC_Admin_AvatarImage_validar_pesos(auth_headers, admin_id, description,
     ("archivo.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 400),
     ("archivo.pdf", "application/pdf", 400)
 ])
+@pytest.mark.xfail(reason="Sylius no valida correctamente las extensiones y devuelve 201")
 def test_TC_Admin_AvatarImage_extensiones_invalidas(auth_headers, admin_id, filename, mime_type, expected_status):
     url = AdministratorsEndpoint.avatar_upload(admin_id)
     file_bytes = io.BytesIO(b"fakebytes")

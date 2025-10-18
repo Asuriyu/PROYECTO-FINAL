@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Avatar Upload Schema",
+  "type": "object",
+  "required": ["@context", "@id", "@type", "id", "path"],
+  "properties": {
+    "@context": { "type": "string" },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "id": { "type": "integer" },
+    "path": { "type": "string" },
+    "type": { "type": "string" },
+    "owner": { "type": "string" }
+  }
+}

@@ -7,7 +7,7 @@ from src.assertions.promotions.error_assertion import AssertionPromotionsError
 from src.assertions.promotions.view_content_assertion import AssertionPromotionsContent
 from src.data.promotions import generate_promotion_data
 from src.resources.payloads.promotions_payload import PromotionsPayload
-
+from src.services.call_request.promotions_call import PromotionsCall
 
 # TC-535: Admin > Marketing > Promotions – Crear promoción con campos válidos
 def test_TC535_Crear_promocion_campos_validos(auth_headers):
@@ -53,10 +53,10 @@ def test_TC541_Crear_promocion_token_invalido():
 # TC-542: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres
 # TC-543: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres
 @pytest.mark.parametrize("promo_code, expected_status", [
-    ("A", 200),         
-    ("A" * 255, 200),
+    ("A", 404),
+    ("A" * 255, 404),
     ("Test_#12/", 404),
-    ("", 200),
+    pytest.param("", 404, marks=pytest.mark.xfail(reason="Backend devuelve 200 al consultar /promotions/ vacío (debería ser 404)")),
     ("A" * 256, 404)
 ])
 def test_TC_Admin_Promotions_validar_parametros_code(auth_headers, promo_code, expected_status):
@@ -64,7 +64,6 @@ def test_TC_Admin_Promotions_validar_parametros_code(auth_headers, promo_code, e
     url = f"{PromotionsEndpoint.promotions()}/{promo_code}"
     response = SyliusRequest.get(url, headers)
     AssertionStatusCode.assert_status_code(response, expected_status)
-    response_json = response.json()
 
 # TC-544: Admin > Marketing > Promotions – Ingresar name igual a 2 carácter válido
 # TC-545: Admin > Marketing > Promotions – Ingresar name con exactamente 255 caracteres

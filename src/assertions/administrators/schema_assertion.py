@@ -15,3 +15,10 @@ class AssertionAdministrators:
         return AssertionSchemas().validate_json_schema(
             response, "admins_lista_schema.json", AssertionAdministrators.MODULE
         )
+    @staticmethod
+    def assert_avatar_upload_schema(response_json):
+        return AssertionSchemas.validate_json_schema(
+            response_json,
+            schema_file="avatar_upload_schema.json",
+            module="administrators"
+        )
