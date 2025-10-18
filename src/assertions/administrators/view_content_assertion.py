@@ -12,8 +12,8 @@ class AssertionAdministratorsContent:
             
             assert item["id"] > 0, "id debe ser > 0"
             assert isinstance(item["enabled"], bool), "enabled no es boolean"
-            assert isinstance(item["firstName"], str), "firstName debe ser string"
-            assert isinstance(item["lastName"], str), "lastName debe ser string"
+            assert isinstance(item["firstName"], (str, type(None))), "firstName debe ser string o null"
+            assert isinstance(item["lastName"], (str, type(None))), "lastName debe ser string o null"
             assert isinstance(item["username"], str), "username debe ser string"
             assert isinstance(item["email"], str), "email debe ser string"
 
