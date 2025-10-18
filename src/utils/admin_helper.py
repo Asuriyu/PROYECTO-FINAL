@@ -8,9 +8,6 @@ def get_avatar_url(admin_id: int) -> str:
     return f"{AdministratorsEndpoint.admins()}/{admin_id}/avatar-image"
 
 def create_temp_admin(headers):
-    """
-    Crea un administrador temporal y retorna (admin_id, payload)
-    """
     payload = AdministratorsPayload.build_payload_admin(generate_admin_data())
     url = AdministratorsEndpoint.admins()
     response = SyliusRequest.post(url, headers, payload)
@@ -18,9 +15,6 @@ def create_temp_admin(headers):
     return response.json()["id"], payload
 
 def delete_temp_admin(headers, admin_id):
-    """
-    Elimina un administrador temporal creado para pruebas
-    """
     url = f"{AdministratorsEndpoint.admins()}/{admin_id}"
     response = SyliusRequest.delete(url, headers)
     AssertionStatusCode.assert_status_code_204(response)

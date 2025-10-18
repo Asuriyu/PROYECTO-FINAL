@@ -5,7 +5,7 @@ from src.assertions.status_code_assertion import AssertionStatusCode
 from src.assertions.administrators.error_assertion import AssertionAdministratorsError
 from src.data.administrators import generate_admin_data
 from src.resources.payloads.administrators_payload import AdministratorsPayload
-from src.data.admin_helper import create_temp_admin, delete_temp_admin 
+from src.utils.admin_helper import create_temp_admin
 
 # TC-131: Admin > Administrators – Eliminar administrador existente con ID válido
 def test_TC131_Eliminar_administrador_existente_con_id_valido(auth_headers):

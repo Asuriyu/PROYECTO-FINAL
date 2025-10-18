@@ -3,9 +3,8 @@ from src.services.request import SyliusRequest
 from src.routes.administrators_endpoint import AdministratorsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
 from src.assertions.administrators.error_assertion import AssertionAdministratorsError
-from src.data.admin_helper import create_temp_admin, delete_temp_admin, get_avatar_url, disable_admin
+from src.utils.admin_helper import create_temp_admin, get_avatar_url
 from tests.conftest import auth_headers
-
 
 # TC-139: Admin > Administrators > Avatar Images – Validar error al consultar imagen de avatar sin token de autenticación
 def test_TC139_Validar_error_al_consultar_imagen_de_avatar_sin_token_de_autenticacion():

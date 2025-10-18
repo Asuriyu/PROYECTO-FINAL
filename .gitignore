@@ -205,3 +205,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Reportes y logs (Allure, pytest, Playwright, etc.)
+reports/
+playwright-report/
+allure-report/
+allure-results/
+logs/
+*.log

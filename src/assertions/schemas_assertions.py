@@ -1,4 +1,4 @@
-from utils.load_resources import load_schema_resource
+from src.utils.load_resources import load_schema_resource
 import jsonschema
 import pytest
 import json
