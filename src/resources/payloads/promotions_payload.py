@@ -25,3 +25,26 @@ class PromotionsPayload:
             "priority": "invalid",
             "channels": []
         }
+    
+def build_promotion_payload():
+    return {
+        "code": "PROMO_E2E",
+        "name": "Promoción E2E",
+        "description": "Descuento automatizado",
+        "priority": 1,
+        "exclusive": False,
+        "usageLimit": 5,
+        "startsAt": "2025-10-18T00:00:00",
+        "endsAt": "2025-12-31T00:00:00",
+        "couponBased": False,
+        "appliesToDiscounted": True,
+        "channels": ["/api/v2/admin/channels/FASHION_WEB"]
+    }
+
+
+def build_promotion_update_payload():
+    return {
+        "name": "Promoción actualizada",
+        "priority": 2,
+        "exclusive": True
+    }
