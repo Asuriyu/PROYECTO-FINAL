@@ -17,3 +17,6 @@ class Endpoint(Enum):
     @classmethod
     def login(cls):
         return f"{BASE_URL}{cls.LOGIN.value}"
+    
+LOGIN2 = f"{BASE_URL}{Endpoint.LOGIN.value}"
+PROMOTIONS = f"{BASE_URL}{Endpoint.BASE_PROMOTIONS.value}"
