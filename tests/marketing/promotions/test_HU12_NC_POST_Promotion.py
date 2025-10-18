@@ -20,7 +20,6 @@ def test_TC535_Crear_promocion_campos_validos(auth_headers):
     AssertionPromotions.assert_create_schema(response_json)
     AssertionPromotionsContent.assert_promotion_item(response_json, expected_code=payload["code"])
 
-
 # TC-538: Admin > Marketing > Promotions – Validar error al crear promoción con campos inválidos
 def test_TC538_Crear_promocion_campos_invalidos(auth_headers):
     headers = auth_headers
@@ -54,8 +53,8 @@ def test_TC541_Crear_promocion_token_invalido():
 # TC-542: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres
 # TC-543: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres
 @pytest.mark.parametrize("promo_code, expected_status", [
-    ("A", 404),         
-    ("A" * 255, 404),
+    ("A", 200),         
+    ("A" * 255, 200),
     ("Test_#12/", 404),
     ("", 200),
     ("A" * 256, 404)
