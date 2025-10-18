@@ -16,7 +16,6 @@ def view_admin(auth_headers):
 
 @pytest.fixture
 def admin_data():
-    """Devuelve datos de administrador válidos."""
     return generate_admin_data()
 
 @pytest.fixture

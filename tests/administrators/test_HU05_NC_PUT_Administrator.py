@@ -7,7 +7,7 @@ from src.assertions.administrators.error_assertion import AssertionAdministrator
 from src.assertions.administrators.view_content_assertion import AssertionAdministratorsContent
 from src.resources.payloads.administrators_payload import AdministratorsPayload
 from src.data.administrators import generate_admin_data
-from src.data.admin_helper import create_temp_admin
+from src.utils.admin_helper import create_temp_admin
 
 # TC-86: Admin > Administrators – Actualizar administrador con datos válidos
 def test_TC86_Actualizar_administrador_con_datos_validos(auth_headers):

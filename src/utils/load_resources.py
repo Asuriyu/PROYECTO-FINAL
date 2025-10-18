@@ -5,9 +5,9 @@ BASE = Path(__file__).absolute().parent.parent
 
 def resources_schemas_path(schema_file, module=None):
     if module:
-        return BASE / "src" / "resources" / "schemas" / module / schema_file
+        return BASE / "resources" / "schemas" / module / schema_file
     else:
-        return BASE / "src" / "resources" / "schemas" / schema_file
+        return BASE / "resources" / "schemas" / schema_file
 
 def load_schema_resource(schema_file, module=None):
     try:
@@ -17,7 +17,7 @@ def load_schema_resource(schema_file, module=None):
         raise FileNotFoundError(f"Schema file '{schema_file}' not found in module '{module}'")
     
 def resources_credential_path(path):
-    return BASE / "src" / "resources" / "credentials" / path
+    return BASE / "resources" / "credentials" / path
 
 def load_credential_resource(filename):
     try:
