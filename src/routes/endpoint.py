@@ -14,6 +14,9 @@ class Endpoint(Enum):
     PROMOTION_ARCHIVE = "/api/v2/admin/promotions/{code}/archive"
     PROMOTION_RESTORE = "/api/v2/admin/promotions/{code}/restore"
 
+    BASE_PRODUCT_REVIEWS = "/api/v2/admin/product-reviews"
+    BASE_PRODUCT_REVIEWS_ID = "/api/v2/admin/product-reviews/{id}"
+
     @classmethod
     def login(cls):
         return f"{BASE_URL}{cls.LOGIN.value}"

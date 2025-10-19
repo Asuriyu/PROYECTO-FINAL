@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProductReviewsListSchema",
+  "type": "object",
+  "required": ["@context", "@id", "@type", "hydra:member"],
+  "properties": {
+    "@context": { "type": "string" },
+    "@id": { "type": "string" },
+    "@type": { "type": "string" },
+    "hydra:member": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "rating",
+          "comment",
+          "status",
+          "author",
+          "reviewSubject",
+          "createdAt"
+        ],
+        "properties": {
+          "id": { "type": "integer" },
+          "title": { "type": "string" },
+          "rating": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "comment": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["new", "accepted", "rejected"]
+          },
+          "author": {
+            "type": "object",
+            "required": ["email"],
+            "properties": {
+              "email": { "type": "string", "format": "email" },
+              "firstName": { "type": ["string", "null"] },
+              "lastName": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          },
+          "reviewSubject": {
+            "type": "string",
+            "description": "URI del producto reseñado (por ejemplo: /api/v2/shop/products/XXX)"
+          },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": ["string", "null"], "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "hydra:totalItems": { "type": ["integer", "null"] },
+    "hydra:view": {
+      "type": ["object", "null"],
+      "properties": {
+        "@id": { "type": "string" },
+        "@type": { "type": "string" },
+        "hydra:first": { "type": ["string", "null"] },
+        "hydra:last": { "type": ["string", "null"] },
+        "hydra:next": { "type": ["string", "null"] },
+        "hydra:previous": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
