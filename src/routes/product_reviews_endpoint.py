@@ -16,12 +16,8 @@ class ProductReviewsEndpoint:
         return base_url
 
     @classmethod
-    def create_product_review(cls):
-        return cls.product_reviews()
-
-    @classmethod
     def product_review_id(cls, review_id: str):
-        return f"{BASE_URL}{Endpoint.BASE_PRODUCT_REVIEW_ID.value.format(review_id=review_id)}"
+        return f"{BASE_URL}{Endpoint.BASE_PRODUCT_REVIEWS_ID.value.format(review_id=review_id)}"
 
     @classmethod
     def delete_product_review(cls, review_id: str):
