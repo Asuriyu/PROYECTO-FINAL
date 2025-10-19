@@ -253,7 +253,7 @@ def test_TC_Admin_Administrators_validar_plainPassword(auth_headers, plainPasswo
 # TC-84: Admin > Administrators - Validar error al ingresar email igual a @mail.com
 # TC-85: Admin > Administrators - Validar error al ingresar email vacío
 @pytest.mark.parametrize("email, expected_status", [
-    ("user9@test.com", 201),
+    ("user900@test.com", 201),
     ("test", 422),
     ("user@com", 422),
     ("@mail.com", 422),
