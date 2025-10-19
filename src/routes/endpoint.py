@@ -15,7 +15,7 @@ class Endpoint(Enum):
     PROMOTION_RESTORE = "/api/v2/admin/promotions/{code}/restore"
 
     BASE_PRODUCT_REVIEWS = "/api/v2/admin/product-reviews"
-    BASE_PRODUCT_REVIEWS_ID = "/api/v2/admin/product-reviews/{id}"
+    BASE_PRODUCT_REVIEWS_ID = "/api/v2/admin/product-reviews/{review_id}"
 
     @classmethod
     def login(cls):

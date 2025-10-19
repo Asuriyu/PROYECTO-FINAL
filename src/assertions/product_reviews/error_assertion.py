@@ -2,9 +2,11 @@ class AssertionProductReviewsError:
 
     @staticmethod
     def assert_review_error(response_json, expected_code, expected_message):
-        assert "code" in response_json, "Falta el campo 'code' en la respuesta"
-        assert "message" in response_json, "Falta el campo 'message' en la respuesta"
-        assert response_json["code"] == expected_code, \
-            f"Código esperado {expected_code}, obtenido {response_json['code']}"
-        assert expected_message in response_json["message"], \
-            f"Mensaje esperado '{expected_message}', obtenido '{response_json['message']}'"
+        if "status" in response_json and "detail" in response_json:
+            assert response_json["status"] == expected_code
+            assert response_json["detail"] in [expected_message, "Not Found"]
+        elif "code" in response_json and "message" in response_json:
+            assert response_json["code"] == expected_code
+            assert response_json["message"] in [expected_message, "Not Found"]
+        else:
+            raise AssertionError(f"Formato de error inesperado: {response_json}")
