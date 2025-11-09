@@ -1,46 +1,36 @@
-# DIPLOMADO INGENIERÍA DE CALIDAD DE SOFTWARE COMERCIAL (3ra Edición)
-## CARRERA DE INGENIERÍA EN SISTEMAS
+>## DIPLOMADO INGENIERÍA DE CALIDAD DE SOFTWARE COMERCIAL (3ra Edición)
+
+>## CARRERA DE INGENIERÍA EN SISTEMAS
 
 ---
 ### PROYECTO FINAL
-### FRAMEWORK DE PRUEBAS AUTOMATIZADAS PARA SYLIUS
-# Assurix  
+### FRAMEWORK DE PRUEBAS AUTOMATIZADAS PARA SYLIUS  
 
 ---
+<!-- no-toc -->
+>## Tabla de contenido
 
-## Tabla de Contenido
+- [1. Descripcion](#1-descripcion)
+- [2. Estructura de Directorios del Proyecto](#2-estructura-de-directorios-del-proyecto)
+- [3. Descripcion de Directorios Generales](#3-descripcion-de-directorios-generales)
+- [4. Pruebas End-to-End (E2E)](#4-pruebas-end-to-end-e2e)
+- [Promociones](#promociones)
+- [5. Endpoints Evaluados por Sprint](#5-endpoints-evaluados-por-sprint)
+- [6. Limites y Alcances](#6-limites-y-alcances)
+- [7. Tipos de Mark Utilizados en el Proyecto](#7-tipos-de-mark-utilizados-en-el-proyecto)
+- [8. Ejecucion de pruebas](#8-ejecucion-de-pruebas)
+- [9. Autenticación y Obtención del Token](#9-autenticación-y-obtención-del-token)
+- [10. Instalacion](#10-instalacion)
+- [11. Buenas Practicas](#11-buenas-practicas)
+- [12. Exploratoy Testing del API Spotify (Collection Postman)](#12-exploratoy-testing-del-api-spotify-collection-postman)
+- [13. Autor](#13-autor)
+<!-- no-toc -->
 
-- [DIPLOMADO INGENIERÍA DE CALIDAD DE SOFTWARE COMERCIAL (3ra Edición)](#diplomado-ingeniería-de-calidad-de-software-comercial-3ra-edición)
-  - [CARRERA DE INGENIERÍA EN SISTEMAS](#carrera-de-ingeniería-en-sistemas)
-    - [PROYECTO FINAL](#proyecto-final)
-    - [FRAMEWORK DE PRUEBAS AUTOMATIZADAS PARA SYLIUS](#framework-de-pruebas-automatizadas-para-sylius)
-- [Assurix](#assurix)
-  - [Tabla de Contenido](#tabla-de-contenido)
-    - [1.Descripcion](#1descripcion)
-    - [2.Estructura de Directorios del Proyecto](#2estructura-de-directorios-del-proyecto)
-    - [3.Descripcion de Directorios Generales](#3descripcion-de-directorios-generales)
-  - [4. Pruebas End-to-End (E2E)](#4-pruebas-end-to-end-e2e)
-    - [Promociones](#promociones)
-  - [5.Endpoints Evaluados por Sprint](#5endpoints-evaluados-por-sprint)
-    - [Primer Sprint](#primer-sprint)
-    - [Segundo Sprint](#segundo-sprint)
-    - [6.Limites y Alcances](#6limites-y-alcances)
-    - [7.Tipos de Mark Utilizados en el Proyecto](#7tipos-de-mark-utilizados-en-el-proyecto)
-    - [Módulos / Dominios](#módulos--dominios)
-    - [Prioridad](#prioridad)
-    - [Tipo de Prueba](#tipo-de-prueba)
-    - [8.Ejecucion de pruebas](#8ejecucion-de-pruebas)
-    - [9.Autenticación y Obtención del Token](#9autenticación-y-obtención-del-token)
-    - [10.Instalacion](#10instalacion)
-  - [11.Buenas Practicas](#11buenas-practicas)
-  - [12.Exploratoy Testing del API Spotify (Collection Postman)](#12exploratoy-testing-del-api-spotify-collection-postman)
-  - [13.Autor](#13autor)
-    
 
-### 1.Descripcion
+## 1. Descripcion
 Este proyecto es un **framework de pruebas automatizadas para la REST API de Sylius**, construido con **Python** y `pytest`. Está diseñado para validar diferentes endpoints del panel administrativo de Sylius de forma estructurada, incorporando herramientas de generación de datos dinámicos, validación de respuestas y generación de reportes detallados mediante `Allure Reports`. Se basa en escenarios reales de uso de la API administrativa de Sylius, con el objetivo de garantizar la calidad, consistencia y confiabilidad de sus servicios REST.
 
-### 2.Estructura de Directorios del Proyecto
+## 2. Estructura de Directorios del Proyecto
 
 ```markdown
 .
@@ -152,29 +142,44 @@ Este proyecto es un **framework de pruebas automatizadas para la REST API de Syl
 └── README.md
 ```
 
-### 3.Descripcion de Directorios Generales
+## 3. Descripcion de Directorios Generales
 `src/:` Código fuente principal del framework<br>
+
 `assertions/:` Validaciones y aserciones personalizadas<br>
+
 `config/:` Configuración general y variables de entorno<br>
+
 `data/:` Generación de datos dinámicos de prueba<br>
+
 `resources/:` Payloads y esquemas JSON de validación<br>
+
 `routes/:` Endpoints y rutas de la API<br>
+
 `services/:` Peticiones HTTP hacia la API<br>
+
 `utils/:` Funciones auxiliares y herramientas de soporte<br>
+
 `tests/:` Casos de prueba automatizados por módulo<br>
+
 `conftest.py:` Fixtures globales y autenticación de API<br>
+
 `reports/:` Reportes generados por Allure o Pytest<br>
+
 `pytest.ini:` Configuración y marcadores de Pytest<br>
+
 `requirements.txt:` Dependencias del proyecto<br>
+
 `.env:` Variables de entorno del framework<br>
+
 `.gitignore:` Archivos ignorados por Git<br>
+
 `README.md:` Documentación general del proyecto<br>
 
 ## 4. Pruebas End-to-End (E2E)
 
 A continuación, se presenta el flujo evaluado dentro de las funcionalidades del módulo **Marketing – Promociones**.
 
-### Promociones
+## Promociones
 
 - **POST** `/api/v2/admin/administrators/token`  
   Autentica al administrador y obtiene el token de acceso para las operaciones siguientes.
@@ -200,9 +205,9 @@ A continuación, se presenta el flujo evaluado dentro de las funcionalidades del
 - **GET** `/api/v2/admin/promotions/{code}`  
   Verifica que la promoción haya sido eliminada exitosamente (debe retornar un estado **404 Not Found**).
 
-## 5.Endpoints Evaluados por Sprint
+## 5. Endpoints Evaluados por Sprint
 
-### Primer Sprint
+>### Primer Sprint
 | Autor     | Categoría         | Método | Endpoint                                         |
 |------------|------------------|--------|--------------------------------------------------|
 | Noelia Cantarran Villarroel     | ADMINISTRATORS   | GET    | /api/v2/admin/administrators                     |
@@ -214,7 +219,7 @@ A continuación, se presenta el flujo evaluado dentro de las funcionalidades del
 | Noelia Cantarran Villarroel     | AVATAR IMAGES    | POST   | /api/v2/admin/administrators/{id}/avatar-image  |
 | Noelia Cantarran Villarroel   | AVATAR IMAGES    | DELETE | /api/v2/admin/administrators/{id}/avatar-image |
 
-### Segundo Sprint
+>### Segundo Sprint
 | Autor     | Categoría        | Método | Endpoint                                         |
 |------------|-----------------|--------|--------------------------------------------------|
 | Noelia Cantarran Villarroel    | PROMOTIONS      | GET    | /api/v2/admin/promotions                         |
@@ -228,7 +233,7 @@ A continuación, se presenta el flujo evaluado dentro de las funcionalidades del
 | Noelia Cantarran Villarroel    | PRODUCT REVIEWS | DELETE | /api/v2/admin/product-reviews/{id}               |
 | Noelia Cantarran Villarroel    | E2E MARKETING   | MIXTO  | Flujo completo: autenticación, creación, consulta, actualización, archivado, restauración y eliminación de promoción |
 
-### 6.Limites y Alcances 
+## 6. Limites y Alcances 
 Las pruebas se enfocaron en:
 - Validación de respuesta HTTP (códigos 200,201,204, 400,401,403,404, 405, 409, 415, 422, 500)
 - Validacion de los endpoints **GET, POST, PUT, PATCH y DELETE** sobre los módulos **Administrators**, **Promotions** y **Product Reviews**.
@@ -242,32 +247,46 @@ Las pruebas se enfocaron en:
 - Uso de yield de Pytest para combinar la fase de ejecución con la limpieza final (teardown) en los tests
 
 
-### 7.Tipos de Mark Utilizados en el Proyecto
+## 7. Tipos de Mark Utilizados en el Proyecto
 El framework utiliza distintas marcas (`@pytest.mark`) para clasificar, filtrar y ejecutar las pruebas de manera organizada según su módulo, prioridad o tipo de validación.
 
-### Módulos / Dominios
+>### Módulos / Dominios
+
 `administrator:` Pruebas del módulo Administrador (Administrators)<br>
+
 `marketing:` Pruebas del módulo Marketing (Promotions y Product Reviews)<br>
+
 `avatar_images:` Pruebas del submódulo de imágenes o avatares asociados al administrador<br>
+
 `product_reviews:` Pruebas del módulo de Reseñas de Productos<br>
+
 `promotions:` Pruebas del módulo de Promociones<br>
 
-### Prioridad
+>### Prioridad
+
 `high:` Prioridad alta → pruebas críticas; si fallan, bloquean la operación principal del sistema<br>
 `medium:` Prioridad media → pruebas importantes; su falla afecta parcialmente las funcionalidades<br>
 `low:` Prioridad baja → pruebas secundarias; su falla no impacta el negocio principal<br>
 
-### Tipo de Prueba
+>### Tipo de Prueba
+
 `functional_positive:` Verifica el comportamiento correcto con entradas válidas<br>
+
 `functional_negative:` Evalúa la respuesta ante entradas o condiciones no válidas<br>
+
 `functional_validation:` Valida campos individuales y reglas de negocio<br>
+
 `functional_edgecase:` Considera casos límite o valores extremos<br>
+
 `security:` Evalúa autenticación, permisos y manejo de tokens<br>
+
 `regression:` Reejecuta funcionalidades para asegurar que los cambios no introduzcan errores<br>
+
 `e2e:` Pruebas End-to-End para validar flujos completos de negocio<br>
+
 `concurrent:` Marca personalizada para pruebas concurrentes (por ejemplo, eliminaciones simultáneas)<br>
 
-### 8.Ejecucion de pruebas
+## 8. Ejecucion de pruebas
 
 1. Ejecuta todos los archivos de prueba
 ```python
@@ -343,7 +362,7 @@ allure serve reports/allure-results
 allure open reports/allure-report
 ```
 
-### 9.Autenticación y Obtención del Token
+## 9. Autenticación y Obtención del Token
 
 Las pruebas requieren un **token JWT válido** obtenido mediante la autenticación del administrador del sistema.  
 Este token se genera a través del endpoint de login y se utiliza en los encabezados de autorización (`Authorization: Bearer <token>`) para todas las peticiones de la API durante la ejecución de las pruebas automatizadas.
@@ -375,7 +394,7 @@ El token JWT obtenido debe incluirse en los encabezados de autenticación para t
 
 Authorization: Bearer &lt;token&gt;
 
-### 10.Instalacion
+## 10. Instalacion
 
 1.Clonar el repositorio CatSoft
 ```python
@@ -416,16 +435,20 @@ ADMIN_PASSWORD=sylius-api
 
 ```
 
-## 11.Buenas Practicas
+## 11. Buenas Practicas
 
 `Archivo Schema :` Archivo de almacenamiento de schemas entrada/salida  usados <br>
+
 `Assertions:` Archivo de almacenamiento de codigo reutilizable <br>
+
 `Logger:` Archivo donde se almacenan los logger INFO , DEBUG para que nos permitira debugear el codigo <br>
+
 `Teardown:` Garantiza la correcta preparación y limpieza del entorno de pruebas.
 <br>
+
 `Principio SOLID (S y O):` Cada clase sigue una responsabilidad y una facilidad de modificacion futura<br>
 
-## 12.Exploratoy Testing del API Spotify (Collection Postman)
+## 12. Exploratoy Testing del API Spotify (Collection Postman)
 
 Se realizó la **prueba exploratoria del API de Sylius**, siguiendo la documentación oficial disponible en su entorno demo.  
 Durante este proceso se ejecutaron solicitudes **HTTP mediante Postman**, lo que permitió comprender el comportamiento de los endpoints administrativos, identificar posibles respuestas inesperadas y registrar hallazgos relevantes.  
@@ -434,5 +457,5 @@ A continuación, se presenta el archivo JSON exportado con la colección de endp
 
 [📄Ver Collection JSON](https://drive.google.com/drive/u/1/folders/1MtJWbse82XjqnZRuoElpv5UNdUBib-eG)
 
-## 13.Autor
+## 13. Autor
 - Cantarran Villarroel Noelia [![GitHub](https://img.shields.io/badge/GitHub-Asuriyu-blue?logo=github)](https://github.com/Asuriyu)
