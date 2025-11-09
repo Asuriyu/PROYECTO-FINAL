@@ -1,4 +1,5 @@
 import pytest
+import allure
 from src.services.request import SyliusRequest
 from src.routes.promotions_endpoint import PromotionsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
@@ -7,6 +8,16 @@ from src.assertions.promotions.error_assertion import AssertionPromotionsError
 from src.assertions.promotions.view_content_assertion import AssertionPromotionsContent
 
 # TC-506: Admin > Marketing > Promotions – Validar error al consultar una promoción sin token de autenticación
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Consulta individual de promoción")
+@allure.title("SYLIUS-506: Validar error al consultar una promoción sin token de autenticación")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC506_Consultar_promocion_sin_token():
     headers = {}
     promo_code = "PROMO123"
@@ -15,8 +26,17 @@ def test_TC506_Consultar_promocion_sin_token():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionPromotionsError.assert_promotion_error(response.json(), 401, "JWT Token not found")
 
-
 # TC-507: Admin > Marketing > Promotions – Validar error al consultar una promoción con token inválido
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Consulta individual de promoción")
+@allure.title("SYLIUS-507: Validar error al consultar una promoción con token inválido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC507_Consultar_promocion_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     promo_code = "PROMO123"
@@ -25,8 +45,17 @@ def test_TC507_Consultar_promocion_token_invalido():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionPromotionsError.assert_promotion_error(response.json(), 401, "Invalid JWT Token")
 
-
 # TC-508: Admin > Marketing > Promotions – Validar códigos únicos de promociones
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validación de unicidad de códigos")
+@allure.title("SYLIUS-508: Validar códigos únicos de promociones")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.medium
 def test_TC508_Validar_codigos_unicos_promociones(view_promotions):
     headers, _, _ = view_promotions
     url = PromotionsEndpoint.promotions()
@@ -40,6 +69,16 @@ def test_TC508_Validar_codigos_unicos_promociones(view_promotions):
 
 
 # TC-509: Admin > Marketing > Promotions – Verificar localización consistente de los datos
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validación de consistencia de localización")
+@allure.title("SYLIUS-509: Verificar localización consistente de los datos de promociones")
+@allure.severity(allure.severity_level.TRIVIAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.low
 def test_TC509_Verificar_localizacion_consistente(view_promotions):
     headers, _, _ = view_promotions
     url = PromotionsEndpoint.promotions()
@@ -52,8 +91,16 @@ def test_TC509_Verificar_localizacion_consistente(view_promotions):
     assert all(isinstance(loc, dict) for loc in locales), "Formato inválido en translations"
     assert all(len(loc) > 0 for loc in locales), "Existen promociones sin datos de traducción"
 
-
 # TC-510: Admin > Marketing > Promotions – Obtener promoción activa
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Consulta de promociones activas")
+@allure.title("SYLIUS-510: Obtener promoción activa")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.medium
 def test_TC510_Obtener_promocion_activa(view_promotions):
     headers, _, _ = view_promotions
     url = PromotionsEndpoint.promotions_with_params(enabled=True)
@@ -68,6 +115,17 @@ def test_TC510_Obtener_promocion_activa(view_promotions):
 # TC-513: Admin > Marketing > Promotions – Ingresar code con caracteres alfanuméricos y especiales igual a Test_#12/  
 # TC-514: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres  
 # TC-515: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres  
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validación del parámetro 'code'")
+@allure.title("SYLIUS-511 - 515: Validar parámetros del campo code")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.medium
 @pytest.mark.parametrize("promo_code, expected_status", [
     ("A", 404),                      
     ("A" * 255, 404),                  

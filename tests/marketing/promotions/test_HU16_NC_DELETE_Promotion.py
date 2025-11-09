@@ -1,4 +1,5 @@
 import pytest
+import allure
 from src.services.request import SyliusRequest
 from src.routes.promotions_endpoint import PromotionsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
@@ -7,6 +8,15 @@ from src.assertions.promotions.error_assertion import AssertionPromotionsError
 from src.services.call_request.promotions_call import PromotionsCall
 
 # TC-516: Admin > Marketing > Promotions – Eliminar promoción existente con code válido
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Eliminar promociones")
+@allure.title("SYLIUS-516: Eliminar promoción existente con code válido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.high
 def test_TC516_Eliminar_promocion_code_valido(create_promotion):
     headers = create_promotion["headers"]
     promo_code = create_promotion["promo_code"]
@@ -14,6 +24,15 @@ def test_TC516_Eliminar_promocion_code_valido(create_promotion):
     AssertionStatusCode.assert_status_code_204(response)
 
 # TC-517: Admin > Marketing > Promotions – Validar error al eliminar promoción inexistente
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validaciones funcionales")
+@allure.title("SYLIUS-517: Validar error al eliminar promoción inexistente")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.medium
 def test_TC517_Eliminar_promocion_inexistente(auth_headers):
     headers = auth_headers
     fake_code = "PROMONOTFOUND"
@@ -22,6 +41,16 @@ def test_TC517_Eliminar_promocion_inexistente(auth_headers):
     AssertionPromotionsError.assert_promotion_error(response.json(), 404, "Promotion not found")
 
 # TC-518: Admin > Marketing > Promotions – Validar error al eliminar promoción sin token de autenticación
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Autenticación")
+@allure.title("SYLIUS-518: Validar error al eliminar promoción sin token de autenticación")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC518_Eliminar_promocion_sin_token():
     headers = {}
     fake_code = "PROMOFAKE"
@@ -30,6 +59,16 @@ def test_TC518_Eliminar_promocion_sin_token():
     AssertionPromotionsError.assert_promotion_error(response.json(), 401, "JWT Token not found")
 
 # TC-519: Admin > Marketing > Promotions – Validar error al eliminar promoción con token inválido
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Autenticación")
+@allure.title("SYLIUS-519: Validar error al eliminar promoción con token inválido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC519_Eliminar_promocion_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     fake_code = "PROMOFAKE"
@@ -38,6 +77,16 @@ def test_TC519_Eliminar_promocion_token_invalido():
     AssertionPromotionsError.assert_promotion_error(response.json(), 401, "Invalid JWT Token")
 
 # TC-520: Admin > Marketing > Promotions – Verificar eliminación de promoción deshabilitada o archivada
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validaciones funcionales")
+@allure.title("SYLIUS-520: Verificar eliminación de promoción deshabilitada o archivada")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.medium
 def test_TC520_Eliminar_promocion_archivada(create_promotion):
     headers = create_promotion["headers"]
     promo_code = create_promotion["promo_code"]
@@ -47,6 +96,15 @@ def test_TC520_Eliminar_promocion_archivada(create_promotion):
     AssertionStatusCode.assert_status_code_204(delete_response)
 
 # TC-521: Admin > Marketing > Promotions – Validar error al eliminar promoción repetida
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validaciones funcionales")
+@allure.title("SYLIUS-521: Validar error al eliminar promoción repetida")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.medium
 def test_TC521_Eliminar_promocion_repetida(create_promotion):
     headers = create_promotion["headers"]
     promo_code = create_promotion["promo_code"]
@@ -57,6 +115,17 @@ def test_TC521_Eliminar_promocion_repetida(create_promotion):
     AssertionPromotionsError.assert_promotion_error(second_response.json(), 404, "Promotion not found")
 
 # TC-522: Admin > Marketing > Promotions – Verificar eliminación concurrente de la misma promoción
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Concurrencia")
+@allure.title("SYLIUS-522: Verificar eliminación concurrente de la misma promoción")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.concurrent
+@pytest.mark.functional_validation
+@pytest.mark.medium
 def test_TC522_Eliminar_promocion_concurrente(create_promotion):
     headers = create_promotion["headers"]
     promo_code = create_promotion["promo_code"]
@@ -66,6 +135,16 @@ def test_TC522_Eliminar_promocion_concurrente(create_promotion):
     assert statuses == [204, 404], f"Resultados inesperados: {statuses}"
 
 # TC-523: Admin > Marketing > Promotions – Verificar que una promoción eliminada no exista más en el sistema
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validaciones funcionales")
+@allure.title("SYLIUS-523: Verificar que una promoción eliminada no exista más en el sistema")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.medium
 def test_TC523_Eliminar_promocion_verificar_inexistencia(create_promotion):
     headers = create_promotion["headers"]
     promo_code = create_promotion["promo_code"]

@@ -1,4 +1,5 @@
 import pytest
+import allure
 from src.services.request import SyliusRequest
 from src.routes.product_reviews_endpoint import ProductReviewsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
@@ -6,8 +7,16 @@ from src.assertions.product_reviews.schema_assertion import AssertionProductRevi
 from src.assertions.product_reviews.error_assertion import AssertionProductReviewsError
 from src.assertions.product_reviews.view_content_assertion import AssertionProductReviewsContent
 
-
 # TC-491: Admin > Marketing > Product Reviews – Obtener lista completa de reseñas de productos
+@allure.epic("Módulo de Marketing")
+@allure.feature("Product Reviews")
+@allure.story("Obtener lista de reseñas de productos")
+@allure.title("SYLIUS-491: Obtener lista completa de reseñas de productos")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.product_reviews
+@pytest.mark.functional_positive
+@pytest.mark.medium
 def test_TC491_Obtener_lista_completa_de_reseñas_de_productos(view_product_reviews):
     headers, _, _ = view_product_reviews
     url = ProductReviewsEndpoint.reviews()
@@ -17,8 +26,17 @@ def test_TC491_Obtener_lista_completa_de_reseñas_de_productos(view_product_revi
     AssertionProductReviews.assert_list_schema(response_json)
     AssertionProductReviewsContent.assert_review_collection(response_json)
 
-
 # TC-492: Admin > Marketing > Product Reviews – Validar error al listar reseñas sin token de autenticación
+@allure.epic("Módulo de Marketing ")
+@allure.feature("Product Reviews")
+@allure.story("Autenticación de reseñas")
+@allure.title("SYLIUS-492: Validar error al listar reseñas sin token de autenticación")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.product_reviews
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC492_Listar_reseñas_sin_token():
     headers = {}
     url = ProductReviewsEndpoint.reviews()
@@ -26,8 +44,17 @@ def test_TC492_Listar_reseñas_sin_token():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionProductReviewsError.assert_review_error(response.json(), 401, "JWT Token not found")
 
-
 # TC-493: Admin > Marketing > Product Reviews – Validar error al listar reseñas con token inválido
+@allure.epic("Módulo de Marketing")
+@allure.feature("Product Reviews")
+@allure.story("Autenticación de reseñas")
+@allure.title("SYLIUS-493: Validar error al listar reseñas con token inválido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.product_reviews
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC493_Listar_reseñas_con_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     url = ProductReviewsEndpoint.reviews()
@@ -35,10 +62,19 @@ def test_TC493_Listar_reseñas_con_token_invalido():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionProductReviewsError.assert_review_error(response.json(), 401, "Invalid JWT Token")
 
-
 # TC-494: Admin > Marketing > Product Reviews – Obtener lista de reseñas con página igual a 1
 # TC-495: Admin > Marketing > Product Reviews – Obtener lista con página mínima válida y cantidad igual a 1
 # TC-496: Admin > Marketing > Product Reviews – Obtener lista con página mínima válida y cantidad igual a 0
+@allure.epic("Módulo de Marketing")
+@allure.feature("Product Reviews")
+@allure.story("Listar reseñas con paginación válida")
+@allure.title("SYLIUS-494 - 496: Obtener lista de reseñas con paginación válida")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.product_reviews
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.medium
 @pytest.mark.parametrize("page, itemsPerPage", [
     (1, None),
     (1, 1),
@@ -62,6 +98,17 @@ def test_TC_Obtener_lista_de_reseñas_con_paginacion_valida(view_product_reviews
 # TC-503: Admin > Marketing > Product Reviews – Validar error al usar cantidad mínima válida y página decimal igual a 1.5 
 # TC-504: Admin > Marketing > Product Reviews – Validar error al usar cantidad mínima válida y página string igual a “uno” 
 # TC-505: Admin > Marketing > Product Reviews – Validar error al usar cantidad mínima válida y página vacía
+@allure.epic("Módulo de Marketing")
+@allure.feature("Product Reviews")
+@allure.story("Listar reseñas con paginación inválida")
+@allure.title("SYLIUS-497 - 505: Validar error al usar parámetros de paginación inválidos")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.product_reviews
+@pytest.mark.functional_negative
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.medium
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),

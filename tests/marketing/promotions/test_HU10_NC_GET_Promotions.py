@@ -1,4 +1,5 @@
 import pytest
+import allure
 from src.services.request import SyliusRequest
 from src.routes.promotions_endpoint import PromotionsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
@@ -7,6 +8,15 @@ from src.assertions.promotions.error_assertion import AssertionPromotionsError
 from src.assertions.promotions.view_content_assertion import AssertionPromotionsContent
 
 # TC-461: Admin > Marketing > Promotions – Obtener lista completa de promociones
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Listar promociones")
+@allure.title("SYLIUS-461: Obtener lista completa de promociones")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.high
 def test_TC461_Obtener_lista_completa_de_promociones(view_promotions):
     headers, _, _ = view_promotions
     url = PromotionsEndpoint.promotions()
@@ -17,6 +27,16 @@ def test_TC461_Obtener_lista_completa_de_promociones(view_promotions):
     AssertionPromotionsContent.assert_promotion_collection(response_json)
 
 # TC-462: Admin > Marketing > Promotions – Validar error al listar promociones sin token de autenticación
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Autenticación")
+@allure.title("SYLIUS-462: Validar error al listar promociones sin token de autenticación")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC462_Listar_promociones_sin_token():
     headers = {}
     url = PromotionsEndpoint.promotions()
@@ -25,6 +45,16 @@ def test_TC462_Listar_promociones_sin_token():
     AssertionPromotionsError.assert_promotion_error(response.json(), 401, "JWT Token not found")
 
 # TC-463: Admin > Marketing > Promotions – Validar error al listar promociones con token inválido
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Autenticación")
+@allure.title("SYLIUS-463: Validar error al listar promociones con token inválido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC463_Listar_promociones_con_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     url = PromotionsEndpoint.promotions()
@@ -35,6 +65,16 @@ def test_TC463_Listar_promociones_con_token_invalido():
 # TC-464: Admin > Marketing > Promotions – Obtener lista de promociones con página igual a 1
 # TC-465: Admin > Marketing > Promotions – Obtener lista con página mínima válida y cantidad igual a 1
 # TC-466: Admin > Marketing > Promotions – Obtener lista con página mínima válida y cantidad igual a 0
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Listar promociones con paginación válida")
+@allure.title("SYLIUS-464 - 466: Obtener lista de promociones con parámetros de paginación válidos")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.medium
 @pytest.mark.parametrize("page, itemsPerPage", [
     (1, None),
     (1, 1),
@@ -58,6 +98,17 @@ def test_TC_Obtener_lista_de_promociones_con_paginacion_valida(view_promotions, 
 # TC-473: Admin > Marketing > Promotions – Validar error al usar página mínima válida y cantidad decimal igual a 1.5
 # TC-474: Admin > Marketing > Promotions – Validar error al usar página mínima válida y cantidad string igual a “uno”
 # TC-475: Admin > Marketing > Promotions – Validar error al usar página mínima válida y cantidad vacía
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Listar promociones con paginación inválida")
+@allure.title("SYLIUS-467 - 475: Validar error al usar parámetros de paginación inválidos")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.medium
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),
