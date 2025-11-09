@@ -1,4 +1,5 @@
 import pytest
+import allure
 from src.services.request import SyliusRequest
 from src.routes.promotions_endpoint import PromotionsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
@@ -10,6 +11,15 @@ from src.resources.payloads.promotions_payload import PromotionsPayload
 from src.services.call_request.promotions_call import PromotionsCall
 
 # TC-535: Admin > Marketing > Promotions – Crear promoción con campos válidos
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Creación de promociones")
+@allure.title("SYLIUS-535: Crear promoción con campos válidos")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.high
 def test_TC535_Crear_promocion_campos_validos(auth_headers):
     headers = auth_headers
     payload = PromotionsPayload.build_payload_promotion(generate_promotion_data())
@@ -21,6 +31,15 @@ def test_TC535_Crear_promocion_campos_validos(auth_headers):
     AssertionPromotionsContent.assert_promotion_item(response_json, expected_code=payload["code"])
 
 # TC-538: Admin > Marketing > Promotions – Validar error al crear promoción con campos inválidos
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Creación de promociones")
+@allure.title("SYLIUS-538: Validar error al crear promoción con campos inválidos")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.medium
 def test_TC538_Crear_promocion_campos_invalidos(auth_headers):
     headers = auth_headers
     payload = PromotionsPayload.build_invalid_payload()
@@ -30,6 +49,16 @@ def test_TC538_Crear_promocion_campos_invalidos(auth_headers):
     AssertionPromotionsError.assert_promotion_error(response.json(), 400, "attribute must be")
 
 # TC-540: Admin > Marketing > Promotions – Validar error al crear promoción sin token de autenticación
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Autenticación")
+@allure.title("SYLIUS-540: Validar error al crear promoción sin token de autenticación")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC540_Crear_promocion_sin_token():
     headers = {}
     payload = PromotionsPayload.build_payload_promotion(generate_promotion_data())
@@ -39,6 +68,16 @@ def test_TC540_Crear_promocion_sin_token():
     AssertionPromotionsError.assert_promotion_error(response.json(), 401, "JWT Token not found")
 
 # TC-541: Admin > Marketing > Promotions – Validar error al crear promoción con token inválido
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Autenticación")
+@allure.title("SYLIUS-541: Validar error al crear promoción con token inválido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC541_Crear_promocion_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     payload = PromotionsPayload.build_payload_promotion(generate_promotion_data())
@@ -52,6 +91,17 @@ def test_TC541_Crear_promocion_token_invalido():
 # TC-539: Admin > Marketing > Promotions – Ingresar code con caracteres alfanuméricos y especiales igual a Test_#123/
 # TC-542: Admin > Marketing > Promotions – Validar error al ingresar code con 0 caracteres
 # TC-543: Admin > Marketing > Promotions – Validar error al ingresar code con 256 caracteres
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validación de campo 'code'")
+@allure.title("SYLIUS-536 - 543: Validar variaciones del parámetro 'code'")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_negative
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.medium
 @pytest.mark.parametrize("promo_code, expected_status", [
     ("A", 404),
     ("A" * 255, 404),
@@ -70,6 +120,17 @@ def test_TC_Admin_Promotions_validar_parametros_code(auth_headers, promo_code, e
 # TC-546: Admin > Marketing > Promotions – Ingresar name con caracteres alfanuméricos y especiales igual a Test_#123/
 # TC-547: Admin > Marketing > Promotions – Validar error al ingresar name con 1 caracteres
 # TC-548: Admin > Marketing > Promotions – Validar error al ingresar name con 256 caracteres
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validación de campo 'name'")
+@allure.title("SYLIUS-544 - 548: Validar variaciones del parámetro 'name'")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.medium
 @pytest.mark.parametrize("promo_name, expected_status", [
     ("AB", 201),
     ("A" * 255, 201),
@@ -90,6 +151,17 @@ def test_TC_Admin_Promotions_validar_parametros_name(auth_headers, promo_name, e
 # TC-551: Admin > Marketing > Promotions – Ingresar description con caracteres alfanuméricos y especiales igual a Test_de_qa/
 # TC-552: Admin > Marketing > Promotions – Validar error al ingresar description con 1 caracteres
 # TC-553: Admin > Marketing > Promotions – Validar error al ingresar description con 256 caracteres
+@allure.epic("Módulo de Marketing")
+@allure.feature("Promotions")
+@allure.story("Validación de campo 'description'")
+@allure.title("SYLIUS-549 - 553: Validar variaciones del parámetro 'description'")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.marketing
+@pytest.mark.promotions
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.medium
 @pytest.mark.parametrize("promo_desc, expected_status", [
     ("AB", 201),
     ("A" * 255, 201),
