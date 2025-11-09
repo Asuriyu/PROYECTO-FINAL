@@ -1,4 +1,5 @@
 import pytest
+import allure
 from src.services.request import SyliusRequest
 from src.routes.administrators_endpoint import AdministratorsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
@@ -7,6 +8,16 @@ from src.utils.admin_helper import create_temp_admin, get_avatar_url
 from tests.conftest import auth_headers
 
 # TC-139: Admin > Administrators > Avatar Images – Validar error al consultar imagen de avatar sin token de autenticación
+@allure.epic("Módulo de Administrador")
+@allure.feature("Administrators > Avatar Images")
+@allure.story("Consultar imagen de avatar")
+@allure.title("SYLIUS-139: Validar error al consultar imagen de avatar sin token de autenticación")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.administrator
+@pytest.mark.avatar_images
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC139_Validar_error_al_consultar_imagen_de_avatar_sin_token_de_autenticacion():
     headers = {}
     admin_id = 1
@@ -15,8 +26,17 @@ def test_TC139_Validar_error_al_consultar_imagen_de_avatar_sin_token_de_autentic
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "JWT Token not found")
 
-
 # TC-140: Admin > Administrators > Avatar Images – Validar error al consultar avatar image con token inválido
+@allure.epic("Módulo de Administrador")
+@allure.feature("Administrators > Avatar Images")
+@allure.story("Consultar imagen de avatar")
+@allure.title("SYLIUS-140: Validar error al consultar avatar image con token inválido")
+@allure.severity(allure.severity_level.CRITICAL)
+@pytest.mark.administrator
+@pytest.mark.avatar_images
+@pytest.mark.security
+@pytest.mark.functional_negative
+@pytest.mark.high
 def test_TC140_Validar_error_al_consultar_avatar_image_con_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     admin_id = 1
@@ -25,8 +45,17 @@ def test_TC140_Validar_error_al_consultar_avatar_image_con_token_invalido():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "Invalid JWT Token")
 
-
 # TC-141: Admin > Administrators > Avatar Images – Validar que path devuelva URL válida
+@allure.epic("Módulo de Administrador")
+@allure.feature("Administrators > Avatar Images")
+@allure.story("Consultar imagen de avatar")
+@allure.title("SYLIUS-141: Validar que path devuelva URL válida")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.administrator
+@pytest.mark.avatar_images
+@pytest.mark.functional_positive
+@pytest.mark.functional_validation
+@pytest.mark.medium
 def test_TC141_Validar_que_path_devuelva_URL_valida(auth_headers):
     admin_id, _ = create_temp_admin(auth_headers)
     url = get_avatar_url(admin_id)
@@ -35,6 +64,15 @@ def test_TC141_Validar_que_path_devuelva_URL_valida(auth_headers):
 
 
 # TC-142: Admin > Administrators > Avatar Images – Verificar error cuando administrador no tiene avatar configurado
+@allure.epic("Módulo de Administrador")
+@allure.feature("Administrators > Avatar Images")
+@allure.story("Consultar imagen de avatar")
+@allure.title("SYLIUS-142: Validar error al consultar avatar sin configuración")
+@allure.severity(allure.severity_level.NORMAL)
+@pytest.mark.administrator
+@pytest.mark.avatar_images
+@pytest.mark.functional_negative
+@pytest.mark.medium
 def test_TC142_Validar_error_al_consultar_avatar_sin_configuracion(auth_headers):
     admin_id, _ = create_temp_admin(auth_headers)
     url = get_avatar_url(admin_id)
@@ -47,6 +85,17 @@ def test_TC142_Validar_error_al_consultar_avatar_sin_configuracion(auth_headers)
 # TC-146: Admin > Administrators > Avatar Images - Validar error al ingresar ID string igual a "uno"
 # TC-147: Admin > Administrators > Avatar Images - Validar error al ingresar ID negativo igual a -1
 # TC-148: Admin > Administrators > Avatar Images - Validar error al ingresar ID decimal igual a 1.5
+@allure.epic("Módulo de Administrador")
+@allure.feature("Administrators > Avatar Images")
+@allure.story("Validar parámetros de ID en avatar")
+@allure.title("SYLIUS-144 - 148: Validar errores al consultar avatar con IDs inválidos")
+@allure.severity(allure.severity_level.MINOR)
+@pytest.mark.administrator
+@pytest.mark.avatar_images
+@pytest.mark.functional_negative
+@pytest.mark.functional_validation
+@pytest.mark.functional_edgecase
+@pytest.mark.low
 @pytest.mark.parametrize("admin_id, expected_status", [
     (12345, 404),
     (0, 404),
