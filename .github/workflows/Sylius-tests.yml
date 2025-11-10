@@ -37,19 +37,16 @@ jobs:
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
-    # PASO 1: Descargar código
     - name: Descargar código de la rama main
       uses: actions/checkout@v4
       with:
         ref: main
 
-    # PASO 2: Configurar Python
     - name: Configurar Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
 
-    # PASO 3: Instalar dependencias
     - name: Instalar dependencias necesarias
       run: |
         python -m pip install --upgrade pip
@@ -58,16 +55,16 @@ jobs:
         fi
         pip install pytest-html allure-pytest
 
-    # PASO 4: Instalar Allure CLI
-    - name: Instalar Allure CLI
+    - name: Instalar Allure CLI (última versión)
       run: |
         sudo apt-get update
-        sudo apt-get install -y unzip
-        wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.30.0.zip
-        unzip allure-2.30.0.zip -d /opt/allure
-        sudo ln -s /opt/allure/allure-2.30.0/bin/allure /usr/bin/allure
+        sudo apt-get install -y unzip curl
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/allure-framework/allure2/releases/latest | grep tag_name | cut -d '"' -f 4)
+        echo "Instalando Allure versión $LATEST_VERSION"
+        curl -L -o allure.zip https://github.com/allure-framework/allure2/releases/download/$LATEST_VERSION/allure-$LATEST_VERSION.zip
+        unzip allure.zip -d /opt/allure
+        sudo ln -s /opt/allure/allure-$LATEST_VERSION/bin/allure /usr/bin/allure
 
-    # PASO 5: Crear archivo .env
     - name: Crear archivo .env
       run: |
         echo "BASE_URL=${{ env.BASE_URL }}" > .env
@@ -75,11 +72,9 @@ jobs:
         echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
         echo ".env generado con las variables de entorno."
 
-    # PASO 6: Crear carpetas para reportes
     - name: Crear carpetas de reportes
       run: mkdir -p reports/allure-results reports/allure-report
 
-    # PASO 7: Ejecutar pruebas Pytest
     - name: Ejecutar pruebas con Pytest y generar reportes
       run: |
         echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}..."
@@ -88,12 +83,10 @@ jobs:
           --html=reports/resultados.html \
           --self-contained-html -v -s || true
 
-    # PASO 8: Generar reporte Allure
     - name: Generar reporte Allure
       run: |
         allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
 
-    # PASO 9: Subir reportes HTML y Allure como artefactos
     - name: Subir reportes generados
       uses: actions/upload-artifact@v4
       with:
@@ -102,7 +95,6 @@ jobs:
           reports/resultados.html
           reports/allure-report
 
-    # PASO 10: Mostrar resumen
     - name: Resumen final
       run: |
         echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
