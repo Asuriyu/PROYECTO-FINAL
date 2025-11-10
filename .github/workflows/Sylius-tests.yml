@@ -1,0 +1,91 @@
+name: Ejecutar pruebas manualmente - Sylius API
+
+on:
+  workflow_dispatch:
+    inputs:
+      mark:
+        description: 'Selecciona la marca de pruebas a ejecutar'
+        required: true
+        default: 'administrator'
+        type: choice
+        options:
+          - administrator
+          - avatar_images
+          - promotions
+          - product_reviews
+          - marketing
+          - e2e
+          - functional_positive
+          - functional_negative
+          - functional_validation
+          - functional_edgecase
+          - security
+          - regression
+          - concurrent
+          - high
+          - medium
+          - low
+
+jobs:
+  run-tests:
+    name: Ejecutar pruebas Pytest + Allure
+    runs-on: ubuntu-latest
+
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v4
+      with:
+        ref: development
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          echo "Archivo requirements.txt no encontrado, se usará el entorno base."
+        fi
+
+    - name: Crear archivo .env
+      run: |
+        echo "BASE_URL=${{ env.BASE_URL }}" > .env
+        echo "ADMIN_EMAIL=${{ env.ADMIN_EMAIL }}" >> .env
+        echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
+        echo ".env generado con las variables de entorno."
+
+    - name: Ejecutar pruebas por marca
+      run: |
+        echo "Ejecutando pruebas para la marca: ${{ inputs.mark }}"
+        pytest -m "${{ inputs.mark }}" \
+          --alluredir=reports/allure-results \
+          --html=reports/resultados.html \
+          --self-contained-html -v -s
+      continue-on-error: true
+
+    - name: Generar reporte Allure
+      run: |
+        allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
+      continue-on-error: true
+
+    - name: Subir reportes como artefactos
+      uses: actions/upload-artifact@v4
+      with:
+        name: reportes-sylius-${{ inputs.mark }}
+        path: |
+          reports/allure-report
+          reports/resultados.html
+
+    - name: Mostrar resumen final
+      run: |
+        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}"
+        echo " Reportes disponibles como artefactos en la ejecución del workflow."
