@@ -1,10 +1,10 @@
-name: Ejecutar pruebas manualmente - Sylius API
+name: Ejecutar Pruebas Manualmente - Sylius API
 
 on:
   workflow_dispatch:
     inputs:
       mark:
-        description: 'Selecciona la marca de pruebas a ejecutar'
+        description: 'Selecciona la marca para ejecutar las pruebas'
         required: true
         default: 'administrator'
         type: choice
@@ -27,8 +27,8 @@ on:
           - low
 
 jobs:
-  run-tests:
-    name: Ejecutar pruebas Pytest + Allure
+  pruebas:
+    name: Ejecutar pruebas en la rama main
     runs-on: ubuntu-latest
 
     env:
@@ -37,25 +37,37 @@ jobs:
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
-    - name: Checkout del repositorio
+    # PASO 1: Descargar código
+    - name: Descargar código de la rama main
       uses: actions/checkout@v4
       with:
-        ref: development
+        ref: main
 
+    # PASO 2: Configurar Python
     - name: Configurar Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
 
-    - name: Instalar dependencias
+    # PASO 3: Instalar dependencias
+    - name: Instalar dependencias necesarias
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then
           pip install -r requirements.txt
-        else
-          echo "Archivo requirements.txt no encontrado, se usará el entorno base."
         fi
+        pip install pytest-html allure-pytest
 
+    # PASO 4: Instalar Allure CLI
+    - name: Instalar Allure CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y unzip
+        wget https://github.com/allure-framework/allure2/releases/latest/download/allure-2.30.0.zip
+        unzip allure-2.30.0.zip -d /opt/allure
+        sudo ln -s /opt/allure/allure-2.30.0/bin/allure /usr/bin/allure
+
+    # PASO 5: Crear archivo .env
     - name: Crear archivo .env
       run: |
         echo "BASE_URL=${{ env.BASE_URL }}" > .env
@@ -63,29 +75,35 @@ jobs:
         echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
         echo ".env generado con las variables de entorno."
 
-    - name: Ejecutar pruebas por marca
+    # PASO 6: Crear carpetas para reportes
+    - name: Crear carpetas de reportes
+      run: mkdir -p reports/allure-results reports/allure-report
+
+    # PASO 7: Ejecutar pruebas Pytest
+    - name: Ejecutar pruebas con Pytest y generar reportes
       run: |
-        echo "Ejecutando pruebas para la marca: ${{ inputs.mark }}"
+        echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}..."
         pytest -m "${{ inputs.mark }}" \
           --alluredir=reports/allure-results \
           --html=reports/resultados.html \
-          --self-contained-html -v -s
-      continue-on-error: true
+          --self-contained-html -v -s || true
 
+    # PASO 8: Generar reporte Allure
     - name: Generar reporte Allure
       run: |
         allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
-      continue-on-error: true
 
-    - name: Subir reportes como artefactos
+    # PASO 9: Subir reportes HTML y Allure como artefactos
+    - name: Subir reportes generados
       uses: actions/upload-artifact@v4
       with:
-        name: reportes-sylius-${{ inputs.mark }}
+        name: reporte-sylius-${{ inputs.mark }}
         path: |
-          reports/allure-report
           reports/resultados.html
+          reports/allure-report
 
-    - name: Mostrar resumen final
+    # PASO 10: Mostrar resumen
+    - name: Resumen final
       run: |
-        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}"
-        echo " Reportes disponibles como artefactos en la ejecución del workflow."
+        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
+        echo " Reportes generados y subidos correctamente."
