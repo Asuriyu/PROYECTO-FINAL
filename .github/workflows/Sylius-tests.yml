@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       mark:
-        description: 'Selecciona la marca para ejecutar las pruebas'
+        description: "Selecciona la marca para ejecutar las pruebas"
         required: true
-        default: 'administrator'
+        default: "administrator"
         type: choice
         options:
           - administrator
@@ -28,8 +28,8 @@ on:
 
 jobs:
   pruebas:
-    name: Ejecutar pruebas en la rama main
     runs-on: ubuntu-latest
+    name: Ejecutar pruebas en Sylius API
 
     env:
       BASE_URL: ${{ secrets.BASE_URL }}
@@ -37,7 +37,8 @@ jobs:
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
-    - name: Descargar código de la rama main
+
+    - name: Descargar código
       uses: actions/checkout@v4
       with:
         ref: main
@@ -45,7 +46,7 @@ jobs:
     - name: Configurar Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: "3.12"
 
     - name: Instalar dependencias necesarias
       run: |
@@ -60,27 +61,29 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y allure
 
+    # Verificar instalación de Allure (debug)
+    - name: Verificar Allure CLI
+      run: allure --version
+
     - name: Crear archivo .env
       run: |
         echo "BASE_URL=${{ env.BASE_URL }}" > .env
         echo "ADMIN_EMAIL=${{ env.ADMIN_EMAIL }}" >> .env
         echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
-        echo ".env generado con las variables de entorno."
 
-    - name: Crear carpetas de reportes
-      run: mkdir -p reports/allure-results reports/allure-report
-
-    - name: Ejecutar pruebas con Pytest y generar reportes
+    - name: Ejecutar pruebas con Pytest
       run: |
-        echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}..."
+        echo "Ejecutando pruebas con la marca: ${{ inputs.mark }}"
         pytest -m "${{ inputs.mark }}" \
           --alluredir=reports/allure-results \
           --html=reports/resultados.html \
-          --self-contained-html -v -s || true
+          --self-contained-html \
+          -v -s || true
 
     - name: Generar reporte Allure
       run: |
-        allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
+        echo "Generando reporte Allure..."
+        allure generate reports/allure-results -o reports/allure-report --clean
 
     - name: Subir reportes generados
       uses: actions/upload-artifact@v4
@@ -92,5 +95,5 @@ jobs:
 
     - name: Resumen final
       run: |
-        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
-        echo " Reportes generados y subidos correctamente."
+        echo "Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
+        echo "Reportes generados y subidos correctamente."
