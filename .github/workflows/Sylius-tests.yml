@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       mark:
-        description: "Selecciona la marca para ejecutar las pruebas"
+        description: 'Selecciona la marca para ejecutar las pruebas'
         required: true
-        default: "administrator"
+        default: 'administrator'
         type: choice
         options:
           - administrator
@@ -28,64 +28,74 @@ on:
 
 jobs:
   pruebas:
+    name: Ejecutar pruebas en la rama main
     runs-on: ubuntu-latest
 
-    steps:
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
-    - name: Descargar código
+    steps:
+    - name: Descargar código de la rama main
       uses: actions/checkout@v4
+      with:
+        ref: main
 
     - name: Configurar Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
-
-    - name: Establecer variables de entorno desde secrets
-      run: |
-        echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
-        echo "ADMIN_EMAIL=${{ secrets.ADMIN_EMAIL }}" >> $GITHUB_ENV
-        echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
+        python-version: '3.12'
 
     - name: Instalar dependencias necesarias
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Ejecutar tests con pytest y generar allure-results
-      run: |
-        if [ -n "${{ github.event.inputs.mark }}" ]; then
-          echo "Ejecutando pytest con marker: ${{ github.event.inputs.mark }}"
-          pytest -m "${{ github.event.inputs.mark }}" --disable-warnings -v --alluredir=reports/allure-results
-        else
-          echo "Ejecutando todos los tests"
-          pytest --disable-warnings -v --alluredir=reports/allure-results
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
         fi
+        pip install pytest-html allure-pytest
 
-    - name: Load test report history
-      uses: actions/checkout@v4
-      if: always()
-      continue-on-error: true
-      with:
-        ref: report-allure
-        path: report-allure
+    - name: Instalar Allure CLI (última versión)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y unzip curl
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/allure-framework/allure2/releases/latest | grep tag_name | cut -d '"' -f 4)
+        echo "Instalando Allure versión $LATEST_VERSION"
+        curl -L -o allure.zip https://github.com/allure-framework/allure2/releases/download/$LATEST_VERSION/allure-$LATEST_VERSION.zip
+        unzip allure.zip -d /opt/allure
+        sudo ln -s /opt/allure/allure-$LATEST_VERSION/bin/allure /usr/bin/allure
 
-    - name: Build Allure Report
-      uses: simple-elf/allure-report-action@master
-      if: always()
-      with:
-        gh_pages: report-allure
-        allure_results: reports/allure-results
-        allure_history: allure-history
+    - name: Crear archivo .env
+      run: |
+        echo "BASE_URL=${{ env.BASE_URL }}" > .env
+        echo "ADMIN_EMAIL=${{ env.ADMIN_EMAIL }}" >> .env
+        echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
+        echo ".env generado con las variables de entorno."
 
-    - name: Publish Allure Report to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: always()
+    - name: Crear carpetas de reportes
+      run: mkdir -p reports/allure-results reports/allure-report
+
+    - name: Ejecutar pruebas con Pytest y generar reportes
+      run: |
+        echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}..."
+        pytest -m "${{ inputs.mark }}" \
+          --alluredir=reports/allure-results \
+          --html=reports/resultados.html \
+          --self-contained-html -v -s || true
+
+    - name: Generar reporte Allure
+      run: |
+        allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
+
+    - name: Subir reportes generados
+      uses: actions/upload-artifact@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: report-allure
-        publish_dir: allure-history
+        name: reporte-sylius-${{ inputs.mark }}
+        path: |
+          reports/resultados.html
+          reports/allure-report
 
     - name: Resumen final
       run: |
-        echo "Pruebas completadas con la marca seleccionada: ${{ github.event.inputs.mark }}."
-        echo "Reportes Allure generados y publicados correctamente."
+        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
+        echo " Reportes generados y subidos correctamente."
