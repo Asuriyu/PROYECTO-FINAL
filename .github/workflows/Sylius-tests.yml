@@ -55,8 +55,15 @@ jobs:
         fi
         pip install pytest-html allure-pytest
 
-    - name: Instalar Allure CLI
-      uses: allure-framework/actions/setup@v1
+    - name: Instalar Allure CLI (última versión)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y unzip curl
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/allure-framework/allure2/releases/latest | grep tag_name | cut -d '"' -f 4)
+        echo "Instalando Allure versión $LATEST_VERSION"
+        curl -L -o allure.zip https://github.com/allure-framework/allure2/releases/download/$LATEST_VERSION/allure-$LATEST_VERSION.zip
+        unzip allure.zip -d /opt/allure
+        sudo ln -s /opt/allure/allure-$LATEST_VERSION/bin/allure /usr/bin/allure
 
     - name: Crear archivo .env
       run: |
@@ -91,4 +98,4 @@ jobs:
     - name: Resumen final
       run: |
         echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
-        echo " Reportes generados y subidos correctamente."
+        echo " Reportes generados y subidos correctamente.
