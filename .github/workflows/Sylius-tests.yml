@@ -37,6 +37,7 @@ jobs:
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
+
     - name: Descargar código de la rama main
       uses: actions/checkout@v4
       with:
@@ -55,15 +56,8 @@ jobs:
         fi
         pip install pytest-html allure-pytest
 
-    - name: Instalar Allure CLI (última versión)
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y unzip curl
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/allure-framework/allure2/releases/latest | grep tag_name | cut -d '"' -f 4)
-        echo "Instalando Allure versión $LATEST_VERSION"
-        curl -L -o allure.zip https://github.com/allure-framework/allure2/releases/download/$LATEST_VERSION/allure-$LATEST_VERSION.zip
-        unzip allure.zip -d /opt/allure
-        sudo ln -s /opt/allure/allure-$LATEST_VERSION/bin/allure /usr/bin/allure
+    - name: Instalar Allure CLI
+      uses: allure-framework/actions/setup@v1
 
     - name: Crear archivo .env
       run: |
@@ -85,7 +79,8 @@ jobs:
 
     - name: Generar reporte Allure
       run: |
-        allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
+        echo "Generando reporte Allure..."
+        allure generate reports/allure-results -o reports/allure-report --clean
 
     - name: Subir reportes generados
       uses: actions/upload-artifact@v4
@@ -97,5 +92,5 @@ jobs:
 
     - name: Resumen final
       run: |
-        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
+        echo "Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
         echo "Reportes generados y subidos correctamente."
