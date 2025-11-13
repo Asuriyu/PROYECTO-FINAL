@@ -98,4 +98,4 @@ jobs:
     - name: Resumen final
       run: |
         echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
-        echo " Reportes generados y subidos correctamente.
+        echo "Reportes generados y subidos correctamente."
