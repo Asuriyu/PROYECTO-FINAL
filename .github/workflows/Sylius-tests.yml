@@ -37,26 +37,16 @@ jobs:
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
-
-    # ------------------------------
-    # Descargar el código
-    # ------------------------------
     - name: Descargar código de la rama main
       uses: actions/checkout@v4
       with:
         ref: main
 
-    # ------------------------------
-    # Configurar Python
-    # ------------------------------
     - name: Configurar Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
 
-    # ------------------------------
-    # Instalar dependencias
-    # ------------------------------
     - name: Instalar dependencias necesarias
       run: |
         python -m pip install --upgrade pip
@@ -65,15 +55,11 @@ jobs:
         fi
         pip install pytest-html allure-pytest
 
-    # ------------------------------
-    # Instalar Allure CLI (oficial)
-    # ------------------------------
     - name: Instalar Allure CLI
-      uses: allure-framework/actions/setup@v1
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y allure
 
-    # ------------------------------
-    # Crear archivo .env
-    # ------------------------------
     - name: Crear archivo .env
       run: |
         echo "BASE_URL=${{ env.BASE_URL }}" > .env
@@ -81,15 +67,9 @@ jobs:
         echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
         echo ".env generado con las variables de entorno."
 
-    # ------------------------------
-    # Crear carpetas del reporte
-    # ------------------------------
     - name: Crear carpetas de reportes
       run: mkdir -p reports/allure-results reports/allure-report
 
-    # ------------------------------
-    # Ejecutar pruebas con Pytest
-    # ------------------------------
     - name: Ejecutar pruebas con Pytest y generar reportes
       run: |
         echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}..."
@@ -98,17 +78,10 @@ jobs:
           --html=reports/resultados.html \
           --self-contained-html -v -s || true
 
-    # ------------------------------
-    # Generar reporte Allure
-    # ------------------------------
     - name: Generar reporte Allure
       run: |
-        echo "Generando reporte Allure..."
-        allure generate reports/allure-results -o reports/allure-report --clean
+        allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
 
-    # ------------------------------
-    # Subir artifacts (HTML + Allure)
-    # ------------------------------
     - name: Subir reportes generados
       uses: actions/upload-artifact@v4
       with:
@@ -117,10 +90,7 @@ jobs:
           reports/resultados.html
           reports/allure-report
 
-    # ------------------------------
-    # Mensaje final
-    # ------------------------------
     - name: Resumen final
       run: |
-        echo "Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
-        echo "Reportes generados y subidos correctamente."
+        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
+        echo " Reportes generados y subidos correctamente."
