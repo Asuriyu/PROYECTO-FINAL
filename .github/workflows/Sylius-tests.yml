@@ -111,9 +111,10 @@ jobs:
     name: Publicar reporte en GitHub Pages
     needs: pruebas
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+  
     steps:
-
     - name: Descargar artifacts
       uses: actions/download-artifact@v4
       with:
@@ -129,6 +130,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./allure-report
+
 
     - name: Finalización publicación
       run: |
