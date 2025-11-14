@@ -1,0 +1,30 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_AvatarImage_validar_parametros_ID[12345-404]
+INFO     root:conftest.py:16 Start time: 08:07:04
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/administrators/12345/avatar-image HTTP/1.1" 404 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/12345/avatar-image
+INFO     root:logger_helpers.py:31 STATUS CODE: 404
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjEsImV4cCI6MTc2MzExMTIyMSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.egfd5HSU3xgC-pyfvx4w41eDA_ZWn4FnbjBHf5OIyewqkTblyttu48N55gxJlBTrbiyVnhxhzT_4SEzqEajyANyz2X1lxfFA3dolu1N452V8PaOFWtQn21AAfwJ_yYm_VEDLlJ4wB7RjgYtd89nVgTBgECKyW0W41O9RB9HN0BovMD1HI6UYa_AxaidteXYqVaFKN6AEpQoMepdY6WYwC0nZ5KSZ9Y_Yqdk9ag4pZvr8olySguLWdY3yvXpqz4kpIY0DUvkOxY6Y27CgSAyNLNCE7PDmseNTLLknkCtF6eAaeTiNe8mvy2jpPt66jSgKrfp2LNtldYKIilmYuKWUu0iuamvoxL_YCxNykbdf_m0Q2A5exa93_WYTQY_GGLahaDrfw4Ph4D0VW4gOMYFrHfVNiZ1zgwRRdjKx9ALJjEbeQjdaIQz4S8Jmv6QUhDrW1gGxxlgTf006kKx9IhajLfm4MeJNvxf6gS40N-FgfAcFjofKB9Z5kAHP81fiGWqc6e2wQ26ygIdIp7KuAVLxTjUs4Y76lq5yXFlOs7FFb0J-iK56H7UJkS9mXxij-3Eume9Nhk-iUOD94gVpWvJ6aOe5wOWl6TE6HzpcpCVGbjbnT5N02GweEB219F2AOYbqEUnu8k4e3PdmZYmBab1zvQrDyvED_p4bWA9F8y3NYNM"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_AvatarImage_validar_parametros_ID[12345-404]
+INFO     root:conftest.py:19 ====================================================================================================

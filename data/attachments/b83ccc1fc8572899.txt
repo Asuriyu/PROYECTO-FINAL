@@ -1,0 +1,131 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Promotions_validar_parametros_name[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-422]
+INFO     root:conftest.py:16 Start time: 08:09:33
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/promotions HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOZXqv",
+    "name": "Watch low.",
+    "description": "Central attention on. Environment at pull outside magazine never while. Rich reflect feel field.",
+    "priority": 3,
+    "exclusive": true,
+    "usageLimit": 4,
+    "startsAt": "2025-08-25T18:18:51.042128",
+    "endsAt": "2025-12-09T08:40:43.757202",
+    "couponBased": false,
+    "appliesToDiscounted": false,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOZXqv",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25166,
+    "code": "PROMOZXqv",
+    "name": "Watch low.",
+    "description": "Central attention on. Environment at pull outside magazine never while. Rich reflect feel field.",
+    "priority": 3,
+    "exclusive": true,
+    "usageLimit": 4,
+    "used": 0,
+    "startsAt": "2025-08-25 18:18:51",
+    "endsAt": "2025-12-09 08:40:43",
+    "couponBased": false,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": false,
+    "archivedAt": null,
+    "createdAt": "2025-11-14 08:09:33",
+    "updatedAt": "2025-11-14 08:09:33",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOZXqv/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "PUT /api/v2/admin/promotions/PROMOZXqv HTTP/1.1" 422 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: PUT
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOZXqv
+INFO     root:logger_helpers.py:31 STATUS CODE: 422
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOcagI",
+    "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "description": "Health decide possible or. Know civil first behind major sister fall.",
+    "priority": 3,
+    "exclusive": true,
+    "usageLimit": 37,
+    "startsAt": "2025-02-13T21:55:08.878726",
+    "endsAt": "2025-12-04T04:10:12.887296",
+    "couponBased": false,
+    "appliesToDiscounted": true,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "name",
+            "message": "Promotion name must not be longer than 255 characters.",
+            "code": "d94b19cc-114f-4f44-9cc4-4138e80a87b9"
+        }
+    ],
+    "detail": "name: Promotion name must not be longer than 255 characters.",
+    "type": "/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "hydra:description": "name: Promotion name must not be longer than 255 characters.",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOZXqv HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOZXqv
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Promotions_validar_parametros_name[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-422]
+INFO     root:conftest.py:19 ====================================================================================================

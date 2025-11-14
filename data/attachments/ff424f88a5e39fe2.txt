@@ -1,0 +1,53 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC46_Validar_error_al_crear_administrador_sin_datos_requeridos
+INFO     root:conftest.py:16 Start time: 08:07:51
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/administrators HTTP/1.1" 422 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators
+INFO     root:logger_helpers.py:31 STATUS CODE: 422
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/0=c1051bb4-d103-4f74-8988-acbcafc7fdc3;1=c1051bb4-d103-4f74-8988-acbcafc7fdc3;2=c1051bb4-d103-4f74-8988-acbcafc7fdc3;3=c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "email",
+            "message": "Please enter your email.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        },
+        {
+            "propertyPath": "username",
+            "message": "Please enter your name.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        },
+        {
+            "propertyPath": "localeCode",
+            "message": "Please choose a locale.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        },
+        {
+            "propertyPath": "plainPassword",
+            "message": "Please enter your password.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        }
+    ],
+    "detail": "email: Please enter your email.\nusername: Please enter your name.\nlocaleCode: Please choose a locale.\nplainPassword: Please enter your password.",
+    "type": "/validation_errors/0=c1051bb4-d103-4f74-8988-acbcafc7fdc3;1=c1051bb4-d103-4f74-8988-acbcafc7fdc3;2=c1051bb4-d103-4f74-8988-acbcafc7fdc3;3=c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "hydra:description": "email: Please enter your email.\nusername: Please enter your name.\nlocaleCode: Please choose a locale.\nplainPassword: Please enter your password.",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC46_Validar_error_al_crear_administrador_sin_datos_requeridos
+INFO     root:conftest.py:19 ====================================================================================================

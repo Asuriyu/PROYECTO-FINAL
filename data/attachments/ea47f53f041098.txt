@@ -1,0 +1,131 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC523_Eliminar_promocion_verificar_inexistencia
+INFO     root:conftest.py:16 Start time: 08:09:51
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/promotions HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOANrG",
+    "name": "Choose it accept.",
+    "description": "Continue city act reflect who.\nChild agreement world whatever over. Control forget side out.",
+    "priority": 10,
+    "exclusive": false,
+    "usageLimit": 80,
+    "startsAt": "2025-02-05T04:02:11.458358",
+    "endsAt": "2025-11-23T07:36:29.764825",
+    "couponBased": true,
+    "appliesToDiscounted": true,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOANrG",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25180,
+    "code": "PROMOANrG",
+    "name": "Choose it accept.",
+    "description": "Continue city act reflect who.\nChild agreement world whatever over. Control forget side out.",
+    "priority": 10,
+    "exclusive": false,
+    "usageLimit": 80,
+    "used": 0,
+    "startsAt": "2025-02-05 04:02:11",
+    "endsAt": "2025-11-23 07:36:29",
+    "couponBased": true,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": true,
+    "archivedAt": null,
+    "createdAt": "2025-11-14 08:09:51",
+    "updatedAt": "2025-11-14 08:09:51",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOANrG/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOANrG HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOANrG
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/promotions/PROMOANrG HTTP/1.1" 404 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOANrG
+INFO     root:logger_helpers.py:31 STATUS CODE: 404
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOANrG HTTP/1.1" 404 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOANrG
+INFO     root:logger_helpers.py:31 STATUS CODE: 404
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDc2MjYsImV4cCI6MTc2MzExMTIyNiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BpZyfI6u5-0lbNU9lCrHIDqdgR3VjiajMI4HIEy7zLBLhgRTPb9qKJfMEUUtdJMt3HcrIAUkH1BgFdbfZs25LEDlM0rKTFrirw8IXdyd3sqSVKl177p7WLWdbcWER-ZASjxXk2mD0KarWNxDUpXJ-KVa1UzuqIyj0szTbwJgTvVUDBzU69Tl3EUnuwdRyIw3FNNfB4E-3zgu8io0wKubE1EkwWU-TUba4E6OwTQrAfGekhv22e53snCpX6nXSHD2oVMoL_LqeLYOVnUB9JA21Xak7D5N6WOGsOF9NWS-XlfoVGbdZfJ_ptZFVcBECvb87ahuir2q5K7vW1TVFladZXKtV9tvidOOmtArfBgbVL-m18gLgpH35PV3sRNLXShR98ng5IMNb0tmHPTzvu4scNfI13HdwsCFYvEW-onvmOKRIpY0UG2bsAZbt5e2gLBwJ4xEZnJQahvZbC0GBBbaITgdKdS65g6oSFGWJ9Bt_7_X0rtEYXPEHoG2pcokWYb-ax0l3P9nSrey-Q0_BUXsV81rhATBg_j-UccIGxN72zgu8_QNh7aDxCrMfjqnh8IAYFAxQAMxzXVDvMcUdSuEWb_IvyrnTYHnru1MGChAV85XQUXi0tIFBdw3kjGLr050iRIa6scjETpY94unIjkYpZlsLBIHIgMB0wYlO5R3dYk",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC523_Eliminar_promocion_verificar_inexistencia
+INFO     root:conftest.py:19 ====================================================================================================
