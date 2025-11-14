@@ -1,2 +1,7 @@
 "BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
-"0","E2E - Marketing","0","Promotions","1","0","HU07 - Flujo completo de gestión de promociones (Admin)","0"
+"0","Módulo de Marketing","0","Product Reviews","5","4","Listar reseñas con paginación inválida","0"
+"0","Módulo de Marketing","0","Product Reviews","6","0","Eliminar reseña de producto","0"
+"0","Módulo de Marketing","0","Product Reviews","3","0","Listar reseñas con paginación válida","0"
+"0","Módulo de Marketing","0","Product Reviews","1","0","Obtener lista de reseñas de productos","0"
+"0","Módulo de Marketing ","0","Product Reviews","1","0","Autenticación de reseñas","0"
+"0","Módulo de Marketing","0","Product Reviews","1","0","Autenticación de reseñas","0"

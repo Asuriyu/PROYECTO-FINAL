@@ -1,7 +1,0 @@
-INFO     root:conftest.py:13 
-====================================================================================================
-INFO     root:conftest.py:14 CODE REVIEW - Approved
-INFO     root:conftest.py:15 Test: test_e2e_promocion_admin
-INFO     root:conftest.py:16 Start time: 07:21:38
-INFO     root:conftest.py:18 Completed test: test_e2e_promocion_admin
-INFO     root:conftest.py:19 ====================================================================================================

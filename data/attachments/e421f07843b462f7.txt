@@ -1,0 +1,30 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Obtener_lista_de_reseñas_con_paginacion_invalida[0-1]
+INFO     root:conftest.py:16 Start time: 07:29:02
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/product-reviews?page=0&itemsPerPage=1 HTTP/1.1" 400 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews?page=0&itemsPerPage=1
+INFO     root:logger_helpers.py:31 STATUS CODE: 400
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDUzMzcsImV4cCI6MTc2MzEwODkzNywicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.iLKZYr1kaI3GMvYzb8FSMpfaXzg8d8a_fhvAqWhc7iaxHVlzXtZwNpdf12Rpk3dI7i8ZEx4TD7NcFB482BwhOK_nAq3pp5giUGhs8-UkNOy-Vk43qIbE62f7BPbxRx_p_GCwqGxZa_xyfru70r52BZkGHnd1_OpSCHqYD9aBmc-WSzppMuOca7zvfP7pSqYUYvDaggVb3ZHUs5GtSr04huOqUVLNQZfhVFIOXT4AbpDLfQ9-TblMTW1a9OPJ2Ic18a8ifdxCuf6F5d2zgkOUysqqrY_tzxiCImoH2B1l2Gempbrt4ZkF8c4Bf0eXOsjh-1x4K-8ur5QiIodQ6CMPomd0wRbZldIm2rXGEEkAuq5JXx841CXSjE76u2j4VNS1_MDbqG9H0QPJgeVQlGfLAlyC70ip7n1A1YlfrshStsTMgzIscHczDBoplqcZhtcxaarNVtOedobcipXg-3lhc07FU4TPdH5UtjT4GiX-N2BS5SIST8mykiC5PodofSSmnHtviX8PwPISrS5950iNd07k9vPEdl_vHm9M5UsQJSZAyTJEqpw5GLbdbILO6e8aSgVdnUT2TXlQD7VBJL-CLbxDWTb5adtYmbZ_LmtCd9C9Zh34GYXOzUs0ado8PCyANocW8n1K0W769LGC1banbl-nVYSPXEDHnxd86u6qtpk"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/400",
+    "@type": "hydra:Error",
+    "detail": "Page should not be less than 1",
+    "status": 400,
+    "type": "/errors/400",
+    "hydra:description": "Page should not be less than 1",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Obtener_lista_de_reseñas_con_paginacion_invalida[0-1]
+INFO     root:conftest.py:19 ====================================================================================================
