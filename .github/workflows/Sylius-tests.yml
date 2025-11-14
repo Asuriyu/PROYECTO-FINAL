@@ -9,6 +9,7 @@ on:
         default: 'administrator'
         type: choice
         options:
+          - all
           - administrator
           - avatar_images
           - promotions
@@ -79,11 +80,18 @@ jobs:
 
     - name: Ejecutar pruebas con Pytest
       run: |
-        echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}"
-        pytest -m "${{ inputs.mark }}" \
-          --alluredir=reports/allure-results \
-          --html=reports/resultados.html \
-          --self-contained-html -v -s || true
+        echo "Marca seleccionada: ${{ inputs.mark }}"
+        if [ "${{ inputs.mark }}" = "all" ]; then
+            pytest \
+              --alluredir=reports/allure-results \
+              --html=reports/resultados.html \
+              --self-contained-html -v -s || true
+        else
+            pytest -m "${{ inputs.mark }}" \
+              --alluredir=reports/allure-results \
+              --html=reports/resultados.html \
+              --self-contained-html -v -s || true
+        fi
 
     - name: Generar reporte Allure
       run: |
