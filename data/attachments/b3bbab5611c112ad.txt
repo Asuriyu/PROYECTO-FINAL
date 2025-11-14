@@ -1,0 +1,48 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Administrators_validar_plainPassword[Test1234-201]
+INFO     root:conftest.py:16 Start time: 07:51:32
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/administrators HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Shelley",
+    "lastName": "Holmes",
+    "username": "shehol716",
+    "plainPassword": "Test1234",
+    "email": "shelley.holmes873@example.com",
+    "enabled": true,
+    "localeCode": "es_ES"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Administrator",
+    "@id": "/api/v2/admin/administrators/18501",
+    "@type": "Administrator",
+    "firstName": "Shelley",
+    "lastName": "Holmes",
+    "localeCode": "es_ES",
+    "avatar": null,
+    "id": 18501,
+    "username": "shehol716",
+    "lastLogin": null,
+    "verifiedAt": null,
+    "email": "shelley.holmes873@example.com",
+    "createdAt": "2025-11-14 07:51:32",
+    "updatedAt": "2025-11-14 07:51:32",
+    "enabled": true
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Administrators_validar_plainPassword[Test1234-201]
+INFO     root:conftest.py:19 ====================================================================================================

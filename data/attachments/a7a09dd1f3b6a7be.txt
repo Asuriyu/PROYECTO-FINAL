@@ -1,0 +1,20 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC139_Validar_error_al_consultar_imagen_de_avatar_sin_token_de_autenticacion
+INFO     root:conftest.py:16 Start time: 07:50:29
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/administrators/1/avatar-image HTTP/1.1" 401 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/1/avatar-image
+INFO     root:logger_helpers.py:31 STATUS CODE: 401
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC139_Validar_error_al_consultar_imagen_de_avatar_sin_token_de_autenticacion
+INFO     root:conftest.py:19 ====================================================================================================

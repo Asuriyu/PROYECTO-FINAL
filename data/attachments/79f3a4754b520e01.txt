@@ -1,0 +1,1032 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC575_Eliminar_review_existente_valido
+INFO     root:conftest.py:16 Start time: 07:52:22
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/product-reviews HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductReview",
+    "@id": "/api/v2/admin/product-reviews",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 37,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-reviews/316886",
+            "@type": "ProductReview",
+            "id": 316886,
+            "title": "omnis hic et",
+            "rating": 2,
+            "comment": "Ut fugiat esse est ut. Sed voluptas hic quo consectetur perspiciatis quis dolorem vel. Quia voluptatibus veritatis voluptatum in sint tempora.",
+            "author": "/api/v2/admin/customers/167933",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Shoreline_Serenity_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316887",
+            "@type": "ProductReview",
+            "id": 316887,
+            "title": "et nihil omnis",
+            "rating": 2,
+            "comment": "Ea qui nisi totam ad qui molestias. Voluptates iusto aperiam est at sit saepe facere. Repudiandae et corporis aut numquam.",
+            "author": "/api/v2/admin/customers/167935",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Tranquil_Twilight_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316888",
+            "@type": "ProductReview",
+            "id": 316888,
+            "title": "qui ex quia",
+            "rating": 3,
+            "comment": "Tempora officia iure reiciendis eum. Sed provident et impedit corporis similique. Vitae repudiandae omnis dicta fugit eligendi ut.",
+            "author": "/api/v2/admin/customers/167951",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Serene_Sunshine_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316889",
+            "@type": "ProductReview",
+            "id": 316889,
+            "title": "asperiores praesentium dolore",
+            "rating": 5,
+            "comment": "Corporis a aut quam sint adipisci ad deserunt. Non corrupti voluptatem incidunt. Qui eos nisi autem consectetur at sint.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Sophisticated_Sunset_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316890",
+            "@type": "ProductReview",
+            "id": 316890,
+            "title": "autem assumenda id",
+            "rating": 3,
+            "comment": "Autem culpa eos praesentium molestias est adipisci ut. Perspiciatis dicta sint quia optio. Quis fugit sunt aliquid expedita illum ut iure.",
+            "author": "/api/v2/admin/customers/167946",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Palm_Tree_Paradise",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316891",
+            "@type": "ProductReview",
+            "id": 316891,
+            "title": "inventore quia dolorem",
+            "rating": 2,
+            "comment": "Sit recusandae omnis non eligendi quas. Velit rerum dicta perferendis provident vel. Id aliquid non et consequuntur et maiores.",
+            "author": "/api/v2/admin/customers/167942",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Tropical_Sunset_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316892",
+            "@type": "ProductReview",
+            "id": 316892,
+            "title": "natus recusandae cumque",
+            "rating": 1,
+            "comment": "Velit et voluptas quis ut unde minus. Fugiat quidem reiciendis reiciendis id. Et possimus accusamus deserunt excepturi deserunt sed ratione consequatur.",
+            "author": "/api/v2/admin/customers/167936",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Lunar_Echo_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316893",
+            "@type": "ProductReview",
+            "id": 316893,
+            "title": "exercitationem est tempore",
+            "rating": 4,
+            "comment": "Ut vel ad eveniet voluptates non. Cumque est voluptatem ipsa et id quos quas esse. Quia aut sed dignissimos culpa.",
+            "author": "/api/v2/admin/customers/167933",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Tropical_Sunset_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316894",
+            "@type": "ProductReview",
+            "id": 316894,
+            "title": "porro dolor architecto",
+            "rating": 4,
+            "comment": "Voluptatum accusamus facere earum. Quia tempora occaecati et eos assumenda quisquam. Et mollitia enim ipsam earum nulla dolorum fugit.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Sunflower_Radiance_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316895",
+            "@type": "ProductReview",
+            "id": 316895,
+            "title": "id possimus animi",
+            "rating": 3,
+            "comment": "Nam cupiditate et fuga iste. Doloribus ut et nobis doloribus id. Quo dolore iusto provident.",
+            "author": "/api/v2/admin/customers/167944",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sunrise_Splendor_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316896",
+            "@type": "ProductReview",
+            "id": 316896,
+            "title": "est impedit hic",
+            "rating": 2,
+            "comment": "Debitis aut minima ut perferendis odio. Dolores voluptatibus dolor delectus vel enim. Quia veniam ut et rerum illo molestias commodi.",
+            "author": "/api/v2/admin/customers/167943",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Galactic_Pulse_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316897",
+            "@type": "ProductReview",
+            "id": 316897,
+            "title": "sed voluptatibus et",
+            "rating": 2,
+            "comment": "Pariatur cupiditate sed laudantium beatae. Numquam voluptatem fugiat fuga voluptatem omnis. Eos qui perspiciatis cupiditate nulla ut.",
+            "author": "/api/v2/admin/customers/167951",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Playful_Paradise_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316898",
+            "@type": "ProductReview",
+            "id": 316898,
+            "title": "nam libero aliquam",
+            "rating": 1,
+            "comment": "Ducimus nostrum consequatur molestiae sed voluptatum officia sapiente. Illo neque voluptatibus voluptas molestiae sint omnis. Nobis est similique recusandae labore.",
+            "author": "/api/v2/admin/customers/167949",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Swantastic_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316899",
+            "@type": "ProductReview",
+            "id": 316899,
+            "title": "accusantium delectus et",
+            "rating": 2,
+            "comment": "Et eveniet rerum impedit quis nam. Et illo molestiae nesciunt aspernatur pariatur modi aspernatur. Eum omnis sed possimus eos consectetur ullam nemo.",
+            "author": "/api/v2/admin/customers/167937",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Sun_Kissed_Sundress",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316900",
+            "@type": "ProductReview",
+            "id": 316900,
+            "title": "optio sint perferendis",
+            "rating": 3,
+            "comment": "Aperiam rerum atque quo ducimus voluptate. Ut et aut accusamus molestiae necessitatibus eum doloremque iure. Tempore impedit praesentium facilis ut nihil nisi hic et.",
+            "author": "/api/v2/admin/customers/167947",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sun_Path_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316901",
+            "@type": "ProductReview",
+            "id": 316901,
+            "title": "nihil eum sit",
+            "rating": 2,
+            "comment": "Repellat a consequatur praesentium suscipit sapiente voluptatem. Optio quae atque et voluptas sint. Molestiae beatae enim repellat explicabo itaque.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Sunrise_Splendor_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316902",
+            "@type": "ProductReview",
+            "id": 316902,
+            "title": "tempora vel similique",
+            "rating": 2,
+            "comment": "Doloremque harum soluta tempore. Nam ut labore inventore labore rerum. Quos et veritatis qui.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Whispering_Wind_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316903",
+            "@type": "ProductReview",
+            "id": 316903,
+            "title": "ut totam similique",
+            "rating": 1,
+            "comment": "Quod ratione est excepturi fuga. Modi omnis esse repellat nobis. Maxime quaerat quo facilis perspiciatis.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Beach_Bonfire_Beauty",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316904",
+            "@type": "ProductReview",
+            "id": 316904,
+            "title": "in alias voluptates",
+            "rating": 3,
+            "comment": "Sed maxime necessitatibus facere nisi dolorem dolorem et. Aut et doloremque velit qui. Odio qui et est magnam.",
+            "author": "/api/v2/admin/customers/167949",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Sophisticated_Sunset_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316905",
+            "@type": "ProductReview",
+            "id": 316905,
+            "title": "voluptatem omnis repudiandae",
+            "rating": 5,
+            "comment": "Eligendi nihil harum exercitationem voluptas dolores deleniti iste. Sapiente ipsum fugiat assumenda aliquid. Aliquam est pariatur dignissimos dolorem molestias placeat.",
+            "author": "/api/v2/admin/customers/167948",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Celestial_Harmony_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316906",
+            "@type": "ProductReview",
+            "id": 316906,
+            "title": "quam nam et",
+            "rating": 1,
+            "comment": "Ut aut amet aspernatur magni tempora voluptates et. Similique qui suscipit accusantium consequatur consequatur numquam et nihil. Excepturi est incidunt voluptatum enim ratione quia dolor.",
+            "author": "/api/v2/admin/customers/167933",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Ethereal_Drift_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316907",
+            "@type": "ProductReview",
+            "id": 316907,
+            "title": "hic accusamus voluptas",
+            "rating": 3,
+            "comment": "Dolor doloribus odit ullam consequatur. Aperiam cupiditate expedita laborum. Velit ipsa architecto maiores culpa quis architecto.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Apollo_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316908",
+            "@type": "ProductReview",
+            "id": 316908,
+            "title": "omnis deserunt ut",
+            "rating": 5,
+            "comment": "In temporibus officiis ut sapiente et. Fugit at maiores voluptatem ipsam consequatur quia. Et repellat alias animi vel recusandae mollitia ea explicabo.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Seashell_Harmony_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316909",
+            "@type": "ProductReview",
+            "id": 316909,
+            "title": "et qui voluptate",
+            "rating": 2,
+            "comment": "Quo distinctio eligendi ad. Dolores neque doloremque aut asperiores corporis eum. Sapiente consequatur animi dolore enim consequatur.",
+            "author": "/api/v2/admin/customers/167945",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sunshine_Strappy_Delight",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316910",
+            "@type": "ProductReview",
+            "id": 316910,
+            "title": "totam qui itaque",
+            "rating": 2,
+            "comment": "Provident veniam iusto voluptatem quos aliquam totam. Quo laborum reprehenderit tempora ea expedita minima eveniet. Blanditiis voluptas iure quis ut quasi ex molestiae.",
+            "author": "/api/v2/admin/customers/167946",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Ocean_Whisper_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316911",
+            "@type": "ProductReview",
+            "id": 316911,
+            "title": "explicabo esse facere",
+            "rating": 2,
+            "comment": "Quo culpa nam enim laudantium. Quidem dolores dolores quia dolor. Maiores illo ut quia omnis provident odit et.",
+            "author": "/api/v2/admin/customers/167944",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Sunshine_Strappy_Delight",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316912",
+            "@type": "ProductReview",
+            "id": 316912,
+            "title": "voluptates ullam eius",
+            "rating": 3,
+            "comment": "Sint nemo dolore est quae accusantium iste est nostrum. Necessitatibus rerum non laudantium accusamus. Quos nam eum ad esse repudiandae nam.",
+            "author": "/api/v2/admin/customers/167932",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Adventurous_Aurora_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316913",
+            "@type": "ProductReview",
+            "id": 316913,
+            "title": "illum sunt sit",
+            "rating": 2,
+            "comment": "Dolore sit dolor voluptas molestias tempora inventore nobis. Error nostrum voluptate temporibus omnis. Voluptates nam non laudantium sequi.",
+            "author": "/api/v2/admin/customers/167945",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Swantastic_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316914",
+            "@type": "ProductReview",
+            "id": 316914,
+            "title": "voluptatibus corporis autem",
+            "rating": 3,
+            "comment": "Iusto excepturi repellat dolores modi. Consequuntur consequatur veniam sequi commodi. Earum cum debitis ipsum sed ullam.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Festival_Ruffle_Wrap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316915",
+            "@type": "ProductReview",
+            "id": 316915,
+            "title": "repellat eligendi consequatur",
+            "rating": 5,
+            "comment": "Consectetur aperiam aliquid magnam debitis. Odio atque dolor dolorum soluta dolores. Facere ad sit minima autem dicta ullam.",
+            "author": "/api/v2/admin/customers/167936",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Nebula_Dream_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-reviews?page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/product-reviews?page=1",
+        "hydra:last": "/api/v2/admin/product-reviews?page=2",
+        "hydra:next": "/api/v2/admin/product-reviews?page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-reviews{?order[createdAt],order[title],order[rating],order[status],reviewSubject,reviewSubject[],status,status[],title}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[createdAt]",
+                "property": "createdAt",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[title]",
+                "property": "title",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[rating]",
+                "property": "rating",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[status]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject[]",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status[]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "title",
+                "property": "title",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductReview",
+    "@id": "/api/v2/admin/product-reviews",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 37,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-reviews/316886",
+            "@type": "ProductReview",
+            "id": 316886,
+            "title": "omnis hic et",
+            "rating": 2,
+            "comment": "Ut fugiat esse est ut. Sed voluptas hic quo consectetur perspiciatis quis dolorem vel. Quia voluptatibus veritatis voluptatum in sint tempora.",
+            "author": "/api/v2/admin/customers/167933",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Shoreline_Serenity_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316887",
+            "@type": "ProductReview",
+            "id": 316887,
+            "title": "et nihil omnis",
+            "rating": 2,
+            "comment": "Ea qui nisi totam ad qui molestias. Voluptates iusto aperiam est at sit saepe facere. Repudiandae et corporis aut numquam.",
+            "author": "/api/v2/admin/customers/167935",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Tranquil_Twilight_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316888",
+            "@type": "ProductReview",
+            "id": 316888,
+            "title": "qui ex quia",
+            "rating": 3,
+            "comment": "Tempora officia iure reiciendis eum. Sed provident et impedit corporis similique. Vitae repudiandae omnis dicta fugit eligendi ut.",
+            "author": "/api/v2/admin/customers/167951",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Serene_Sunshine_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316889",
+            "@type": "ProductReview",
+            "id": 316889,
+            "title": "asperiores praesentium dolore",
+            "rating": 5,
+            "comment": "Corporis a aut quam sint adipisci ad deserunt. Non corrupti voluptatem incidunt. Qui eos nisi autem consectetur at sint.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Sophisticated_Sunset_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316890",
+            "@type": "ProductReview",
+            "id": 316890,
+            "title": "autem assumenda id",
+            "rating": 3,
+            "comment": "Autem culpa eos praesentium molestias est adipisci ut. Perspiciatis dicta sint quia optio. Quis fugit sunt aliquid expedita illum ut iure.",
+            "author": "/api/v2/admin/customers/167946",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Palm_Tree_Paradise",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316891",
+            "@type": "ProductReview",
+            "id": 316891,
+            "title": "inventore quia dolorem",
+            "rating": 2,
+            "comment": "Sit recusandae omnis non eligendi quas. Velit rerum dicta perferendis provident vel. Id aliquid non et consequuntur et maiores.",
+            "author": "/api/v2/admin/customers/167942",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Tropical_Sunset_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316892",
+            "@type": "ProductReview",
+            "id": 316892,
+            "title": "natus recusandae cumque",
+            "rating": 1,
+            "comment": "Velit et voluptas quis ut unde minus. Fugiat quidem reiciendis reiciendis id. Et possimus accusamus deserunt excepturi deserunt sed ratione consequatur.",
+            "author": "/api/v2/admin/customers/167936",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Lunar_Echo_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316893",
+            "@type": "ProductReview",
+            "id": 316893,
+            "title": "exercitationem est tempore",
+            "rating": 4,
+            "comment": "Ut vel ad eveniet voluptates non. Cumque est voluptatem ipsa et id quos quas esse. Quia aut sed dignissimos culpa.",
+            "author": "/api/v2/admin/customers/167933",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Tropical_Sunset_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316894",
+            "@type": "ProductReview",
+            "id": 316894,
+            "title": "porro dolor architecto",
+            "rating": 4,
+            "comment": "Voluptatum accusamus facere earum. Quia tempora occaecati et eos assumenda quisquam. Et mollitia enim ipsam earum nulla dolorum fugit.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Sunflower_Radiance_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316895",
+            "@type": "ProductReview",
+            "id": 316895,
+            "title": "id possimus animi",
+            "rating": 3,
+            "comment": "Nam cupiditate et fuga iste. Doloribus ut et nobis doloribus id. Quo dolore iusto provident.",
+            "author": "/api/v2/admin/customers/167944",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sunrise_Splendor_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316896",
+            "@type": "ProductReview",
+            "id": 316896,
+            "title": "est impedit hic",
+            "rating": 2,
+            "comment": "Debitis aut minima ut perferendis odio. Dolores voluptatibus dolor delectus vel enim. Quia veniam ut et rerum illo molestias commodi.",
+            "author": "/api/v2/admin/customers/167943",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Galactic_Pulse_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316897",
+            "@type": "ProductReview",
+            "id": 316897,
+            "title": "sed voluptatibus et",
+            "rating": 2,
+            "comment": "Pariatur cupiditate sed laudantium beatae. Numquam voluptatem fugiat fuga voluptatem omnis. Eos qui perspiciatis cupiditate nulla ut.",
+            "author": "/api/v2/admin/customers/167951",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Playful_Paradise_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316898",
+            "@type": "ProductReview",
+            "id": 316898,
+            "title": "nam libero aliquam",
+            "rating": 1,
+            "comment": "Ducimus nostrum consequatur molestiae sed voluptatum officia sapiente. Illo neque voluptatibus voluptas molestiae sint omnis. Nobis est similique recusandae labore.",
+            "author": "/api/v2/admin/customers/167949",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Swantastic_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316899",
+            "@type": "ProductReview",
+            "id": 316899,
+            "title": "accusantium delectus et",
+            "rating": 2,
+            "comment": "Et eveniet rerum impedit quis nam. Et illo molestiae nesciunt aspernatur pariatur modi aspernatur. Eum omnis sed possimus eos consectetur ullam nemo.",
+            "author": "/api/v2/admin/customers/167937",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Sun_Kissed_Sundress",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316900",
+            "@type": "ProductReview",
+            "id": 316900,
+            "title": "optio sint perferendis",
+            "rating": 3,
+            "comment": "Aperiam rerum atque quo ducimus voluptate. Ut et aut accusamus molestiae necessitatibus eum doloremque iure. Tempore impedit praesentium facilis ut nihil nisi hic et.",
+            "author": "/api/v2/admin/customers/167947",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sun_Path_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316901",
+            "@type": "ProductReview",
+            "id": 316901,
+            "title": "nihil eum sit",
+            "rating": 2,
+            "comment": "Repellat a consequatur praesentium suscipit sapiente voluptatem. Optio quae atque et voluptas sint. Molestiae beatae enim repellat explicabo itaque.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Sunrise_Splendor_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316902",
+            "@type": "ProductReview",
+            "id": 316902,
+            "title": "tempora vel similique",
+            "rating": 2,
+            "comment": "Doloremque harum soluta tempore. Nam ut labore inventore labore rerum. Quos et veritatis qui.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Whispering_Wind_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316903",
+            "@type": "ProductReview",
+            "id": 316903,
+            "title": "ut totam similique",
+            "rating": 1,
+            "comment": "Quod ratione est excepturi fuga. Modi omnis esse repellat nobis. Maxime quaerat quo facilis perspiciatis.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Beach_Bonfire_Beauty",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316904",
+            "@type": "ProductReview",
+            "id": 316904,
+            "title": "in alias voluptates",
+            "rating": 3,
+            "comment": "Sed maxime necessitatibus facere nisi dolorem dolorem et. Aut et doloremque velit qui. Odio qui et est magnam.",
+            "author": "/api/v2/admin/customers/167949",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Sophisticated_Sunset_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316905",
+            "@type": "ProductReview",
+            "id": 316905,
+            "title": "voluptatem omnis repudiandae",
+            "rating": 5,
+            "comment": "Eligendi nihil harum exercitationem voluptas dolores deleniti iste. Sapiente ipsum fugiat assumenda aliquid. Aliquam est pariatur dignissimos dolorem molestias placeat.",
+            "author": "/api/v2/admin/customers/167948",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Celestial_Harmony_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316906",
+            "@type": "ProductReview",
+            "id": 316906,
+            "title": "quam nam et",
+            "rating": 1,
+            "comment": "Ut aut amet aspernatur magni tempora voluptates et. Similique qui suscipit accusantium consequatur consequatur numquam et nihil. Excepturi est incidunt voluptatum enim ratione quia dolor.",
+            "author": "/api/v2/admin/customers/167933",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Ethereal_Drift_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316907",
+            "@type": "ProductReview",
+            "id": 316907,
+            "title": "hic accusamus voluptas",
+            "rating": 3,
+            "comment": "Dolor doloribus odit ullam consequatur. Aperiam cupiditate expedita laborum. Velit ipsa architecto maiores culpa quis architecto.",
+            "author": "/api/v2/admin/customers/167939",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Apollo_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316908",
+            "@type": "ProductReview",
+            "id": 316908,
+            "title": "omnis deserunt ut",
+            "rating": 5,
+            "comment": "In temporibus officiis ut sapiente et. Fugit at maiores voluptatem ipsam consequatur quia. Et repellat alias animi vel recusandae mollitia ea explicabo.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Seashell_Harmony_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316909",
+            "@type": "ProductReview",
+            "id": 316909,
+            "title": "et qui voluptate",
+            "rating": 2,
+            "comment": "Quo distinctio eligendi ad. Dolores neque doloremque aut asperiores corporis eum. Sapiente consequatur animi dolore enim consequatur.",
+            "author": "/api/v2/admin/customers/167945",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sunshine_Strappy_Delight",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316910",
+            "@type": "ProductReview",
+            "id": 316910,
+            "title": "totam qui itaque",
+            "rating": 2,
+            "comment": "Provident veniam iusto voluptatem quos aliquam totam. Quo laborum reprehenderit tempora ea expedita minima eveniet. Blanditiis voluptas iure quis ut quasi ex molestiae.",
+            "author": "/api/v2/admin/customers/167946",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Ocean_Whisper_Jeans",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316911",
+            "@type": "ProductReview",
+            "id": 316911,
+            "title": "explicabo esse facere",
+            "rating": 2,
+            "comment": "Quo culpa nam enim laudantium. Quidem dolores dolores quia dolor. Maiores illo ut quia omnis provident odit et.",
+            "author": "/api/v2/admin/customers/167944",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Sunshine_Strappy_Delight",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316912",
+            "@type": "ProductReview",
+            "id": 316912,
+            "title": "voluptates ullam eius",
+            "rating": 3,
+            "comment": "Sint nemo dolore est quae accusantium iste est nostrum. Necessitatibus rerum non laudantium accusamus. Quos nam eum ad esse repudiandae nam.",
+            "author": "/api/v2/admin/customers/167932",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Adventurous_Aurora_Cap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316913",
+            "@type": "ProductReview",
+            "id": 316913,
+            "title": "illum sunt sit",
+            "rating": 2,
+            "comment": "Dolore sit dolor voluptas molestias tempora inventore nobis. Error nostrum voluptate temporibus omnis. Voluptates nam non laudantium sequi.",
+            "author": "/api/v2/admin/customers/167945",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Swantastic_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316914",
+            "@type": "ProductReview",
+            "id": 316914,
+            "title": "voluptatibus corporis autem",
+            "rating": 3,
+            "comment": "Iusto excepturi repellat dolores modi. Consequuntur consequatur veniam sequi commodi. Earum cum debitis ipsum sed ullam.",
+            "author": "/api/v2/admin/customers/167940",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Festival_Ruffle_Wrap",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/316915",
+            "@type": "ProductReview",
+            "id": 316915,
+            "title": "repellat eligendi consequatur",
+            "rating": 5,
+            "comment": "Consectetur aperiam aliquid magnam debitis. Odio atque dolor dolorum soluta dolores. Facere ad sit minima autem dicta ullam.",
+            "author": "/api/v2/admin/customers/167936",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Nebula_Dream_T_Shirt",
+            "createdAt": "2025-11-14 07:00:57",
+            "updatedAt": "2025-11-14 07:00:57"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-reviews?page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/product-reviews?page=1",
+        "hydra:last": "/api/v2/admin/product-reviews?page=2",
+        "hydra:next": "/api/v2/admin/product-reviews?page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-reviews{?order[createdAt],order[title],order[rating],order[status],reviewSubject,reviewSubject[],status,status[],title}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[createdAt]",
+                "property": "createdAt",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[title]",
+                "property": "title",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[rating]",
+                "property": "rating",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[status]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject[]",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status[]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "title",
+                "property": "title",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/product-reviews/316886 HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews/316886
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews/316886
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/product-reviews/316886 HTTP/1.1" 404 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews/316886
+INFO     root:logger_helpers.py:31 STATUS CODE: 404
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews/316886
+INFO     root:logger_helpers.py:31 STATUS CODE: 404
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjMxMDY2MzUsImV4cCI6MTc2MzExMDIzNSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.X0TdnNw2SmGtFfRR6xPJDGGzpipRd7P4cBOntmylcJvBC0pTU6Hs5NzOKgqvNDp7lpCY6IY36AldviHoLLZL_85Xtx6GU4nlQ2uz5Y4RspAtgjeI47KndElwqbbdampIaFnrxjBpL3ePYh5gni-qBYEMTPhCgJ1gfFxOFrzJYJz4MLOfCvK9K0cyPM6mFQFPT3g4k4RB1euUUQPr2QB_2SONwhkYdPCh3fZXtdAWndvEvu_iKlmFLa8tVPe21dwhRWRuWDUvyVJ5_k_ab0XhZ8SppkVABmHxpn9BYqm0iuMudwORu5R4xTgWPIG6bnOFr91roC0aUteTuWdv9R1N3EPqDZI8Clf-yvkg0EGDe-oat7RywXkb73JzImGRdrdN9YPQ6EyrPFO1Ylm7eDDuuz-zRYdd7L-kZ_AHjZGnR0dr8uLagr3gn_Ib3iJe9mnQ49_lIBafW65ITiQsW0tflE9zztF-cjIWpgB7Wn5GRR1RAaJusSpUuzgr0Ila8u6JjvZRhoxKfkOMate1SARXtJUTCCl06AIhqME8ovEX-iPMlnblpkyBdLtt2AOWmYGkygGT7luKya9FlnPOLRhSZgAoZKqIQkDqmhfOzjc6w-RQWv9p2YgW5q--Rw9CjYyMYjPcM7TaP6ECL9pyjez0xgyKtInqnmQH4Ali2qsnuFo"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/404",
+    "@type": "hydra:Error",
+    "detail": "Not Found",
+    "status": 404,
+    "type": "/errors/404",
+    "hydra:description": "Not Found",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC575_Eliminar_review_existente_valido
+INFO     root:conftest.py:19 ====================================================================================================
