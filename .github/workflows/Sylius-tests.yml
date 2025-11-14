@@ -27,6 +27,7 @@ on:
           - low
 
 jobs:
+
   pruebas:
     name: Ejecutar pruebas en la rama main
     runs-on: ubuntu-latest
@@ -37,6 +38,7 @@ jobs:
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
 
     steps:
+
     - name: Descargar código de la rama main
       uses: actions/checkout@v4
       with:
@@ -50,15 +52,13 @@ jobs:
     - name: Instalar dependencias necesarias
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then
-          pip install -r requirements.txt
-        fi
+        pip install -r requirements.txt
         pip install pytest-html allure-pytest
 
     - name: Instalar Allure CLI (última versión)
       run: |
         sudo apt-get update
-        sudo apt-get install -y unzip curl
+        sudo apt-get install -y default-jre unzip curl
         LATEST_VERSION=$(curl -s https://api.github.com/repos/allure-framework/allure2/releases/latest | grep tag_name | cut -d '"' -f 4)
         echo "Instalando Allure versión $LATEST_VERSION"
         curl -L -o allure.zip https://github.com/allure-framework/allure2/releases/download/$LATEST_VERSION/allure-$LATEST_VERSION.zip
@@ -70,14 +70,16 @@ jobs:
         echo "BASE_URL=${{ env.BASE_URL }}" > .env
         echo "ADMIN_EMAIL=${{ env.ADMIN_EMAIL }}" >> .env
         echo "ADMIN_PASSWORD=${{ env.ADMIN_PASSWORD }}" >> .env
-        echo ".env generado con las variables de entorno."
 
-    - name: Crear carpetas de reportes
-      run: mkdir -p reports/allure-results reports/allure-report
-
-    - name: Ejecutar pruebas con Pytest y generar reportes
+    - name: Limpiar reportes anteriores
       run: |
-        echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}..."
+        rm -rf reports/allure-results/*
+        rm -rf reports/allure-report/*
+        mkdir -p reports/allure-results reports/allure-report
+
+    - name: Ejecutar pruebas con Pytest
+      run: |
+        echo "Ejecutando pruebas con la marca seleccionada: ${{ inputs.mark }}"
         pytest -m "${{ inputs.mark }}" \
           --alluredir=reports/allure-results \
           --html=reports/resultados.html \
@@ -85,17 +87,49 @@ jobs:
 
     - name: Generar reporte Allure
       run: |
-        allure generate reports/allure-results -o reports/allure-report --clean || echo "No se generó reporte Allure"
+        allure generate reports/allure-results -o reports/allure-report --clean
 
-    - name: Subir reportes generados
+    - name: Empaquetar reporte Allure
+      run: |
+        cd reports
+        zip -r allure-report.zip allure-report
+
+    - name: Subir artifacts
       uses: actions/upload-artifact@v4
       with:
         name: reporte-sylius-${{ inputs.mark }}
         path: |
           reports/resultados.html
-          reports/allure-report
+          reports/allure-report.zip
 
-    - name: Resumen final
+    - name: Finalización
       run: |
-        echo " Pruebas completadas con la marca seleccionada: ${{ inputs.mark }}."
-        echo " Reportes generados y subidos correctamente."
+        echo "Pruebas completadas para la marca: ${{ inputs.mark }}"
+        echo "Reportes generados correctamente."
+
+  publicar_allure:
+    name: Publicar reporte en GitHub Pages
+    needs: pruebas
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Descargar artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: reporte-sylius-${{ inputs.mark }}
+
+    - name: Descomprimir reporte Allure
+      run: |
+        unzip allure-report.zip -d .
+        ls -R .
+
+    - name: Deploy a GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./allure-report
+
+    - name: Finalización publicación
+      run: |
+        echo "El reporte Allure ha sido publicado correctamente en GitHub Pages."
