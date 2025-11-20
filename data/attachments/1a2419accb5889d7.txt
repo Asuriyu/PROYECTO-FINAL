@@ -1,0 +1,70 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Promotions_validar_parametros_name[Test_#123/-201]
+INFO     root:conftest.py:16 Start time: 21:23:30
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/promotions HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzM2NTQsImV4cCI6MTc2MzY3NzI1NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.KUP4itjyhbIGn3HATcicfNIkS0NEtxmtANoJGUUcF9qjoUKtHOlK3bQG7MiSWTyC1eyRP9GX26YrePN3GyeeKzSUPCKwx4wMSfPLKuBgFW5hOlrhu6SSnJrqAedD8WpNaUybwn0Opg3JX1BD_k0d-7Ier9BksGECJ0FY6EIHXwBk52Mn3E-nR7ashHIXp3y8rHFfGli_h-DYTd25LtSDCGWJL90Fq4gORcUl65pvy6E0UoqiI0l7s3aAEX3sVY_FmJ6oIdXP60hMdIcwEEw29VjLrEahtrDgCjJYsXp_OLV9HBV9b5NLbF7tGBxYGmocF0m_V6ia1puI0f_M52Z3umT65YKDAPOSN5BjM2XjiloJpMMe5Rm7ev9hahvtg2XQzhjUd6oNyIrui8LsrfimokoW0jG2dhd7opFlgcK_p_5cC24oSIPpd7gq5V-gdXsieGw1QrUIeIrAROxtUoEEqiGdxgvhBhBtdAvRgHVR-h6EujQ-Kz5cG8I8rixHjTQ8gVcen0CtZUf1Kr8zt43vgMhxibEk-DgRi06GB9PVgoz5deHS2IfKw1BTIbTaPJJYW_EEo4yIYOLp-f-C6XuqIMc507pCqsTni59zms0qXbJZEAa0yoeGBvFRbMK605j9kLdMF_Wo38axuzjPO_ohQVu16OGTRCNaVH-Cgnk2gGg",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOTVuj",
+    "name": "Test_#123/",
+    "description": "Above capital father everyone cause edge. However little as guy.",
+    "priority": 2,
+    "exclusive": false,
+    "usageLimit": 86,
+    "startsAt": "2025-05-23T22:38:17.779905",
+    "endsAt": "2025-12-08T00:10:44.731526",
+    "couponBased": true,
+    "appliesToDiscounted": false,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOTVuj",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25720,
+    "code": "PROMOTVuj",
+    "name": "Test_#123/",
+    "description": "Above capital father everyone cause edge. However little as guy.",
+    "priority": 2,
+    "exclusive": false,
+    "usageLimit": 86,
+    "used": 0,
+    "startsAt": "2025-05-23 22:38:17",
+    "endsAt": "2025-12-08 00:10:44",
+    "couponBased": true,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": false,
+    "archivedAt": null,
+    "createdAt": "2025-11-20 21:23:30",
+    "updatedAt": "2025-11-20 21:23:30",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOTVuj/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Promotions_validar_parametros_name[Test_#123/-201]
+INFO     root:conftest.py:19 ====================================================================================================

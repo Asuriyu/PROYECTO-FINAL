@@ -1,0 +1,83 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_AvatarImage_extensiones_validas[avatar.jpg-image/jpeg-201]
+INFO     root:conftest.py:16 Start time: 21:21:05
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/administrators HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzM2NTQsImV4cCI6MTc2MzY3NzI1NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.KUP4itjyhbIGn3HATcicfNIkS0NEtxmtANoJGUUcF9qjoUKtHOlK3bQG7MiSWTyC1eyRP9GX26YrePN3GyeeKzSUPCKwx4wMSfPLKuBgFW5hOlrhu6SSnJrqAedD8WpNaUybwn0Opg3JX1BD_k0d-7Ier9BksGECJ0FY6EIHXwBk52Mn3E-nR7ashHIXp3y8rHFfGli_h-DYTd25LtSDCGWJL90Fq4gORcUl65pvy6E0UoqiI0l7s3aAEX3sVY_FmJ6oIdXP60hMdIcwEEw29VjLrEahtrDgCjJYsXp_OLV9HBV9b5NLbF7tGBxYGmocF0m_V6ia1puI0f_M52Z3umT65YKDAPOSN5BjM2XjiloJpMMe5Rm7ev9hahvtg2XQzhjUd6oNyIrui8LsrfimokoW0jG2dhd7opFlgcK_p_5cC24oSIPpd7gq5V-gdXsieGw1QrUIeIrAROxtUoEEqiGdxgvhBhBtdAvRgHVR-h6EujQ-Kz5cG8I8rixHjTQ8gVcen0CtZUf1Kr8zt43vgMhxibEk-DgRi06GB9PVgoz5deHS2IfKw1BTIbTaPJJYW_EEo4yIYOLp-f-C6XuqIMc507pCqsTni59zms0qXbJZEAa0yoeGBvFRbMK605j9kLdMF_Wo38axuzjPO_ohQVu16OGTRCNaVH-Cgnk2gGg",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Renee",
+    "lastName": "Mendez",
+    "username": "renmen490",
+    "plainPassword": "123456",
+    "email": "renee.mendez423@example.com",
+    "enabled": true,
+    "localeCode": "es_ES"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Administrator",
+    "@id": "/api/v2/admin/administrators/19078",
+    "@type": "Administrator",
+    "firstName": "Renee",
+    "lastName": "Mendez",
+    "localeCode": "es_ES",
+    "avatar": null,
+    "id": 19078,
+    "username": "renmen490",
+    "lastLogin": null,
+    "verifiedAt": null,
+    "email": "renee.mendez423@example.com",
+    "createdAt": "2025-11-20 21:21:05",
+    "updatedAt": "2025-11-20 21:21:06",
+    "enabled": true
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/administrators/19078/avatar-image HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/19078/avatar-image
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzM2NTQsImV4cCI6MTc2MzY3NzI1NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.KUP4itjyhbIGn3HATcicfNIkS0NEtxmtANoJGUUcF9qjoUKtHOlK3bQG7MiSWTyC1eyRP9GX26YrePN3GyeeKzSUPCKwx4wMSfPLKuBgFW5hOlrhu6SSnJrqAedD8WpNaUybwn0Opg3JX1BD_k0d-7Ier9BksGECJ0FY6EIHXwBk52Mn3E-nR7ashHIXp3y8rHFfGli_h-DYTd25LtSDCGWJL90Fq4gORcUl65pvy6E0UoqiI0l7s3aAEX3sVY_FmJ6oIdXP60hMdIcwEEw29VjLrEahtrDgCjJYsXp_OLV9HBV9b5NLbF7tGBxYGmocF0m_V6ia1puI0f_M52Z3umT65YKDAPOSN5BjM2XjiloJpMMe5Rm7ev9hahvtg2XQzhjUd6oNyIrui8LsrfimokoW0jG2dhd7opFlgcK_p_5cC24oSIPpd7gq5V-gdXsieGw1QrUIeIrAROxtUoEEqiGdxgvhBhBtdAvRgHVR-h6EujQ-Kz5cG8I8rixHjTQ8gVcen0CtZUf1Kr8zt43vgMhxibEk-DgRi06GB9PVgoz5deHS2IfKw1BTIbTaPJJYW_EEo4yIYOLp-f-C6XuqIMc507pCqsTni59zms0qXbJZEAa0yoeGBvFRbMK605j9kLdMF_Wo38axuzjPO_ohQVu16OGTRCNaVH-Cgnk2gGg"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/AvatarImage",
+    "@id": "/api/v2/admin/administrators/19078/avatar-image",
+    "@type": "AvatarImage",
+    "id": 16802,
+    "path": "https://v2.demo.sylius.com/media/cache/resolve/sylius_original/f8/c7/6d3cc8a9f31f7b446da0af215cdd.txt",
+    "owner": "/api/v2/admin/administrators/19078"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/administrators/19078 HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/19078
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzM2NTQsImV4cCI6MTc2MzY3NzI1NCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.KUP4itjyhbIGn3HATcicfNIkS0NEtxmtANoJGUUcF9qjoUKtHOlK3bQG7MiSWTyC1eyRP9GX26YrePN3GyeeKzSUPCKwx4wMSfPLKuBgFW5hOlrhu6SSnJrqAedD8WpNaUybwn0Opg3JX1BD_k0d-7Ier9BksGECJ0FY6EIHXwBk52Mn3E-nR7ashHIXp3y8rHFfGli_h-DYTd25LtSDCGWJL90Fq4gORcUl65pvy6E0UoqiI0l7s3aAEX3sVY_FmJ6oIdXP60hMdIcwEEw29VjLrEahtrDgCjJYsXp_OLV9HBV9b5NLbF7tGBxYGmocF0m_V6ia1puI0f_M52Z3umT65YKDAPOSN5BjM2XjiloJpMMe5Rm7ev9hahvtg2XQzhjUd6oNyIrui8LsrfimokoW0jG2dhd7opFlgcK_p_5cC24oSIPpd7gq5V-gdXsieGw1QrUIeIrAROxtUoEEqiGdxgvhBhBtdAvRgHVR-h6EujQ-Kz5cG8I8rixHjTQ8gVcen0CtZUf1Kr8zt43vgMhxibEk-DgRi06GB9PVgoz5deHS2IfKw1BTIbTaPJJYW_EEo4yIYOLp-f-C6XuqIMc507pCqsTni59zms0qXbJZEAa0yoeGBvFRbMK605j9kLdMF_Wo38axuzjPO_ohQVu16OGTRCNaVH-Cgnk2gGg",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_AvatarImage_extensiones_validas[avatar.jpg-image/jpeg-201]
+INFO     root:conftest.py:19 ====================================================================================================

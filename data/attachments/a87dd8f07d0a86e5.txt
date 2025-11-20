@@ -1,0 +1,35 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC89_Validar_error_al_actualizar_administrador_con_token_invalido
+INFO     root:conftest.py:16 Start time: 21:22:12
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "PUT /api/v2/admin/administrators/1 HTTP/1.1" 401 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: PUT
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/1
+INFO     root:logger_helpers.py:31 STATUS CODE: 401
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer token_invalido",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Donna",
+    "lastName": "Long",
+    "username": "donlon554",
+    "plainPassword": "123456",
+    "email": "donna.long592@example.com",
+    "enabled": true,
+    "localeCode": "es_ES"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC89_Validar_error_al_actualizar_administrador_con_token_invalido
+INFO     root:conftest.py:19 ====================================================================================================
