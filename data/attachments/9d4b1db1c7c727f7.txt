@@ -1,0 +1,92 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Obtener_lista_de_reseñas_con_paginacion_valida[1-0]
+INFO     root:conftest.py:16 Start time: 21:51:06
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/product-reviews?page=1&itemsPerPage=0 HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews?page=1&itemsPerPage=0
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzUzMzIsImV4cCI6MTc2MzY3ODkzMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.QHIKgIrC2vjJWzh_1ACIlLdkEdWPY9azcQeORBMYPG5R-M_bH1BWatdIiz88D_1KmVUIUQXT5Q53yG1VQ3cqCyU5yzpZEX9KwbDt6QumHsSy9wJLWuW6DX_QAMP8O7-3HWM0SjrC-bWGaDuR-1BEkFi031rBgdNOMnAvhdZcrH7wiumqYNQeuZZScvGGtYZBMMivo-Ecl4uhobvQqtgZMOyA9NHumypaCYWfm1-UtjODH4djlOSISqrPLSW0cITkeVvjXdwxvC42zu3c6nC2gu7POFiiIt29VRtIQ6UWt8oHRy8ou4HebMhyV3l0r2vF5ZN0htwOUwSyVb7U7uwhIWBEQVF-OqaMVbpvPjTBrrl7o9GVKzSqDeuIfThmu1m_g4b55_7IsfeIG-41zHpXNnfKM8U2uj7exegr0iNMkAgq7QLsgEFz9eWtX-ufPuR-G8c2ts_WbYS4yxCrb6GoW6bUHjqxx6BW88Kd9QTJA0RdyBDNnBk7OwGrniwm12LcPHtusFT-czx8iDfaxPx_nfJCneRhoMOJ6hnBWKIq_DM1G-O8zBo__iSQ7bv44g-W6DW8Di4joZA6XNcjNVslI4t6Bx8T1Nk9j8egca4lzyu8HmTObjU3zrWizgbFJNlVCOvIMusKlWTpnzNe5lcWDk50DqRyGobKkehr48IZhU8"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductReview",
+    "@id": "/api/v2/admin/product-reviews",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 34,
+    "hydra:member": [],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-reviews?itemsPerPage=0",
+        "@type": "hydra:PartialCollectionView"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-reviews{?order[createdAt],order[title],order[rating],order[status],reviewSubject,reviewSubject[],status,status[],title}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[createdAt]",
+                "property": "createdAt",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[title]",
+                "property": "title",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[rating]",
+                "property": "rating",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[status]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject[]",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status[]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "title",
+                "property": "title",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Obtener_lista_de_reseñas_con_paginacion_valida[1-0]
+INFO     root:conftest.py:19 ====================================================================================================

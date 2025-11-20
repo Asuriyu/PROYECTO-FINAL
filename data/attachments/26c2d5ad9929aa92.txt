@@ -1,0 +1,147 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Promotions_validar_parametros_description[AB-200]
+INFO     root:conftest.py:16 Start time: 21:51:55
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/promotions HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzUzMzIsImV4cCI6MTc2MzY3ODkzMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.QHIKgIrC2vjJWzh_1ACIlLdkEdWPY9azcQeORBMYPG5R-M_bH1BWatdIiz88D_1KmVUIUQXT5Q53yG1VQ3cqCyU5yzpZEX9KwbDt6QumHsSy9wJLWuW6DX_QAMP8O7-3HWM0SjrC-bWGaDuR-1BEkFi031rBgdNOMnAvhdZcrH7wiumqYNQeuZZScvGGtYZBMMivo-Ecl4uhobvQqtgZMOyA9NHumypaCYWfm1-UtjODH4djlOSISqrPLSW0cITkeVvjXdwxvC42zu3c6nC2gu7POFiiIt29VRtIQ6UWt8oHRy8ou4HebMhyV3l0r2vF5ZN0htwOUwSyVb7U7uwhIWBEQVF-OqaMVbpvPjTBrrl7o9GVKzSqDeuIfThmu1m_g4b55_7IsfeIG-41zHpXNnfKM8U2uj7exegr0iNMkAgq7QLsgEFz9eWtX-ufPuR-G8c2ts_WbYS4yxCrb6GoW6bUHjqxx6BW88Kd9QTJA0RdyBDNnBk7OwGrniwm12LcPHtusFT-czx8iDfaxPx_nfJCneRhoMOJ6hnBWKIq_DM1G-O8zBo__iSQ7bv44g-W6DW8Di4joZA6XNcjNVslI4t6Bx8T1Nk9j8egca4lzyu8HmTObjU3zrWizgbFJNlVCOvIMusKlWTpnzNe5lcWDk50DqRyGobKkehr48IZhU8",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOpKCc",
+    "name": "Sure guess point.",
+    "description": "Movie art people coach. Claim give walk seek control admit. Child up candidate team.",
+    "priority": 9,
+    "exclusive": true,
+    "usageLimit": 98,
+    "startsAt": "2025-10-13T00:25:28.811826",
+    "endsAt": "2025-12-16T18:34:32.195261",
+    "couponBased": false,
+    "appliesToDiscounted": true,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOpKCc",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25778,
+    "code": "PROMOpKCc",
+    "name": "Sure guess point.",
+    "description": "Movie art people coach. Claim give walk seek control admit. Child up candidate team.",
+    "priority": 9,
+    "exclusive": true,
+    "usageLimit": 98,
+    "used": 0,
+    "startsAt": "2025-10-13 00:25:28",
+    "endsAt": "2025-12-16 18:34:32",
+    "couponBased": false,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": true,
+    "archivedAt": null,
+    "createdAt": "2025-11-20 21:51:55",
+    "updatedAt": "2025-11-20 21:51:55",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOpKCc/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "PUT /api/v2/admin/promotions/PROMOpKCc HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: PUT
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOpKCc
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzUzMzIsImV4cCI6MTc2MzY3ODkzMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.QHIKgIrC2vjJWzh_1ACIlLdkEdWPY9azcQeORBMYPG5R-M_bH1BWatdIiz88D_1KmVUIUQXT5Q53yG1VQ3cqCyU5yzpZEX9KwbDt6QumHsSy9wJLWuW6DX_QAMP8O7-3HWM0SjrC-bWGaDuR-1BEkFi031rBgdNOMnAvhdZcrH7wiumqYNQeuZZScvGGtYZBMMivo-Ecl4uhobvQqtgZMOyA9NHumypaCYWfm1-UtjODH4djlOSISqrPLSW0cITkeVvjXdwxvC42zu3c6nC2gu7POFiiIt29VRtIQ6UWt8oHRy8ou4HebMhyV3l0r2vF5ZN0htwOUwSyVb7U7uwhIWBEQVF-OqaMVbpvPjTBrrl7o9GVKzSqDeuIfThmu1m_g4b55_7IsfeIG-41zHpXNnfKM8U2uj7exegr0iNMkAgq7QLsgEFz9eWtX-ufPuR-G8c2ts_WbYS4yxCrb6GoW6bUHjqxx6BW88Kd9QTJA0RdyBDNnBk7OwGrniwm12LcPHtusFT-czx8iDfaxPx_nfJCneRhoMOJ6hnBWKIq_DM1G-O8zBo__iSQ7bv44g-W6DW8Di4joZA6XNcjNVslI4t6Bx8T1Nk9j8egca4lzyu8HmTObjU3zrWizgbFJNlVCOvIMusKlWTpnzNe5lcWDk50DqRyGobKkehr48IZhU8",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOqGbG",
+    "name": "Something soon Congress.",
+    "description": "AB",
+    "priority": 0,
+    "exclusive": false,
+    "usageLimit": 5,
+    "startsAt": "2025-06-15T06:29:00.733495",
+    "endsAt": "2025-11-30T14:05:13.489235",
+    "couponBased": false,
+    "appliesToDiscounted": false,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOpKCc",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25778,
+    "code": "PROMOpKCc",
+    "name": "Something soon Congress.",
+    "description": "AB",
+    "priority": 0,
+    "exclusive": false,
+    "usageLimit": 5,
+    "used": 0,
+    "startsAt": "2025-06-15 06:29:00",
+    "endsAt": "2025-11-30 14:05:13",
+    "couponBased": false,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": false,
+    "archivedAt": null,
+    "createdAt": "2025-11-20 21:51:55",
+    "updatedAt": "2025-11-20 21:51:55",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOpKCc/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOpKCc HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOpKCc
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzUzMzIsImV4cCI6MTc2MzY3ODkzMiwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.QHIKgIrC2vjJWzh_1ACIlLdkEdWPY9azcQeORBMYPG5R-M_bH1BWatdIiz88D_1KmVUIUQXT5Q53yG1VQ3cqCyU5yzpZEX9KwbDt6QumHsSy9wJLWuW6DX_QAMP8O7-3HWM0SjrC-bWGaDuR-1BEkFi031rBgdNOMnAvhdZcrH7wiumqYNQeuZZScvGGtYZBMMivo-Ecl4uhobvQqtgZMOyA9NHumypaCYWfm1-UtjODH4djlOSISqrPLSW0cITkeVvjXdwxvC42zu3c6nC2gu7POFiiIt29VRtIQ6UWt8oHRy8ou4HebMhyV3l0r2vF5ZN0htwOUwSyVb7U7uwhIWBEQVF-OqaMVbpvPjTBrrl7o9GVKzSqDeuIfThmu1m_g4b55_7IsfeIG-41zHpXNnfKM8U2uj7exegr0iNMkAgq7QLsgEFz9eWtX-ufPuR-G8c2ts_WbYS4yxCrb6GoW6bUHjqxx6BW88Kd9QTJA0RdyBDNnBk7OwGrniwm12LcPHtusFT-czx8iDfaxPx_nfJCneRhoMOJ6hnBWKIq_DM1G-O8zBo__iSQ7bv44g-W6DW8Di4joZA6XNcjNVslI4t6Bx8T1Nk9j8egca4lzyu8HmTObjU3zrWizgbFJNlVCOvIMusKlWTpnzNe5lcWDk50DqRyGobKkehr48IZhU8",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Promotions_validar_parametros_description[AB-200]
+INFO     root:conftest.py:19 ====================================================================================================
