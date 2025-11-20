@@ -398,7 +398,7 @@ def test_TC_Admin_Administrators_validar_plainPassword(auth_headers, plainPasswo
 @pytest.mark.functional_validation
 @pytest.mark.medium
 @pytest.mark.parametrize("email, expected_status", [
-    ("user90018@test.com", 201),
+    ("user90018088@test.com", 201),
     ("test", 422),
     ("user@com", 422),
     ("@mail.com", 422),
