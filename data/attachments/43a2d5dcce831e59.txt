@@ -1,0 +1,89 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Administrators_validar_plainPassword_PUT[-200]
+INFO     root:conftest.py:16 Start time: 22:09:54
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/administrators HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzY0NzAsImV4cCI6MTc2MzY4MDA3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Y0No-9R7POl6whlByKWc5xqDQQNoMdlCmH3sM0yvpe-RgVLpxIXRSpd2aIP4I1qTYzok0kA_l_lhadyubMaKTl3J23_l6L9XO8Y5qXQ--sD0ygC20Pz3xlwUO5AQ9xIc9lFvZLCL2OAsWBOKJDinXA9G-R0Fu4W0iGzIE9MVy_SFs-8hSWj8n8ckaKaWJVg8eC5UNtOfSfFj57a2VjLHh3UdxQ1Orjs5M6mRubpa-idCI4f6iGJrEnc2ImxTITB8OVNfYfwmV7J7QuDEGw1QadETLbyZZkF8UOrxSqL-1-TjnePr6ZAfzTqexIvrrgSJxSCwMZxLadP8hoOw9_KshK-EAIDPNTLt-2AKKPl4wv-k8Bj-IHnpdq3DJC6eOHmghnTCTkIQMIDj7zHbobh3yFrZlekzp8cXLxr4NKRPlQ1O1LZ8yctBxFROId3vvmTar6MFPDo9mHFVrTYaJaURFqyz4anZIzCyFyUwx96koyzqhKH45cRIkZD7MquVNdqu1N6t5ZY9Eg97bTTNAR5jq8cVhSxaX_wq8woShT81oSF7GzzSEmti-I-i3cxZEcUNBfBB1b6blIgLE4F9HVHdWJfYB0YDOO8A4Fc7EstaOUzMlI6564buWniSVGh7lbSIWRyOoVkgur85ZFTLWtIwYSvaLeEufqSxilcKHJMUwn0",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Derrick",
+    "lastName": "Martin",
+    "username": "dermar487",
+    "plainPassword": "123456",
+    "email": "derrick.martin888@example.com",
+    "enabled": true,
+    "localeCode": "es_ES"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Administrator",
+    "@id": "/api/v2/admin/administrators/19436",
+    "@type": "Administrator",
+    "firstName": "Derrick",
+    "lastName": "Martin",
+    "localeCode": "es_ES",
+    "avatar": null,
+    "id": 19436,
+    "username": "dermar487",
+    "lastLogin": null,
+    "verifiedAt": null,
+    "email": "derrick.martin888@example.com",
+    "createdAt": "2025-11-20 22:09:55",
+    "updatedAt": "2025-11-20 22:09:55",
+    "enabled": true
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "PUT /api/v2/admin/administrators/19436 HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: PUT
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/19436
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzY0NzAsImV4cCI6MTc2MzY4MDA3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Y0No-9R7POl6whlByKWc5xqDQQNoMdlCmH3sM0yvpe-RgVLpxIXRSpd2aIP4I1qTYzok0kA_l_lhadyubMaKTl3J23_l6L9XO8Y5qXQ--sD0ygC20Pz3xlwUO5AQ9xIc9lFvZLCL2OAsWBOKJDinXA9G-R0Fu4W0iGzIE9MVy_SFs-8hSWj8n8ckaKaWJVg8eC5UNtOfSfFj57a2VjLHh3UdxQ1Orjs5M6mRubpa-idCI4f6iGJrEnc2ImxTITB8OVNfYfwmV7J7QuDEGw1QadETLbyZZkF8UOrxSqL-1-TjnePr6ZAfzTqexIvrrgSJxSCwMZxLadP8hoOw9_KshK-EAIDPNTLt-2AKKPl4wv-k8Bj-IHnpdq3DJC6eOHmghnTCTkIQMIDj7zHbobh3yFrZlekzp8cXLxr4NKRPlQ1O1LZ8yctBxFROId3vvmTar6MFPDo9mHFVrTYaJaURFqyz4anZIzCyFyUwx96koyzqhKH45cRIkZD7MquVNdqu1N6t5ZY9Eg97bTTNAR5jq8cVhSxaX_wq8woShT81oSF7GzzSEmti-I-i3cxZEcUNBfBB1b6blIgLE4F9HVHdWJfYB0YDOO8A4Fc7EstaOUzMlI6564buWniSVGh7lbSIWRyOoVkgur85ZFTLWtIwYSvaLeEufqSxilcKHJMUwn0",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Derrick",
+    "lastName": "Martin",
+    "username": "dermar487",
+    "plainPassword": "",
+    "email": "derrick.martin888@example.com",
+    "enabled": true,
+    "localeCode": "es_ES"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Administrator",
+    "@id": "/api/v2/admin/administrators/19436",
+    "@type": "Administrator",
+    "firstName": "Derrick",
+    "lastName": "Martin",
+    "localeCode": "es_ES",
+    "avatar": null,
+    "id": 19436,
+    "username": "dermar487",
+    "lastLogin": null,
+    "verifiedAt": null,
+    "email": "derrick.martin888@example.com",
+    "createdAt": "2025-11-20 22:09:55",
+    "updatedAt": "2025-11-20 22:09:55",
+    "enabled": true
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Administrators_validar_plainPassword_PUT[-200]
+INFO     root:conftest.py:19 ====================================================================================================

@@ -1,0 +1,303 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC509_Verificar_localizacion_consistente
+INFO     root:conftest.py:16 Start time: 22:10:31
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/promotions HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzY0NzAsImV4cCI6MTc2MzY4MDA3MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Y0No-9R7POl6whlByKWc5xqDQQNoMdlCmH3sM0yvpe-RgVLpxIXRSpd2aIP4I1qTYzok0kA_l_lhadyubMaKTl3J23_l6L9XO8Y5qXQ--sD0ygC20Pz3xlwUO5AQ9xIc9lFvZLCL2OAsWBOKJDinXA9G-R0Fu4W0iGzIE9MVy_SFs-8hSWj8n8ckaKaWJVg8eC5UNtOfSfFj57a2VjLHh3UdxQ1Orjs5M6mRubpa-idCI4f6iGJrEnc2ImxTITB8OVNfYfwmV7J7QuDEGw1QadETLbyZZkF8UOrxSqL-1-TjnePr6ZAfzTqexIvrrgSJxSCwMZxLadP8hoOw9_KshK-EAIDPNTLt-2AKKPl4wv-k8Bj-IHnpdq3DJC6eOHmghnTCTkIQMIDj7zHbobh3yFrZlekzp8cXLxr4NKRPlQ1O1LZ8yctBxFROId3vvmTar6MFPDo9mHFVrTYaJaURFqyz4anZIzCyFyUwx96koyzqhKH45cRIkZD7MquVNdqu1N6t5ZY9Eg97bTTNAR5jq8cVhSxaX_wq8woShT81oSF7GzzSEmti-I-i3cxZEcUNBfBB1b6blIgLE4F9HVHdWJfYB0YDOO8A4Fc7EstaOUzMlI6564buWniSVGh7lbSIWRyOoVkgur85ZFTLWtIwYSvaLeEufqSxilcKHJMUwn0"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 4,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/promotions/PROMOIejO",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25839,
+            "code": "PROMOIejO",
+            "name": "Yet radio effect.",
+            "description": "Same economic federal magazine news company. Long size floor citizen authority impact.",
+            "priority": 6,
+            "exclusive": false,
+            "usageLimit": 21,
+            "used": 0,
+            "startsAt": "2025-09-13 19:26:51",
+            "endsAt": "2025-12-10 20:57:36",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 22:10:31",
+            "updatedAt": "2025-11-20 22:10:31",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOIejO/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOfnzK",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25838,
+            "code": "PROMOfnzK",
+            "name": "Policy send somebody.",
+            "description": "Down smile trade onto. Chair they three this. Fire down air. Long important personal business.",
+            "priority": 5,
+            "exclusive": false,
+            "usageLimit": 22,
+            "used": 0,
+            "startsAt": "2025-09-12 00:27:10",
+            "endsAt": "2025-12-07 05:30:08",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 22:10:30",
+            "updatedAt": "2025-11-20 22:10:30",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOfnzK/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/new_year",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25834,
+            "code": "new_year",
+            "name": "New Year",
+            "description": "Ratione quo excepturi facilis maiores molestiae.",
+            "priority": 2,
+            "exclusive": true,
+            "usageLimit": 10,
+            "used": 10,
+            "startsAt": "2025-11-13 22:06:04",
+            "endsAt": "2025-11-27 22:06:04",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [
+                {
+                    "@id": "/api/v2/admin/promotions/new_year/rules/24291",
+                    "@type": "PromotionRule",
+                    "id": 24291,
+                    "type": "item_total",
+                    "configuration": {
+                        "FASHION_WEB": {
+                            "amount": 10000
+                        }
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "@id": "/api/v2/admin/promotions/new_year/actions/24300",
+                    "@type": "PromotionAction",
+                    "id": 24300,
+                    "type": "order_fixed_discount",
+                    "configuration": {
+                        "FASHION_WEB": {
+                            "amount": 1000
+                        }
+                    }
+                }
+            ],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 22:06:04",
+            "updatedAt": "2025-11-20 22:06:05",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/de_DE",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/fr_FR",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/pl_PL",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/es_ES",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/es_MX",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/pt_PT",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/zh_CN",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/christmas",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25833,
+            "code": "christmas",
+            "name": "Christmas",
+            "description": "Ratione quo excepturi facilis maiores molestiae.",
+            "priority": 0,
+            "exclusive": true,
+            "usageLimit": null,
+            "used": 0,
+            "startsAt": null,
+            "endsAt": null,
+            "couponBased": true,
+            "coupons": [
+                "/api/v2/admin/promotions/christmas/coupons/CHRISTMAS_SALE"
+            ],
+            "rules": [
+                {
+                    "@id": "/api/v2/admin/promotions/christmas/rules/24290",
+                    "@type": "PromotionRule",
+                    "id": 24290,
+                    "type": "cart_quantity",
+                    "configuration": {
+                        "count": 7
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "@id": "/api/v2/admin/promotions/christmas/actions/24299",
+                    "@type": "PromotionAction",
+                    "id": 24299,
+                    "type": "order_percentage_discount",
+                    "configuration": {
+                        "percentage": 0.93
+                    }
+                }
+            ],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 22:06:04",
+            "updatedAt": "2025-11-20 22:06:04",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/de_DE",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/fr_FR",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/pl_PL",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/es_ES",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/es_MX",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/pt_PT",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/zh_CN",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                }
+            }
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/promotions{?coupons.code,coupons.code[],order[priority],exists[archivedAt]}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "coupons.code",
+                "property": "coupons.code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "coupons.code[]",
+                "property": "coupons.code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[priority]",
+                "property": "priority",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "exists[archivedAt]",
+                "property": "archivedAt",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC509_Verificar_localizacion_consistente
+INFO     root:conftest.py:19 ====================================================================================================
