@@ -1,0 +1,147 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Promotions_validar_parametros_name[AB-200]
+INFO     root:conftest.py:16 Start time: 22:02:23
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/promotions HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOJKpk",
+    "name": "Up idea.",
+    "description": "Return pattern place nice science military. Positive smile somebody appear risk I too.",
+    "priority": 5,
+    "exclusive": false,
+    "usageLimit": 100,
+    "startsAt": "2025-07-06T15:31:31.177859",
+    "endsAt": "2025-12-15T10:16:52.972059",
+    "couponBased": true,
+    "appliesToDiscounted": false,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOJKpk",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25813,
+    "code": "PROMOJKpk",
+    "name": "Up idea.",
+    "description": "Return pattern place nice science military. Positive smile somebody appear risk I too.",
+    "priority": 5,
+    "exclusive": false,
+    "usageLimit": 100,
+    "used": 0,
+    "startsAt": "2025-07-06 15:31:31",
+    "endsAt": "2025-12-15 10:16:52",
+    "couponBased": true,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": false,
+    "archivedAt": null,
+    "createdAt": "2025-11-20 22:02:23",
+    "updatedAt": "2025-11-20 22:02:23",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOJKpk/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "PUT /api/v2/admin/promotions/PROMOJKpk HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: PUT
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOJKpk
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "code": "PROMOEysb",
+    "name": "AB",
+    "description": "Head claim goal mean. Crime wife we understand part. To six simple over perform mention personal.",
+    "priority": 4,
+    "exclusive": false,
+    "usageLimit": 92,
+    "startsAt": "2025-07-21T06:21:47.062275",
+    "endsAt": "2025-12-06T16:07:52.658539",
+    "couponBased": false,
+    "appliesToDiscounted": true,
+    "channels": [
+        "https://demo.sylius.com/api/v2/shop/channels/FASHION_WEB"
+    ]
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions/PROMOJKpk",
+    "@type": "Promotion",
+    "channels": [
+        "/api/v2/admin/channels/FASHION_WEB"
+    ],
+    "id": 25813,
+    "code": "PROMOJKpk",
+    "name": "AB",
+    "description": "Head claim goal mean. Crime wife we understand part. To six simple over perform mention personal.",
+    "priority": 4,
+    "exclusive": false,
+    "usageLimit": 92,
+    "used": 0,
+    "startsAt": "2025-07-21 06:21:47",
+    "endsAt": "2025-12-06 16:07:52",
+    "couponBased": false,
+    "coupons": [],
+    "rules": [],
+    "actions": [],
+    "appliesToDiscounted": true,
+    "archivedAt": null,
+    "createdAt": "2025-11-20 22:02:23",
+    "updatedAt": "2025-11-20 22:02:23",
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/promotions/PROMOJKpk/translations/en_US",
+            "@type": "PromotionTranslation",
+            "label": null
+        }
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOJKpk HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOJKpk
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Promotions_validar_parametros_name[AB-200]
+INFO     root:conftest.py:19 ====================================================================================================

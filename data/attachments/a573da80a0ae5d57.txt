@@ -1,0 +1,1004 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Obtener_lista_de_promociones_con_paginacion_invalida[1-None]
+INFO     root:conftest.py:16 Start time: 22:01:56
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/promotions?page=1 HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions?page=1
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 25,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/promotions/PROMONQmX",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25679,
+            "code": "PROMONQmX",
+            "name": "Test_#123/",
+            "description": "Middle their learn drop. Through spring condition management describe hit hair.",
+            "priority": 28,
+            "exclusive": false,
+            "usageLimit": 53,
+            "used": 0,
+            "startsAt": "2025-04-05 15:32:56",
+            "endsAt": "2025-11-29 07:44:52",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:55",
+            "updatedAt": "2025-11-20 21:02:55",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMONQmX/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOWSgB",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25677,
+            "code": "PROMOWSgB",
+            "name": "AB",
+            "description": "Set heart approach southern student degree close director. Must company organization front.",
+            "priority": 25,
+            "exclusive": true,
+            "usageLimit": 11,
+            "used": 0,
+            "startsAt": "2025-08-20 14:47:08",
+            "endsAt": "2025-12-14 20:17:52",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:52",
+            "updatedAt": "2025-11-20 21:02:53",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOWSgB/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOOiVY",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25678,
+            "code": "PROMOOiVY",
+            "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "description": "Successful fast fill either media. Moment rock left road election TV.",
+            "priority": 24,
+            "exclusive": true,
+            "usageLimit": 20,
+            "used": 0,
+            "startsAt": "2025-06-22 13:14:02",
+            "endsAt": "2025-12-07 07:20:55",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:54",
+            "updatedAt": "2025-11-20 21:02:54",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOOiVY/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/new_year",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25670,
+            "code": "new_year",
+            "name": "New Year",
+            "description": "Incidunt praesentium esse omnis facilis sit.",
+            "priority": 22,
+            "exclusive": true,
+            "usageLimit": 10,
+            "used": 10,
+            "startsAt": "2025-11-13 21:00:06",
+            "endsAt": "2025-11-27 21:00:06",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [
+                {
+                    "@id": "/api/v2/admin/promotions/new_year/rules/24288",
+                    "@type": "PromotionRule",
+                    "id": 24288,
+                    "type": "item_total",
+                    "configuration": {
+                        "FASHION_WEB": {
+                            "amount": 10000
+                        }
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "@id": "/api/v2/admin/promotions/new_year/actions/24297",
+                    "@type": "PromotionAction",
+                    "id": 24297,
+                    "type": "order_fixed_discount",
+                    "configuration": {
+                        "FASHION_WEB": {
+                            "amount": 1000
+                        }
+                    }
+                }
+            ],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:07",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/de_DE",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/fr_FR",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/pl_PL",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/es_ES",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/es_MX",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/pt_PT",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/promotions/new_year/translations/zh_CN",
+                    "@type": "PromotionTranslation",
+                    "label": "New Year"
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOHCGa",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25721,
+            "code": "PROMOHCGa",
+            "name": "Crime will field.",
+            "description": "AB",
+            "priority": 21,
+            "exclusive": true,
+            "usageLimit": 40,
+            "used": 0,
+            "startsAt": "2025-05-31 04:10:24",
+            "endsAt": "2025-12-03 07:30:53",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:32",
+            "updatedAt": "2025-11-20 21:23:32",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOHCGa/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOjwCW",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25676,
+            "code": "PROMOjwCW",
+            "name": "Learn reflect bit.",
+            "description": "Yeah child high or.",
+            "priority": 20,
+            "exclusive": false,
+            "usageLimit": 2,
+            "used": 0,
+            "startsAt": "2025-07-10 16:41:03",
+            "endsAt": "2025-12-02 05:36:23",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:42",
+            "updatedAt": "2025-11-20 21:02:42",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOjwCW/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOeLYj",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25719,
+            "code": "PROMOeLYj",
+            "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "description": "Thing necessary ball knowledge side indicate only.",
+            "priority": 19,
+            "exclusive": true,
+            "usageLimit": 95,
+            "used": 0,
+            "startsAt": "2025-03-26 04:38:58",
+            "endsAt": "2025-12-02 11:01:41",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:30",
+            "updatedAt": "2025-11-20 21:23:30",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOeLYj/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/christmas",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25669,
+            "code": "christmas",
+            "name": "Christmas",
+            "description": "Incidunt praesentium esse omnis facilis sit.",
+            "priority": 17,
+            "exclusive": true,
+            "usageLimit": null,
+            "used": 0,
+            "startsAt": null,
+            "endsAt": null,
+            "couponBased": true,
+            "coupons": [
+                "/api/v2/admin/promotions/christmas/coupons/CHRISTMAS_SALE"
+            ],
+            "rules": [
+                {
+                    "@id": "/api/v2/admin/promotions/christmas/rules/24287",
+                    "@type": "PromotionRule",
+                    "id": 24287,
+                    "type": "cart_quantity",
+                    "configuration": {
+                        "count": 7
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "@id": "/api/v2/admin/promotions/christmas/actions/24296",
+                    "@type": "PromotionAction",
+                    "id": 24296,
+                    "type": "order_percentage_discount",
+                    "configuration": {
+                        "percentage": 0.65
+                    }
+                }
+            ],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/de_DE",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/fr_FR",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/pl_PL",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/es_ES",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/es_MX",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/pt_PT",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/promotions/christmas/translations/zh_CN",
+                    "@type": "PromotionTranslation",
+                    "label": "Christmas"
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMObKTd",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25680,
+            "code": "PROMObKTd",
+            "name": "Use close.",
+            "description": "AB",
+            "priority": 16,
+            "exclusive": false,
+            "usageLimit": 100,
+            "used": 0,
+            "startsAt": "2025-03-09 11:22:08",
+            "endsAt": "2025-12-15 16:44:40",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:58",
+            "updatedAt": "2025-11-20 21:02:58",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMObKTd/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOomua",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25758,
+            "code": "PROMOomua",
+            "name": "AB",
+            "description": "Anything budget matter subject. Do large likely remain improve.",
+            "priority": 15,
+            "exclusive": false,
+            "usageLimit": 13,
+            "used": 0,
+            "startsAt": "2025-10-05 08:38:29",
+            "endsAt": "2025-11-24 02:58:21",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:33",
+            "updatedAt": "2025-11-20 21:51:33",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOomua/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOtYIi",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25757,
+            "code": "PROMOtYIi",
+            "name": "Forget grow.",
+            "description": "Unit article hour member finish catch break. Also wide nature red stand because page final.",
+            "priority": 14,
+            "exclusive": false,
+            "usageLimit": 92,
+            "used": 0,
+            "startsAt": "2025-03-09 08:47:10",
+            "endsAt": "2025-12-19 23:05:13",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:30",
+            "updatedAt": "2025-11-20 21:51:30",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOtYIi/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOdOhX",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25682,
+            "code": "PROMOdOhX",
+            "name": "Stock wear.",
+            "description": "Test_de_qa/",
+            "priority": 13,
+            "exclusive": true,
+            "usageLimit": 93,
+            "used": 0,
+            "startsAt": "2025-11-08 12:58:13",
+            "endsAt": "2025-12-18 17:09:02",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:03:00",
+            "updatedAt": "2025-11-20 21:03:00",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOdOhX/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOaeIM",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25763,
+            "code": "PROMOaeIM",
+            "name": "Itself bad teach.",
+            "description": "Test_de_qa/",
+            "priority": 12,
+            "exclusive": false,
+            "usageLimit": 86,
+            "used": 0,
+            "startsAt": "2025-07-14 20:50:50",
+            "endsAt": "2025-12-03 14:38:12",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:36",
+            "updatedAt": "2025-11-20 21:51:36",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOaeIM/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOfpaB",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25717,
+            "code": "PROMOfpaB",
+            "name": "Despite themselves friend.",
+            "description": "Least national friend west say while. Guess visit language book.",
+            "priority": 11,
+            "exclusive": true,
+            "usageLimit": 47,
+            "used": 0,
+            "startsAt": "2025-11-17 01:03:51",
+            "endsAt": "2025-12-14 06:55:28",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:26",
+            "updatedAt": "2025-11-20 21:23:26",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOfpaB/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOwhqW",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25760,
+            "code": "PROMOwhqW",
+            "name": "Test_#123/",
+            "description": "Should seek professor network. Could investment music build agency study more.",
+            "priority": 10,
+            "exclusive": true,
+            "usageLimit": 19,
+            "used": 0,
+            "startsAt": "2025-06-24 22:48:02",
+            "endsAt": "2025-11-30 04:44:55",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:34",
+            "updatedAt": "2025-11-20 21:51:34",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOwhqW/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOXbKa",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25762,
+            "code": "PROMOXbKa",
+            "name": "Eye hold authority.",
+            "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "priority": 9,
+            "exclusive": false,
+            "usageLimit": 33,
+            "used": 0,
+            "startsAt": "2025-03-15 18:20:52",
+            "endsAt": "2025-12-20 04:34:48",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:36",
+            "updatedAt": "2025-11-20 21:51:36",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOXbKa/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOTVuj",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25720,
+            "code": "PROMOTVuj",
+            "name": "Test_#123/",
+            "description": "Above capital father everyone cause edge. However little as guy.",
+            "priority": 8,
+            "exclusive": false,
+            "usageLimit": 86,
+            "used": 0,
+            "startsAt": "2025-05-23 22:38:17",
+            "endsAt": "2025-12-08 00:10:44",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:30",
+            "updatedAt": "2025-11-20 21:23:30",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOTVuj/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOirZP",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25759,
+            "code": "PROMOirZP",
+            "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "description": "Allow information trip. Between full expect give field surface. Source dream finally half soldier.",
+            "priority": 7,
+            "exclusive": false,
+            "usageLimit": 72,
+            "used": 0,
+            "startsAt": "2025-01-07 12:31:17",
+            "endsAt": "2025-12-06 05:06:49",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:34",
+            "updatedAt": "2025-11-20 21:51:34",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOirZP/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMODuLV",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25723,
+            "code": "PROMODuLV",
+            "name": "Operation.",
+            "description": "Test_de_qa/",
+            "priority": 6,
+            "exclusive": false,
+            "usageLimit": 61,
+            "used": 0,
+            "startsAt": "2025-02-25 08:22:12",
+            "endsAt": "2025-12-13 10:13:26",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:32",
+            "updatedAt": "2025-11-20 21:23:32",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMODuLV/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOuCuN",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25681,
+            "code": "PROMOuCuN",
+            "name": "Always administration.",
+            "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "priority": 5,
+            "exclusive": true,
+            "usageLimit": 70,
+            "used": 0,
+            "startsAt": "2025-06-26 17:03:40",
+            "endsAt": "2025-12-06 23:43:03",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:59",
+            "updatedAt": "2025-11-20 21:02:59",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOuCuN/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOMhVb",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25793,
+            "code": "PROMOMhVb",
+            "name": "General.",
+            "description": "Population green sing should floor. Season fast idea life physical believe culture.",
+            "priority": 4,
+            "exclusive": true,
+            "usageLimit": 44,
+            "used": 0,
+            "startsAt": "2025-04-09 23:58:39",
+            "endsAt": "2025-12-15 17:20:28",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 22:01:49",
+            "updatedAt": "2025-11-20 22:01:49",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOMhVb/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOsatE",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25718,
+            "code": "PROMOsatE",
+            "name": "AB",
+            "description": "Machine approach hour gas position pull. Avoid discover term news check professor.",
+            "priority": 3,
+            "exclusive": false,
+            "usageLimit": 7,
+            "used": 0,
+            "startsAt": "2025-03-28 12:14:35",
+            "endsAt": "2025-12-05 01:59:06",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:30",
+            "updatedAt": "2025-11-20 21:23:30",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOsatE/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOjaaO",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25761,
+            "code": "PROMOjaaO",
+            "name": "Institution ever.",
+            "description": "AB",
+            "priority": 2,
+            "exclusive": false,
+            "usageLimit": 83,
+            "used": 0,
+            "startsAt": "2025-08-22 23:31:03",
+            "endsAt": "2025-12-05 03:33:37",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:51:35",
+            "updatedAt": "2025-11-20 21:51:35",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOjaaO/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOkzGM",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25722,
+            "code": "PROMOkzGM",
+            "name": "Begin lead then.",
+            "description": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "priority": 1,
+            "exclusive": false,
+            "usageLimit": 29,
+            "used": 0,
+            "startsAt": "2025-03-06 18:58:17",
+            "endsAt": "2025-11-27 16:45:20",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:23:32",
+            "updatedAt": "2025-11-20 21:23:32",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOkzGM/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        },
+        {
+            "@id": "/api/v2/admin/promotions/PROMOGFeg",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25794,
+            "code": "PROMOGFeg",
+            "name": "Attack together.",
+            "description": "Within human peace street. Just painting scene street manager son. Discover half eat control.",
+            "priority": 0,
+            "exclusive": true,
+            "usageLimit": 48,
+            "used": 0,
+            "startsAt": "2025-09-11 06:22:15",
+            "endsAt": "2025-11-24 22:39:21",
+            "couponBased": false,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": false,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 22:01:50",
+            "updatedAt": "2025-11-20 22:01:50",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMOGFeg/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        }
+    ],
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/promotions{?coupons.code,coupons.code[],order[priority],exists[archivedAt]}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "coupons.code",
+                "property": "coupons.code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "coupons.code[]",
+                "property": "coupons.code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[priority]",
+                "property": "priority",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "exists[archivedAt]",
+                "property": "archivedAt",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Obtener_lista_de_promociones_con_paginacion_invalida[1-None]
+INFO     root:conftest.py:19 ====================================================================================================
+
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOMhVb HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOMhVb
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/promotions/PROMOGFeg HTTP/1.1" 204 0
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: DELETE
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions/PROMOGFeg
+INFO     root:logger_helpers.py:31 STATUS CODE: 204
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:47 RESPONSE: No content (empty body)
+INFO     root:logger_helpers.py:51 ====================================================================================================

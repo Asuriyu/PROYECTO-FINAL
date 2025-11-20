@@ -1,0 +1,89 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Admin_Administrators_validar_localeCode_PUT[-422]
+INFO     root:conftest.py:16 Start time: 22:01:10
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "POST /api/v2/admin/administrators HTTP/1.1" 201 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: POST
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators
+INFO     root:logger_helpers.py:31 STATUS CODE: 201
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Erika",
+    "lastName": "Medina",
+    "username": "erimed610",
+    "plainPassword": "123456",
+    "email": "erika.medina44@example.com",
+    "enabled": true,
+    "localeCode": "es_ES"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Administrator",
+    "@id": "/api/v2/admin/administrators/19325",
+    "@type": "Administrator",
+    "firstName": "Erika",
+    "lastName": "Medina",
+    "localeCode": "es_ES",
+    "avatar": null,
+    "id": 19325,
+    "username": "erimed610",
+    "lastLogin": null,
+    "verifiedAt": null,
+    "email": "erika.medina44@example.com",
+    "createdAt": "2025-11-20 22:01:10",
+    "updatedAt": "2025-11-20 22:01:10",
+    "enabled": true
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "PUT /api/v2/admin/administrators/19325 HTTP/1.1" 422 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: PUT
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/administrators/19325
+INFO     root:logger_helpers.py:31 STATUS CODE: 422
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U",
+    "Content-Type": "application/json"
+}
+DEBUG    root:logger_helpers.py:41 PAYLOAD REQUEST:
+{
+    "firstName": "Erika",
+    "lastName": "Medina",
+    "username": "erimed610",
+    "plainPassword": "123456",
+    "email": "erika.medina44@example.com",
+    "enabled": true,
+    "localeCode": ""
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "localeCode",
+            "message": "Please choose a locale.",
+            "code": "c1051bb4-d103-4f74-8988-acbcafc7fdc3"
+        }
+    ],
+    "detail": "localeCode: Please choose a locale.",
+    "type": "/validation_errors/c1051bb4-d103-4f74-8988-acbcafc7fdc3",
+    "hydra:description": "localeCode: Please choose a locale.",
+    "hydra:title": "An error occurred"
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Admin_Administrators_validar_localeCode_PUT[-422]
+INFO     root:conftest.py:19 ====================================================================================================

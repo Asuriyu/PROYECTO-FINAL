@@ -1,0 +1,98 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Obtener_lista_de_promociones_con_paginacion_invalida[1-1.5]
+INFO     root:conftest.py:16 Start time: 22:01:55
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/promotions?page=1&itemsPerPage=1.5 HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/promotions?page=1&itemsPerPage=1.5
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/Promotion",
+    "@id": "/api/v2/admin/promotions",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 25,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/promotions/PROMONQmX",
+            "@type": "Promotion",
+            "channels": [
+                "/api/v2/admin/channels/FASHION_WEB"
+            ],
+            "id": 25679,
+            "code": "PROMONQmX",
+            "name": "Test_#123/",
+            "description": "Middle their learn drop. Through spring condition management describe hit hair.",
+            "priority": 28,
+            "exclusive": false,
+            "usageLimit": 53,
+            "used": 0,
+            "startsAt": "2025-04-05 15:32:56",
+            "endsAt": "2025-11-29 07:44:52",
+            "couponBased": true,
+            "coupons": [],
+            "rules": [],
+            "actions": [],
+            "appliesToDiscounted": true,
+            "archivedAt": null,
+            "createdAt": "2025-11-20 21:02:55",
+            "updatedAt": "2025-11-20 21:02:55",
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/promotions/PROMONQmX/translations/en_US",
+                    "@type": "PromotionTranslation",
+                    "label": null
+                }
+            }
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/promotions?itemsPerPage=1.5&page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/promotions?itemsPerPage=1.5&page=1",
+        "hydra:last": "/api/v2/admin/promotions?itemsPerPage=1.5&page=25",
+        "hydra:next": "/api/v2/admin/promotions?itemsPerPage=1.5&page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/promotions{?coupons.code,coupons.code[],order[priority],exists[archivedAt]}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "coupons.code",
+                "property": "coupons.code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "coupons.code[]",
+                "property": "coupons.code",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[priority]",
+                "property": "priority",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "exists[archivedAt]",
+                "property": "archivedAt",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Obtener_lista_de_promociones_con_paginacion_invalida[1-1.5]
+INFO     root:conftest.py:19 ====================================================================================================

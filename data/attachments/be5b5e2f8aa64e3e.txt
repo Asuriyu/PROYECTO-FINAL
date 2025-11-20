@@ -1,0 +1,486 @@
+INFO     root:conftest.py:13 
+====================================================================================================
+INFO     root:conftest.py:14 CODE REVIEW - Approved
+INFO     root:conftest.py:15 Test: test_TC_Obtener_lista_de_reseñas_con_paginacion_valida[1-None]
+INFO     root:conftest.py:16 Start time: 22:01:39
+DEBUG    urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): v2.demo.sylius.com:443
+DEBUG    urllib3.connectionpool:connectionpool.py:544 https://v2.demo.sylius.com:443 "GET /api/v2/admin/product-reviews?page=1 HTTP/1.1" 200 None
+INFO     root:logger_helpers.py:27 ====================================================================================================
+INFO     root:logger_helpers.py:28 REQUEST METHOD: GET
+INFO     root:logger_helpers.py:29 IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+DEBUG    root:logger_helpers.py:30 REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/product-reviews?page=1
+INFO     root:logger_helpers.py:31 STATUS CODE: 200
+DEBUG    root:logger_helpers.py:38 REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM2NzU5NjgsImV4cCI6MTc2MzY3OTU2OCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.Cm5NyPsPQ7lDrIYw37jbgND1L4ZTi5r7QRzv-NSBAjQYkxZWtwWV6XlRghk_p2trjIhuwpZ4ZGhFF12Q3BRpH85hkF843T0lBfLrw8M5miYd7nEuZfV1mXLVkKBezlC8qmUX3EHanYJ-IHES1xqKDkvWdi2fv5nH_-WLpsmnAkOXtxwA9gVgxvLKMFgFPpKHB_IN8frxBDG2tbhqz7JBFuFyvFZSSYFH7h9VvIsem7YOB8zkHv0OJ1dUPeJpsLl-ByGUrCnWvqMgFBX1tUcqYrM7xixyTxu6Rhul1wSwyg9ZACiTNeXPxTBbNevQXPPfOaUjYJwZRnBiIRyl4GHrxWHl_JVATdPRjjCplJSQrtyn62NN7ZRVdpNCSBHucUEYnAqHI4mbPN8ovYXqROnrV1qJYwLcIc7k4pf9Zq1VpVLt9ByZdV6pA-EUahBBE_Zpyxy4K8hB6tqjYfXsXv-MlfpPHrkNXNwIPrzASaykapNSYZatBZ4uTcnpXvxs_V2ICeEpx3R4PGa7Gln7u0OAzNRW09khS6eRmcV7bLu5-QQ7fhy6Lyyqzj1cVEQUrQ9MmbR-r0eKTgiHY8xXzHtORRPRldC8-fQaPtojJHDFX8Yow0DefmT0OZ4Ty7lXajBARBkwLODkGixGGIYXsHdaKPgTOTdF0WoMqltyQ2O788U"
+}
+DEBUG    root:logger_helpers.py:45 RESPONSE:
+{
+    "@context": "/api/v2/contexts/ProductReview",
+    "@id": "/api/v2/admin/product-reviews",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 31,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/product-reviews/323478",
+            "@type": "ProductReview",
+            "id": 323478,
+            "title": "ducimus neque omnis",
+            "rating": 1,
+            "comment": "Libero magnam officiis dolorem aut incidunt aut tempore commodi. Deleniti vel autem maxime consequatur quo. Odio et rem sit eos illum reiciendis.",
+            "author": "/api/v2/admin/customers/171387",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Ocean_Whisper_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323479",
+            "@type": "ProductReview",
+            "id": 323479,
+            "title": "dignissimos cupiditate ducimus",
+            "rating": 2,
+            "comment": "Adipisci qui natus velit inventore labore veniam dolor. Aut ea eum et cumque voluptatem nam. Officia maxime aut quasi tenetur eligendi ut et excepturi.",
+            "author": "/api/v2/admin/customers/171394",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Apollo_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323480",
+            "@type": "ProductReview",
+            "id": 323480,
+            "title": "veniam nobis delectus",
+            "rating": 5,
+            "comment": "Aperiam corrupti beatae sed iusto hic. Quis at ducimus quidem dolorem dolor ex. Temporibus veritatis praesentium et necessitatibus.",
+            "author": "/api/v2/admin/customers/171388",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Elegant_Escape_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323481",
+            "@type": "ProductReview",
+            "id": 323481,
+            "title": "labore aut quisquam",
+            "rating": 1,
+            "comment": "Quasi cumque adipisci voluptatem quisquam molestias voluptatem. Eos vel et et. Voluptatem eos neque rerum consequatur sed.",
+            "author": "/api/v2/admin/customers/171394",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Beachside_Twilight_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323482",
+            "@type": "ProductReview",
+            "id": 323482,
+            "title": "sed accusantium enim",
+            "rating": 4,
+            "comment": "Temporibus laudantium est aspernatur qui rem magnam provident. Asperiores voluptatem dignissimos et perferendis incidunt aut voluptate. Qui molestias aut magnam tempora.",
+            "author": "/api/v2/admin/customers/171391",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Radiant_Reflection_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323483",
+            "@type": "ProductReview",
+            "id": 323483,
+            "title": "deleniti aliquid reiciendis",
+            "rating": 2,
+            "comment": "Itaque voluptatem sunt unde dolores natus voluptatibus possimus. Tempore quia deserunt mollitia ad aut. Quidem quis vitae est unde nisi.",
+            "author": "/api/v2/admin/customers/171386",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Apollo_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323484",
+            "@type": "ProductReview",
+            "id": 323484,
+            "title": "quia quis qui",
+            "rating": 3,
+            "comment": "Consectetur nostrum vero nobis maxime non voluptas. A ut facere iusto possimus ea incidunt. Velit consequatur ut ducimus quis id.",
+            "author": "/api/v2/admin/customers/171401",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Starlight_Whisper_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323485",
+            "@type": "ProductReview",
+            "id": 323485,
+            "title": "ullam excepturi natus",
+            "rating": 4,
+            "comment": "Ex qui non et dignissimos aut sed sit. Veniam tenetur est veniam pariatur qui sequi ea rerum. Est eum nostrum amet aut voluptatibus eveniet.",
+            "author": "/api/v2/admin/customers/171403",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Harmonious_Horizon_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323486",
+            "@type": "ProductReview",
+            "id": 323486,
+            "title": "nobis quia ducimus",
+            "rating": 2,
+            "comment": "Fuga accusamus laudantium nobis aut placeat ex. Velit voluptas qui earum accusamus est sunt. Autem ut neque impedit aspernatur architecto minima veniam.",
+            "author": "/api/v2/admin/customers/171396",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Cool_Breeze_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323487",
+            "@type": "ProductReview",
+            "id": 323487,
+            "title": "architecto architecto doloremque",
+            "rating": 5,
+            "comment": "Fuga modi voluptatem esse. Commodi delectus laboriosam illum quo beatae consectetur laboriosam sapiente. Ab doloremque temporibus quo fugit dolor iusto eum.",
+            "author": "/api/v2/admin/customers/171400",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Lunar_Wave_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323488",
+            "@type": "ProductReview",
+            "id": 323488,
+            "title": "rerum fuga ea",
+            "rating": 2,
+            "comment": "Omnis qui facere architecto et quia. Repellendus aliquam sapiente architecto voluptatem consectetur quibusdam sed. Fugiat libero non ut rem sint sint.",
+            "author": "/api/v2/admin/customers/171386",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Skyline_Bliss_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323489",
+            "@type": "ProductReview",
+            "id": 323489,
+            "title": "molestias aliquid quia",
+            "rating": 5,
+            "comment": "Est deserunt minus neque sequi. Facilis maxime laborum accusamus quod eveniet voluptas. Possimus dolor architecto enim quisquam ullam molestiae.",
+            "author": "/api/v2/admin/customers/171392",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Sunflower_Radiance_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323490",
+            "@type": "ProductReview",
+            "id": 323490,
+            "title": "cupiditate a odit",
+            "rating": 5,
+            "comment": "Molestiae aut error magni molestiae impedit placeat maxime. Fugit facilis molestias enim magnam. Sunt voluptas ab quidem.",
+            "author": "/api/v2/admin/customers/171405",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Casual_Coastal_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323491",
+            "@type": "ProductReview",
+            "id": 323491,
+            "title": "corporis minima dolores",
+            "rating": 5,
+            "comment": "Veritatis aliquid perferendis corporis facilis debitis quaerat. Non hic minima omnis. Aut voluptas qui mollitia esse delectus soluta.",
+            "author": "/api/v2/admin/customers/171399",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Lunar_Echo_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323492",
+            "@type": "ProductReview",
+            "id": 323492,
+            "title": "nihil cumque id",
+            "rating": 2,
+            "comment": "Dolorem ab corporis dolores qui quia. Animi repellat necessitatibus autem hic consequuntur natus. Quia id omnis est eius voluptatem rerum.",
+            "author": "/api/v2/admin/customers/171402",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Nebula_Surge_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323493",
+            "@type": "ProductReview",
+            "id": 323493,
+            "title": "vel natus non",
+            "rating": 5,
+            "comment": "Et rerum quisquam nihil nostrum vel pariatur ab. Doloremque amet soluta eos vel suscipit. Quis eligendi voluptates sed rerum quod.",
+            "author": "/api/v2/admin/customers/171395",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Twilight_Glow_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323494",
+            "@type": "ProductReview",
+            "id": 323494,
+            "title": "optio qui tempore",
+            "rating": 4,
+            "comment": "Qui iusto autem nobis ut quia. Odio corporis commodi necessitatibus dolores. Dolorum et quaerat et quisquam.",
+            "author": "/api/v2/admin/customers/171397",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Tropical_Sunset_Maxi",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323495",
+            "@type": "ProductReview",
+            "id": 323495,
+            "title": "id et ut",
+            "rating": 4,
+            "comment": "Quia modi ut beatae ea dolor enim neque quod. Voluptatem illum quod est amet. Optio fugiat esse non quia et eos vitae.",
+            "author": "/api/v2/admin/customers/171388",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Seashell_Harmony_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323496",
+            "@type": "ProductReview",
+            "id": 323496,
+            "title": "aspernatur saepe explicabo",
+            "rating": 4,
+            "comment": "Aperiam voluptatum dolores vel beatae. Maxime non rem repellendus blanditiis deserunt. Qui ut odio corporis.",
+            "author": "/api/v2/admin/customers/171389",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Nebula_Dream_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323497",
+            "@type": "ProductReview",
+            "id": 323497,
+            "title": "sit nihil et",
+            "rating": 1,
+            "comment": "Et sint accusantium nesciunt ea eum. Voluptatem et autem rerum est quos sit fuga. Hic minima velit et soluta.",
+            "author": "/api/v2/admin/customers/171388",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Denim_Daydream",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323498",
+            "@type": "ProductReview",
+            "id": 323498,
+            "title": "id placeat doloribus",
+            "rating": 4,
+            "comment": "Quaerat cumque natus itaque aut. Officia quaerat soluta natus. Quia dolorem aut qui atque blanditiis voluptatum magni id.",
+            "author": "/api/v2/admin/customers/171393",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Beachside_Twilight_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323499",
+            "@type": "ProductReview",
+            "id": 323499,
+            "title": "aut natus non",
+            "rating": 3,
+            "comment": "Aut nostrum recusandae consequuntur et sit ad. Eum veniam ducimus repellendus velit sed. Itaque porro voluptas esse vel qui.",
+            "author": "/api/v2/admin/customers/171386",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Meteor_Echo_T_Shirt",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323500",
+            "@type": "ProductReview",
+            "id": 323500,
+            "title": "consectetur voluptas fuga",
+            "rating": 2,
+            "comment": "Aperiam et fuga magnam quia illum harum id. Autem beatae veniam voluptas dolor. Placeat porro voluptatum quod qui amet omnis.",
+            "author": "/api/v2/admin/customers/171391",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Cool_Breeze_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323501",
+            "@type": "ProductReview",
+            "id": 323501,
+            "title": "voluptas numquam molestiae",
+            "rating": 3,
+            "comment": "Quam molestias molestiae saepe dignissimos totam sunt tenetur. Voluptatibus eligendi qui dignissimos porro cumque labore odit. Quo ipsam debitis rerum voluptatum.",
+            "author": "/api/v2/admin/customers/171388",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Summer_Solstice_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323502",
+            "@type": "ProductReview",
+            "id": 323502,
+            "title": "et et esse",
+            "rating": 3,
+            "comment": "Laboriosam odit vel voluptatem dolore harum quo et. Non atque neque ratione reiciendis eius sed dolorem dolorem. Illo natus vitae nemo accusamus sit saepe enim.",
+            "author": "/api/v2/admin/customers/171402",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Inspiring_Illumination_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323503",
+            "@type": "ProductReview",
+            "id": 323503,
+            "title": "provident sed nisi",
+            "rating": 3,
+            "comment": "Nihil saepe eaque magni ut explicabo laudantium. Eos quaerat qui odit autem dolor omnis accusantium. Excepturi minus in aut quia repellat beatae harum minima.",
+            "author": "/api/v2/admin/customers/171392",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Inspiring_Illumination_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323504",
+            "@type": "ProductReview",
+            "id": 323504,
+            "title": "amet repudiandae sed",
+            "rating": 2,
+            "comment": "Excepturi consequatur accusantium in quia quae quia natus aut. Odit asperiores est ea praesentium ipsam ut. Veniam porro id corporis voluptatum.",
+            "author": "/api/v2/admin/customers/171394",
+            "status": "rejected",
+            "reviewSubject": "/api/v2/admin/products/Ocean_Whisper_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323505",
+            "@type": "ProductReview",
+            "id": 323505,
+            "title": "minus sed id",
+            "rating": 1,
+            "comment": "Numquam aut enim nesciunt quibusdam inventore laborum perferendis. Autem ut ipsam odio et repudiandae ut. Est eius dolor et commodi molestiae modi.",
+            "author": "/api/v2/admin/customers/171387",
+            "status": "accepted",
+            "reviewSubject": "/api/v2/admin/products/Ocean_Wave_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323506",
+            "@type": "ProductReview",
+            "id": 323506,
+            "title": "facilis tenetur omnis",
+            "rating": 2,
+            "comment": "Architecto quasi omnis natus numquam officia sed nulla. Eaque sit est facere fugit hic. Ut ut blanditiis voluptatem ut aut sed et.",
+            "author": "/api/v2/admin/customers/171386",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Dynamic_Dawn_Cap",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        },
+        {
+            "@id": "/api/v2/admin/product-reviews/323507",
+            "@type": "ProductReview",
+            "id": 323507,
+            "title": "adipisci at corporis",
+            "rating": 2,
+            "comment": "Modi occaecati animi quam voluptatem omnis quia. Sint enim aliquam qui alias id nihil vel. Voluptatum eveniet voluptas sint error corrupti tenetur similique.",
+            "author": "/api/v2/admin/customers/171388",
+            "status": "new",
+            "reviewSubject": "/api/v2/admin/products/Tropical_Dawn_Jeans",
+            "createdAt": "2025-11-20 21:00:06",
+            "updatedAt": "2025-11-20 21:00:06"
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/product-reviews?page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/product-reviews?page=1",
+        "hydra:last": "/api/v2/admin/product-reviews?page=2",
+        "hydra:next": "/api/v2/admin/product-reviews?page=2"
+    },
+    "hydra:search": {
+        "@type": "hydra:IriTemplate",
+        "hydra:template": "/api/v2/admin/product-reviews{?order[createdAt],order[title],order[rating],order[status],reviewSubject,reviewSubject[],status,status[],title}",
+        "hydra:variableRepresentation": "BasicRepresentation",
+        "hydra:mapping": [
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[createdAt]",
+                "property": "createdAt",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[title]",
+                "property": "title",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[rating]",
+                "property": "rating",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "order[status]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "reviewSubject[]",
+                "property": "reviewSubject",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "status[]",
+                "property": "status",
+                "required": false
+            },
+            {
+                "@type": "IriTemplateMapping",
+                "variable": "title",
+                "property": "title",
+                "required": false
+            }
+        ]
+    }
+}
+INFO     root:logger_helpers.py:51 ====================================================================================================
+INFO     root:conftest.py:18 Completed test: test_TC_Obtener_lista_de_reseñas_con_paginacion_valida[1-None]
+INFO     root:conftest.py:19 ====================================================================================================
