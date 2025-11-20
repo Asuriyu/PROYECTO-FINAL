@@ -1,2 +1,2 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","5315","test_e2e_promocion_admin","tests.test_e2e","2025-11-14","passed","2025-11-14","","test_E2E_promocion_admin","",""
+"","4412","test_e2e_promocion_admin","tests.test_e2e","2025-11-20","passed","2025-11-20","","test_E2E_promocion_admin","",""
